@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stallion SteelWorks Welding | Mobile Welding, Fabrication, Repairs | welding.stallionsteelworks.com</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Stallion SteelWorks Welding delivers mobile welding, fabrication, structural steel repair, gates, corrals, trailers, ranch and residential welding across Arizona. Fast response, clean welds, heavy-duty results. Request a quote now." />
+  <meta name="keywords" content="mobile welding, welding near me, welder, fabrication, structural steel repair, ranch welding, corral welding, trailer repair, gate welding, TIG welding, MIG welding, stick welding, aluminum welding, stainless welding, Arizona welding, Phoenix welding, Scottsdale welding, Mesa welding, Gilbert welding, Chandler welding" />
+  <link rel="canonical" href="https://welding.stallionsteelworks.com/" />
+
+  <!-- Social -->
+  <meta property="og:title" content="Stallion SteelWorks Welding | Mobile Welding & Fabrication" />
+  <meta property="og:description" content="Heavy-duty mobile welding, fabrication, and steel repair with a clean, professional finish. Request a quote today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://welding.stallionsteelworks.com/" />
+  <!-- Optional: upload an OG image into welding bucket and set it here -->
+  <!-- <meta property="og:image" content="https://welding.stallionsteelworks.com/assets/og-welding.jpg" /> -->
+
+  <meta name="theme-color" content="#0b0f14" />
+
+  <!-- Fonts: keep it simple and strong -->
+  <style>
+    /* -------------------------
+       Granite + Raw Steel Theme
+       ------------------------- */
+    :root{
+      --bg: #070a0e;
+      --bg2:#0b0f14;
+      --granite1:#0c1118;
+      --granite2:#0a0e14;
+      --steel:#101722;
+      --steel2:#0e1620;
+      --stone:#1a232e;
+      --ink:#e9eef6;
+      --muted:#a9b4c2;
+
+      /* Accent palette (~10% more color variation) */
+      --accent:#f3b34a;  /* warm brass */
+      --accent2:#66e3ff; /* cool arc-blue */
+      --accent3:#7cffb2; /* subtle emerald */
+      --accent4:#ff5b8c; /* occasional neon ember */
+      --accent5:#b391ff; /* rare violet highlight */
+
+      --ok:#59ffa4;
+      --warn:#ffd27a;
+
+      --radius: 18px;
+      --radius2: 26px;
+
+      --shadow: 0 12px 45px rgba(0,0,0,.55);
+      --shadow2: 0 10px 28px rgba(0,0,0,.45);
+      --stroke: rgba(255,255,255,.09);
+      --stroke2: rgba(255,255,255,.06);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 800px at 12% 10%, rgba(102,227,255,.10), transparent 55%),
+        radial-gradient(900px 700px at 88% 18%, rgba(243,179,74,.10), transparent 55%),
+        radial-gradient(1000px 700px at 50% 80%, rgba(124,255,178,.07), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
+    }
+
+    /* “Granite” noise + “steel” scratches */
+    .texture{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      z-index:0;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,.06), transparent 40%),
+        radial-gradient(circle at 70% 60%, rgba(255,255,255,.04), transparent 45%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,.028) 0 1px, transparent 1px 10px),
+        repeating-linear-gradient(45deg, rgba(0,0,0,.25) 0 2px, transparent 2px 12px);
+      mix-blend-mode:overlay;
+      opacity:.35;
+      filter: blur(.3px);
+    }
+
+    /* Glimmer line (similar vibe to your glimmer CSS) */
+    .glimmer{
+      position:absolute;
+      inset:-2px;
+      border-radius:inherit;
+      background:
+        linear-gradient(120deg,
+          transparent 0%,
+          rgba(102,227,255,.0) 15%,
+          rgba(102,227,255,.35) 32%,
+          rgba(243,179,74,.25) 45%,
+          rgba(255,255,255,.12) 50%,
+          rgba(124,255,178,.20) 62%,
+          transparent 78%,
+          transparent 100%);
+      opacity:.0;
+      transform: translateX(-45%);
+      transition: opacity .35s ease;
+      pointer-events:none;
+      filter: blur(.2px);
+    }
+    .glimmer-wrap:hover .glimmer{opacity:.65; animation: sweep 1.6s ease-in-out infinite;}
+    @keyframes sweep{
+      0%{transform: translateX(-55%)}
+      50%{transform: translateX(0%)}
+      100%{transform: translateX(55%)}
+    }
+
+    /* Layout */
+    .wrap{
+      position:relative;
+      z-index:1;
+      max-width:1180px;
+      margin:0 auto;
+      padding:28px 18px 80px;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(7,10,14,.82), rgba(7,10,14,.58));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      max-width:1180px;
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:260px;
+    }
+    .mark{
+      width:42px;height:42px;border-radius:14px;
+      background:
+        radial-gradient(circle at 20% 25%, rgba(255,255,255,.22), transparent 45%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+        linear-gradient(135deg, rgba(102,227,255,.24), rgba(243,179,74,.18));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+    }
+    .mark:after{
+      content:"";
+      position:absolute; inset:-40%;
+      background:linear-gradient(120deg, transparent 0 40%, rgba(255,255,255,.18) 50%, transparent 60% 100%);
+      transform: rotate(12deg);
+      animation: sheen 5.6s ease-in-out infinite;
+      opacity:.55;
+    }
+    @keyframes sheen{
+      0%{transform: translateX(-40%) rotate(12deg); opacity:.15}
+      35%{opacity:.55}
+      65%{opacity:.55}
+      100%{transform: translateX(40%) rotate(12deg); opacity:.15}
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:14px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      line-height:1.15;
+    }
+    .brand .sub{
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:.02em;
+      margin-top:3px;
+    }
+
+    .navlinks{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--ink);
+      text-decoration:none;
+      font-weight:600;
+      font-size:13px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+      overflow:hidden;
+      white-space:nowrap;
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      border-color: rgba(243,179,74,.24);
+      background: linear-gradient(180deg, rgba(243,179,74,.10), rgba(255,255,255,.02));
+    }
+    .pill.primary{
+      border-color: rgba(102,227,255,.22);
+      background: linear-gradient(180deg, rgba(102,227,255,.14), rgba(255,255,255,.03));
+    }
+    .pill.primary:hover{
+      border-color: rgba(102,227,255,.38);
+      background: linear-gradient(180deg, rgba(102,227,255,.20), rgba(243,179,74,.04));
+    }
+
+    /* Hero */
+    .hero{
+      padding:34px 0 16px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr; padding-top:18px;}
+      .brand{min-width:auto}
+    }
+
+    .card{
+      border-radius: var(--radius2);
+      background:
+        radial-gradient(700px 450px at 10% 20%, rgba(102,227,255,.10), transparent 55%),
+        radial-gradient(700px 450px at 90% 35%, rgba(243,179,74,.10), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card .inner{padding:22px 22px 20px}
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.22);
+      color:var(--muted);
+      font-weight:700;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      font-size:11px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:99px;
+      background: radial-gradient(circle at 30% 30%, #fff, var(--accent2));
+      box-shadow: 0 0 22px rgba(102,227,255,.55);
+    }
+
+    .hero h2{
+      margin:14px 0 10px;
+      font-size:42px;
+      line-height:1.05;
+      letter-spacing:-.02em;
+    }
+    @media (max-width: 520px){
+      .hero h2{font-size:34px;}
+    }
+    .hero p{
+      margin:0;
+      color:rgba(233,238,246,.86);
+      font-size:15.6px;
+      line-height:1.6;
+      max-width: 62ch;
+    }
+
+    .badges{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:16px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.09);
+      color:rgba(233,238,246,.92);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.01em;
+    }
+    .badge em{
+      font-style:normal;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .badge .spark{
+      width:10px;height:10px;border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, #fff, var(--accent));
+      box-shadow:0 0 18px rgba(243,179,74,.45);
+    }
+
+    /* Quote panel (conversion-focused) */
+    .quote{
+      background:
+        radial-gradient(900px 500px at 70% 0%, rgba(255,91,140,.10), transparent 55%),
+        radial-gradient(900px 500px at 0% 60%, rgba(179,145,255,.10), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    }
+
+    .quote h3{
+      margin:10px 0 6px;
+      font-size:18px;
+      letter-spacing:.02em;
+    }
+    .quote .micro{
+      margin:0 0 12px;
+      color:rgba(233,238,246,.78);
+      font-size:13.5px;
+      line-height:1.55;
+    }
+
+    form{
+      display:grid;
+      gap:10px;
+      margin-top:10px;
+    }
+    .row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    @media (max-width: 520px){ .row{grid-template-columns:1fr;} }
+
+    label{
+      font-size:12px;
+      color:rgba(233,238,246,.75);
+      font-weight:800;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:6px;
+      display:block;
+    }
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.30), rgba(255,255,255,.02));
+      color:var(--ink);
+      outline:none;
+      box-shadow: 0 14px 36px rgba(0,0,0,.26);
+      transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+      font-size:14px;
+    }
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(102,227,255,.35);
+      box-shadow: 0 0 0 4px rgba(102,227,255,.10), 0 14px 36px rgba(0,0,0,.35);
+      transform: translateY(-1px);
+    }
+    textarea{min-height:110px; resize:vertical}
+
+    .cta{
+      margin-top:6px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .btn{
+      position:relative;
+      border:none;
+      cursor:pointer;
+      padding:12px 14px;
+      border-radius:16px;
+      color:#081018;
+      font-weight:900;
+      letter-spacing:.02em;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,.55), rgba(255,255,255,0) 55%),
+        linear-gradient(180deg, rgba(102,227,255,.95), rgba(243,179,74,.80));
+      box-shadow: 0 18px 55px rgba(0,0,0,.45);
+      transition: transform .18s ease, filter .18s ease;
+      overflow:hidden;
+      min-width: 200px;
+    }
+    .btn:hover{transform: translateY(-1px); filter: brightness(1.05)}
+    .btn:active{transform: translateY(0px)}
+    .btn:before{
+      content:"";
+      position:absolute;
+      inset:-50%;
+      background: linear-gradient(120deg, transparent 0 35%, rgba(255,255,255,.50) 50%, transparent 65% 100%);
+      transform: translateX(-40%) rotate(12deg);
+      animation: btnsheen 3.8s ease-in-out infinite;
+      opacity:.40;
+    }
+    @keyframes btnsheen{
+      0%{transform: translateX(-45%) rotate(12deg); opacity:.10}
+      40%{opacity:.45}
+      100%{transform: translateX(45%) rotate(12deg); opacity:.10}
+    }
+
+    .trust{
+      font-size:12.8px;
+      color:rgba(233,238,246,.78);
+      line-height:1.45;
+    }
+    .trust strong{color:rgba(233,238,246,.92)}
+    .trust .hi{color: var(--ok); font-weight:900}
+
+    /* Section styling (infinite scroll feel) */
+    .sections{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
+    }
+    .section{
+      border-radius: var(--radius2);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(255,255,255,.05), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015));
+      border: 1px solid rgba(255,255,255,.09);
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+    }
+    .section .inner{padding:20px 22px}
+
+    .section h3{
+      margin:0 0 8px;
+      font-size:18px;
+      letter-spacing:.01em;
+    }
+    .section p, .section li{
+      color:rgba(233,238,246,.84);
+      line-height:1.7;
+      font-size:15px;
+    }
+    .section ul{
+      margin:10px 0 0 18px;
+      padding:0;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){ .grid2{grid-template-columns:1fr;} }
+
+    .mini{
+      border-radius: 20px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.28), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.08);
+      padding:16px 16px 14px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .mini h4{
+      margin:0 0 6px;
+      font-size:14px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:rgba(233,238,246,.92);
+    }
+    .mini p{margin:0;color:rgba(233,238,246,.78);font-size:14.2px}
+
+    .accent-bar{
+      height:3px;
+      border-radius:999px;
+      background: linear-gradient(90deg, rgba(102,227,255,.9), rgba(243,179,74,.85), rgba(124,255,178,.75));
+      opacity:.75;
+      margin:10px 0 0;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:18px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.08);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      box-shadow: var(--shadow2);
+    }
+    footer .inner{padding:18px 22px}
+    footer p{
+      margin:0;
+      color:rgba(233,238,246,.70);
+      line-height:1.6;
+      font-size:13.5px;
+    }
+
+    /* Sticky “Request Quote” nudge */
+    .sticky-quote{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:50;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      width:min(360px, calc(100vw - 32px));
+    }
+    .nudge{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(800px 400px at 10% 10%, rgba(102,227,255,.10), transparent 55%),
+        radial-gradient(800px 400px at 90% 70%, rgba(243,179,74,.10), transparent 55%),
+        linear-gradient(180deg, rgba(0,0,0,.30), rgba(255,255,255,.02));
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+      padding:12px 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      overflow:hidden;
+    }
+    .nudge small{
+      color:rgba(233,238,246,.80);
+      line-height:1.35;
+      display:block;
+    }
+    .nudge strong{
+      color:rgba(233,238,246,.95);
+      letter-spacing:.02em;
+    }
+    .nudge a{
+      text-decoration:none;
+      font-weight:900;
+      color:#071018;
+      background: linear-gradient(180deg, rgba(243,179,74,.95), rgba(255,255,255,.20));
+      border:1px solid rgba(255,255,255,.14);
+      padding:10px 12px;
+      border-radius:14px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.35);
+      white-space:nowrap;
+    }
+    .nudge a:hover{filter:brightness(1.05)}
+
+     /* ---- Random Glimmer System (mobile-friendly) ---- */
+
+  /* Mark anything you want to glimmer with class="glimmer" */
+  .glimmer {
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0); /* smoother on mobile */
+  }
+
+  /* The sheen */
+  .glimmer::after {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(-120%) rotate(12deg);
+    background: linear-gradient(
+      110deg,
+      rgba(255,255,255,0) 20%,
+      rgba(255,255,255,.08) 35%,
+      rgba(255,255,255,.22) 45%,
+      rgba(255,255,255,.08) 55%,
+      rgba(255,255,255,0) 70%
+    );
+    filter: blur(0.2px);
+    will-change: transform, opacity;
+  }
+
+  /* When JS toggles this, the sheen sweeps */
+  .glimmer.glimmer-run::after {
+    opacity: 1;
+    animation: glimmerSweep var(--glimmerDur, 1.35s) ease-in-out 1;
+  }
+
+  @keyframes glimmerSweep {
+    0%   { transform: translateX(-140%) rotate(12deg); opacity: 0; }
+    12%  { opacity: .95; }
+    55%  { opacity: .65; }
+    100% { transform: translateX(140%) rotate(12deg); opacity: 0; }
+  }
+
+  /* Optional: keep hover for desktop too */
+  @media (hover:hover) {
+    .glimmer:hover::after {
+      opacity: 1;
+      animation: glimmerSweep 1.2s ease-in-out 1;
+    }
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .glimmer::after { display:none !important; }
+  }
+  </style>
+
+  <!-- Structured data (Local Business + Services) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Stallion SteelWorks Welding",
+    "url":"https://welding.stallionsteelworks.com/",
+    "description":"Mobile welding, fabrication, structural steel repair, gates, corrals, trailer repair, ranch and residential welding with a premium finish.",
+    "areaServed":"Arizona",
+    "makesOffer":[
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Mobile Welding"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Fabrication"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Structural Steel Repair"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Gate & Fence Welding"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Trailer Repair Welding"}}
+    ]
+  }
+  </script> 
+  <script>
+(() => {
+  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+
+  // Choose what glimmers: add class="glimmer" to buttons/cards/headlines/etc.
+  const glimmers = Array.from(document.querySelectorAll('.glimmer'));
+  if (!glimmers.length) return;
+
+  // Tunables for "premium" feel (not spammy)
+  const MIN_DELAY = 1200;   // ms between glimmers
+  const MAX_DELAY = 3800;   // ms between glimmers
+  const MIN_PER_BURST = 1;
+  const MAX_PER_BURST = 3;
+
+  // Helps avoid hammering the same element repeatedly
+  let lastIndex = -1;
+
+  const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+  function runOne(el) {
+    // random duration so it feels organic
+    const dur = (Math.random() * 0.8 + 1.05).toFixed(2) + 's';
+    el.style.setProperty('--glimmerDur', dur);
+
+    el.classList.remove('glimmer-run');
+    // force reflow so animation restarts reliably
+    void el.offsetWidth;
+    el.classList.add('glimmer-run');
+
+    const cleanup = () => el.classList.remove('glimmer-run');
+    setTimeout(cleanup, 1900); // slightly longer than max dur
+  }
+
+  function pickIndex() {
+    if (glimmers.length === 1) return 0;
+    let idx = rand(0, glimmers.length - 1);
+    // avoid immediate repeats
+    if (idx === lastIndex) idx = (idx + 1) % glimmers.length;
+    lastIndex = idx;
+    return idx;
+  }
+
+  function tick() {
+    // If tab is hidden, chill to save battery
+    if (document.hidden) {
+      setTimeout(tick, 2500);
+      return;
+    }
+
+    const burst = rand(MIN_PER_BURST, MAX_PER_BURST);
+    const used = new Set();
+
+    for (let i = 0; i < burst; i++) {
+      let idx = pickIndex();
+      // prevent same burst duplicates
+      let guard = 0;
+      while (used.has(idx) && guard++ < 10) idx = rand(0, glimmers.length - 1);
+      used.add(idx);
+      runOne(glimmers[idx]);
+    }
+
+    setTimeout(tick, rand(MIN_DELAY, MAX_DELAY));
+  }
+
+  // Start after a short delay so first paint is clean
+  setTimeout(tick, rand(800, 1600));
+})();
+</script>
+</head>
+
+<body>
+  <div class="glimmer texture" aria-hidden="true"></div>
+
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <h1 class="glimmer">STALLION STEELWORKS <span style="color:var(--accent2);">WELDING</span></h1>
+          <div class="sub">Mobile welding • Fabrication • Repairs • Arizona</div>
+        </div>
+      </div>
+
+      <div class="navlinks">
+        <a class="pill" href="https://stallionsteelworks.com" title="Main Site">Main Site</a>
+        <a class="pill" href="#services">Services</a>
+        <a class="pill" href="#areas">Service Areas</a>
+        <a class="pill primary" href="#quote">Request a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card glimmer-wrap">
+        <div class="glimmer" aria-hidden="true"></div>
+        <div class="inner">
+          <span class="kicker"><span class="dot"></span> Mobile welding that looks premium and lasts</span>
+          <h2>Steel strength.<br/>Clean welds.<br/>A finish you’re proud to own.</h2>
+          <p>
+            Welcome to <strong>Stallion SteelWorks Welding</strong> — the welding division built for customers who want
+            <strong>powerful structure</strong>, <strong>clean lines</strong>, and <strong>professional results</strong>.
+            We handle <strong>mobile welding</strong>, <strong>fabrication</strong>, and <strong>steel repairs</strong> for ranch, residential, and light commercial needs.
+            If it’s steel, we can build it, fix it, reinforce it, and make it look right.
+          </p>
+
+          <div class="badges">
+            <span class="badge"><span class="spark"></span> Fast turnaround <em>&nbsp;when it matters</em></span>
+            <span class="badge"><span class="spark"></span> Heavy-duty workmanship <em>&nbsp;you can feel</em></span>
+            <span class="badge"><span class="spark"></span> High-visibility finish <em>&nbsp;no sloppy welds</em></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUOTE BOX -->
+      <aside class="card quote glimmer-wrap" id="quote">
+        <div class="glimmer" aria-hidden="true"></div>
+        <div class="inner">
+          <span class="kicker"><span class="dot"></span> Request a Quote</span>
+          <h3>Get pricing + a plan in minutes</h3>
+          <p class="micro">
+            Send a quick message and we’ll respond with the fastest path forward:
+            <strong>repair</strong>, <strong>reinforce</strong>, or <strong>build new</strong>.
+            The more detail you add, the faster we can quote. If you’re in a hurry, just send your name + city and we’ll take it from there.
+          </p>
+
+          <!-- Replace action with your form handler (Formspree, API Gateway, Lambda, etc.) -->
+          <form method="post" action="#" onsubmit="return handleQuoteSubmit(event)">
+            <div class="row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" autocomplete="name" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" autocomplete="tel" placeholder="Best number to text/call" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="city">City / Area</label>
+                <input id="city" name="city" placeholder="Phoenix, Mesa, Scottsdale, etc." required />
+              </div>
+              <div>
+                <label for="service">Project type</label>
+                <select id="service" name="service" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Mobile Welding Repair</option>
+                  <option>Fabrication / Custom Build</option>
+                  <option>Gate / Fence / Ranch Welding</option>
+                  <option>Trailer Repair / Reinforcement</option>
+                  <option>Structural Steel Repair</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="details">What do you need welded?</label>
+              <textarea id="details" name="details" placeholder="Describe the problem or the build. Include dimensions, material, timeline, and any 'must-haves'. If you have photos, mention it and we’ll tell you where to send them."></textarea>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="timeline">Timeline</label>
+                <select id="timeline" name="timeline" required>
+                  <option value="" selected disabled>How soon?</option>
+                  <option>ASAP (urgent)</option>
+                  <option>Within 48 hours</option>
+                  <option>This week</option>
+                  <option>Next 2 weeks</option>
+                  <option>Flexible</option>
+                </select>
+              </div>
+              <div>
+                <label for="budget">Budget range (optional)</label>
+                <select id="budget" name="budget">
+                  <option value="" selected>Choose (optional)</option>
+                  <option>Under $300</option>
+                  <option>$300–$800</option>
+                  <option>$800–$1,500</option>
+                  <option>$1,500–$3,000</option>
+                  <option>$3,000+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="cta">
+              <button class="btn" type="submit">Send Quote Request</button>
+              <div class="trust">
+                <strong>Low-friction promise:</strong> We’ll keep it simple. No spam. No runaround.<br/>
+                <span class="hi">Pro tip:</span> If you want the fastest quote, include photos + measurements.
+              </div>
+            </div>
+
+            <p id="quoteStatus" style="margin:10px 0 0; color:rgba(233,238,246,.78); font-size:13px;"></p>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <!-- INFINITE SCROLL STYLE SECTIONS -->
+    <section class="sections" id="services">
+
+      <article class="section glimmer-wrap">
+        <div class="glimmer" aria-hidden="true"></div>
+        <div class="inner">
+          <h3>Mobile Welding That Shows Up Ready</h3>
+          <p>
+            When you search <strong>“mobile welding near me”</strong>, you’re not looking for a mystery.
+            You’re looking for someone who arrives prepared, communicates clearly, and finishes strong.
+            Stallion SteelWorks Welding is built for customers who want a job done with <strong>discipline</strong>, <strong>strength</strong>, and a <strong>clean professional finish</strong>.
+            We bring the tools, the steel mindset, and the craftsmanship to complete repairs and builds that hold up under real use.
+          </p>
+          <div class="grid2">
+            <div class="mini">
+              <h4>Welding Repairs</h4>
+              <p>
+                Cracks, breaks, bent brackets, failed welds, stress points, and fatigue damage — we diagnose it and fix it correctly.
+                The goal is not “just welded.” The goal is <strong>stronger than before</strong>.
+              </p>
+              <div class="accent-bar"></div>
+            </div>
+            <div class="mini">
+              <h4>Fabrication</h4>
+              <p>
+                Custom builds for ranch, residential, and utility needs: frames, mounts, braces, reinforcements, and one-off pieces.
+                If you can explain the goal, we can fabricate the steel solution.
+              </p>
+              <div class="accent-bar"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="section glimmer-wrap">
+        <div class="glimmer" aria-hidden="true"></div>
+        <div class="inner">
+          <h3>Steel Fabrication With a Premium Finish</h3>
+          <p>
+            There’s a difference between a weld that “holds” and a weld that looks like it belongs on a high-end property.
+            We build with an eye for <strong>alignment</strong>, <strong>symmetry</strong>, <strong>clean edges</strong>, and <strong>professional presentation</strong>.
+            This matters for gates, entrances, ranch infrastructure, and any steel feature that people see every day.
+            If you want elegance and power — granite-stone energy with raw-steel authority — you’re in the right place.
+          </p>
+          <ul>
+            <li><strong>Gate welding & reinforcement</strong> to eliminate sag and binding</li>
+            <li><strong>Trailer repair welding</strong> for frames, ramps, tongue reinforcement, and cracked joints</li>
+            <li><strong>Ranch welding</strong> for corrals, panels, braces, hinges, latches, and heavy-use joints</li>
+            <li><strong>Structural steel repair</strong> when failure is not an option</li>
+            <li><strong>Custom brackets & mounts</strong> made for your exact situation</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="section glimmer-wrap" id="areas">
+        <div class="glimmer" aria-hidden="true"></div>
+        <div class="inner">
+          <h3>Service Areas</h3>
+          <p>
+            We serve customers across Arizona depending on job size, scope, and scheduling.
+            If you’re searching for <strong>welding in Phoenix</strong>, <strong>welding in Mesa</strong>, <strong>welding in Scottsdale</strong>,
+            or <strong>mobile welder near me</strong>, send your city and the job details.
+            If your project is the right fit, we’ll move fast and give you a clear quote.
+          </p>
+          <div class="grid2">
+            <div class="mini">
+              <h4>Common Requests</h4>
+              <p>
+                Gate sag fixes, hinge replacement, latch alignment, broken trailer ramps,
+                cracked corral welds, failed brackets, bent frame members, and reinforcement plates.
+              </p>
+              <div class="accent-bar"></div>
+            </div>
+            <div class="mini">
+              <h4>Best Way to Quote</h4>
+              <p>
+                Include: city, photos, measurements, material type, and timeline.
+                We’ll respond with the recommended approach and options.
+              </p>
+              <div class="accent-bar"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="section glimmer-wrap">
+        <div class="glimmer" aria-hidden="true"></div>
+        <div class="inner">
+          <h3>Why Customers Choose Stallion SteelWorks Welding</h3>
+          <p>
+            People don’t just hire a welder — they hire confidence.
+            You want to know the welds will hold under stress, weather, vibration, heat cycles, and real-world load.
+            You want clean work that doesn’t look patched together. You want a plan that makes sense.
+            Our process is built to deliver exactly that: strong structure, clean finish, and direct communication.
+          </p>
+          <div class="grid2">
+            <div class="mini">
+              <h4>Strength First</h4>
+              <p>
+                We prioritize load paths, stress points, and reinforcement where it matters.
+                We’re not here to “cover” a crack — we’re here to solve it.
+              </p>
+              <div class="accent-bar"></div>
+            </div>
+            <div class="mini">
+              <h4>Clean Presentation</h4>
+              <p>
+                Your project should look intentional and professional — not like a rushed repair.
+                We aim for alignment, clean joints, and a finish you’d show off.
+              </p>
+              <div class="accent-bar"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Extra long SEO blocks for “infinite scroll” feel -->
+      <article class="section glimmer-wrap">
+        <div class="glimmer" aria-hidden="true"></div>
+        <div class="inner">
+          <h3>Mobile Welder Near Me: What You Actually Want</h3>
+          <p>
+            When customers type <strong>“mobile welder near me”</strong> they usually want one thing: a reliable pro who can
+            show up, evaluate the situation quickly, and complete a safe repair without drama.
+            Most welding jobs are urgent because something stopped working — a gate won’t close, a trailer isn’t safe, a bracket snapped,
+            or a structural member cracked where it shouldn’t.
+          </p>
+          <p>
+            That’s why our quote flow is built for speed:
+            send your city, a short description, and (if possible) photos and measurements. From there, we’ll tell you the most likely
+            fix, whether reinforcement is recommended, and what the timeline looks like. If you want a premium finish, tell us —
+            we can build toward <strong>straight lines</strong>, <strong>clean transitions</strong>, and a <strong>high-end look</strong> instead of a basic patch.
+          </p>
+        </div>
+      </article>
+
+      <article class="section glimmer-wrap">
+        <div class="glimmer" aria-hidden="true"></div>
+        <div class="inner">
+          <h3>Welding Repairs, Fabrication, and Reinforcement</h3>
+          <p>
+            Some projects need a repair. Some need a rebuild. Some need reinforcement so the failure never happens again.
+            We’ll help you choose the smartest option based on what the steel is doing, where it’s failing, and how it’s used.
+          </p>
+          <ul>
+            <li><strong>Repair</strong>: fix the break and restore function fast</li>
+            <li><strong>Rebuild</strong>: replace compromised sections and restore strength and alignment</li>
+            <li><strong>Reinforce</strong>: add plates, gussets, sleeves, or braces to prevent repeat failure</li>
+          </ul>
+          <p>
+            This is how you go from “it broke” to “it’s better than it was new.”
+          </p>
+        </div>
+      </article>
+
+      <article class="section glimmer-wrap">
+        <div class="glimmer" aria-hidden="true"></div>
+        <div class="inner">
+          <h3>Ready When You Are</h3>
+          <p>
+            This page is intentionally built to be text-rich and searchable — so customers can find the exact service they need.
+            If you’re here because you need welding, the fastest move is simple:
+            scroll back up and send the quote request. You’ll get a response with the next step.
+          </p>
+          <p style="margin-bottom:0;">
+            <strong>Stallion SteelWorks Welding</strong> — where raw steel meets clean execution.
+          </p>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      <div class="inner">
+        <p>
+          <strong>Stallion SteelWorks Welding</strong> • Mobile welding, fabrication, and steel repair.
+          This site is a temporary welding hub under <strong>welding.stallionsteelworks.com</strong> and will expand with project galleries, service pages,
+          and instant-quote automation.<br/>
+          © <span id="yr"></span> Stallion SteelWorks. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Sticky conversion nudge -->
+  <div class="sticky-quote" aria-hidden="false">
+    <div class="nudge">
+      <div>
+        <small><strong>Need welding fast?</strong><br/>Send a quote request — we’ll reply with a plan.</small>
+      </div>
+      <a href="#quote">Quote →</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+
+    // Basic front-end submit handler (so the button "does something" even before you wire the backend).
+    // Replace with a real endpoint later (Formspree, API Gateway, Lambda, etc.).
+    function handleQuoteSubmit(e){
+      e.preventDefault();
+      const status = document.getElementById("quoteStatus");
+      const name = (document.getElementById("name").value || "").trim();
+      const phone = (document.getElementById("phone").value || "").trim();
+      const city = (document.getElementById("city").value || "").trim();
+      const service = document.getElementById("service").value;
+
+      if(!name || !phone || !city || !service){
+        status.textContent = "Please complete the required fields so we can respond fast.";
+        status.style.color = "rgba(255,210,122,.95)";
+        return false;
+      }
+
+      status.textContent = "✅ Quote request ready. Next step: connect this form to your backend (Formspree / API Gateway / Lambda).";
+      status.style.color = "rgba(89,255,164,.95)";
+
+      // Optional: clear form to make it feel “submitted”
+      // e.target.reset();
+
+      return false;
+    }
+  </script>
+</body>
+</html>
