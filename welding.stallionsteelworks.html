@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -15,34 +15,78 @@
   <meta property="og:description" content="Custom welded pieces: doors, gates, railings, furniture, frames, shade + repairs. Fast quote. Call 602-999-77556." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://welding.stallionsteelworks.com/" />
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pics/apple-touch-icon.png">
+
+
 
   <style>
+    /* =========================================================
+       THEME SYSTEM (LIGHT DEFAULT + DARK TOGGLE)
+       ========================================================= */
     :root{
+      --radius: 18px;
+      --radius2: 26px;
+      --shadow: 0 18px 38px rgba(0,0,0,.12);
+      --shadow2: 0 10px 28px rgba(0,0,0,.10);
+
+      --h1: clamp(2.35rem, 4.4vw, 3.7rem);
+      --h2: clamp(1.6rem, 2.5vw, 2.35rem);
+      --h3: clamp(1.15rem, 1.85vw, 1.55rem);
+      --p:  clamp(1.05rem, 1.55vw, 1.2rem);
+      --small: clamp(.95rem, 1.15vw, 1.05rem);
+
+      /* brand accents (kept) */
+      --neon: #22e6c8;
+      --neon2:#1aa8ff;
+      --warning:#ffcc59;
+
+      /* LIGHT THEME TOKENS */
+      --bg0: #f6f9fc;
+      --bg1: #ffffff;
+      --ink: #0b1220;
+      --muted: #2f3a4a;
+      --muted2:#526072;
+      --line: rgba(14, 25, 43, .10);
+
+      --panel: rgba(255,255,255,.82);
+      --panel2: rgba(255,255,255,.92);
+      --glass: rgba(255,255,255,.66);
+
+      --cardEdge: rgba(14,25,43,.10);
+      --cardEdge2: rgba(14,25,43,.14);
+
+      /* readable overlay for photo backgrounds */
+      --photoOverlayA: rgba(255,255,255,.86);
+      --photoOverlayB: rgba(255,255,255,.66);
+      --photoOverlayC: rgba(255,255,255,.25);
+
+      color-scheme: light;
+    }
+
+    html[data-theme="dark"]{
       --bg0:#07090b;
       --bg1:#0b0f14;
-      --steel:#aab3bd;
-      --steel2:#6f7883;
-      --granite:#1a1f26;
-      --granite2:#11151a;
       --ink:#e9eef5;
       --muted:#b7c1cc;
       --muted2:#8f9aa6;
       --line:rgba(233,238,245,.12);
-      --shadow: 0 14px 34px rgba(0,0,0,.55);
-      --neon:#3ef4cf;     /* green-blue hint */
-      --neon2:#39b7ff;    /* blue hint */
-      --warning:#ffcf5a;
-      --ok:#5dff8a;
-      --bad:#ff5d7a;
 
-      /* Typography */
-      --h1: clamp(2.2rem, 4.2vw, 3.6rem);
-      --h2: clamp(1.6rem, 2.6vw, 2.3rem);
-      --h3: clamp(1.2rem, 2.0vw, 1.6rem);
-      --p:  clamp(1.05rem, 1.6vw, 1.22rem);
-      --small: clamp(.95rem, 1.25vw, 1.05rem);
-      --radius: 18px;
-      --radius2: 26px;
+      --panel: rgba(10,14,18,.70);
+      --panel2: rgba(10,14,18,.88);
+      --glass: rgba(7,9,11,.60);
+
+      --cardEdge: rgba(233,238,245,.12);
+      --cardEdge2: rgba(233,238,245,.16);
+
+      --shadow: 0 18px 40px rgba(0,0,0,.55);
+      --shadow2: 0 10px 28px rgba(0,0,0,.45);
+
+      --photoOverlayA: rgba(7,9,11,.72);
+      --photoOverlayB: rgba(7,9,11,.55);
+      --photoOverlayC: rgba(7,9,11,.22);
+
+      color-scheme: dark;
     }
 
     *{box-sizing:border-box}
@@ -52,84 +96,126 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--ink);
       background:
-        radial-gradient(1200px 800px at 20% 10%, rgba(62,244,207,.10), transparent 60%),
-        radial-gradient(900px 650px at 85% 20%, rgba(57,183,255,.10), transparent 55%),
-        radial-gradient(1200px 800px at 50% 95%, rgba(255,207,90,.06), transparent 65%),
+        radial-gradient(1100px 800px at 16% 8%, rgba(34,230,200,.14), transparent 60%),
+        radial-gradient(950px 700px at 86% 16%, rgba(26,168,255,.14), transparent 58%),
+        radial-gradient(950px 700px at 50% 100%, rgba(255,204,89,.11), transparent 62%),
         linear-gradient(180deg, var(--bg0), var(--bg1));
       overflow-x:hidden;
       letter-spacing:.2px;
     }
 
-    /* Granite + steel textures (CSS-only) */
-    .texture-granite{
-      background:
-        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.05), transparent 55%),
-        radial-gradient(2px 2px at 70% 60%, rgba(255,255,255,.04), transparent 55%),
-        radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,.03), transparent 55%),
-        radial-gradient(3px 3px at 60% 20%, rgba(255,255,255,.03), transparent 55%),
-        linear-gradient(180deg, rgba(26,31,38,.92), rgba(11,15,20,.92));
-      border:1px solid rgba(255,255,255,.06);
-    }
-    .texture-steel{
-      background:
-        linear-gradient(135deg, rgba(170,179,189,.10), rgba(0,0,0,0) 55%),
-        repeating-linear-gradient(90deg, rgba(255,255,255,.035), rgba(255,255,255,.035) 1px, transparent 1px, transparent 10px),
-        linear-gradient(180deg, rgba(15,20,26,.92), rgba(7,9,11,.92));
-      border:1px solid rgba(170,179,189,.14);
-    }
-
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
 
-    /* ===== NEW TOP BANNER + NAV (no banner image needed) ===== */
+    /* =========================================================
+       IMAGE ASSETS (place these files in /pics/)
+       =========================================================
+       pics/Welding banner.png
+       pics/shade-installation.jpg
+       pics/MareMotelHayBarn.jpg
+       pics/Patio-Car-Shade.jfif
+       pics/Patio-Car-Shade-far.jfif
+       pics/Pool-Shade.jpg
+       pics/Pool-ShadeThumb.jpg
+       pics/RV-Shade-2.jpg
+       pics/RV-Shade-15FT-Tall.jpg
+    */
+
+    /* =========================================================
+       TOP HERO BANNER (USES YOUR PROVIDED BANNER IMAGE)
+       ========================================================= */
+    .top-hero-banner{
+      position:relative;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(1200px 520px at 10% 10%, rgba(34,230,200,.16), transparent 58%),
+        radial-gradient(900px 520px at 90% 20%, rgba(26,168,255,.14), transparent 58%),
+        linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.35));
+    }
+    html[data-theme="dark"] .top-hero-banner{
+      background:
+        radial-gradient(1200px 520px at 10% 10%, rgba(34,230,200,.12), transparent 58%),
+        radial-gradient(900px 520px at 90% 20%, rgba(26,168,255,.10), transparent 58%),
+        linear-gradient(180deg, rgba(7,9,11,.92), rgba(11,15,20,.76));
+    }
+
+    .top-hero-inner{
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 18px 18px;
+    }
+    .top-hero-img{
+      display:block;
+      width:100%;
+      height:auto;
+      max-height: 260px;     /* mobile baseline */
+      object-fit: contain;   /* never crops logo text */
+      border-radius: 18px;
+      box-shadow: var(--shadow2);
+      background: rgba(255,255,255,.35);
+    }
+    html[data-theme="dark"] .top-hero-img{
+      background: rgba(0,0,0,.15);
+    }
+    @media (min-width: 1024px){
+      .top-hero-inner{padding: 26px 18px;}
+      .top-hero-img{max-height: 430px; border-radius: 22px;}
+    }
+    @media (min-width: 768px) and (max-width: 1023px){
+      .top-hero-img{max-height: 340px;}
+    }
+
+    /* =========================================================
+       STICKY MASTHEAD
+       ========================================================= */
     .masthead{
       position:sticky;
       top:0;
       z-index:80;
-      background: rgba(7,9,11,.62);
+      background: var(--glass);
       backdrop-filter: blur(14px);
-      border-bottom:1px solid rgba(233,238,245,.10);
+      border-bottom:1px solid var(--line);
     }
 
     .banner{
       position:relative;
       overflow:hidden;
-      border-bottom:1px solid rgba(233,238,245,.10);
+      border-bottom:1px solid var(--line);
       background:
-        radial-gradient(1200px 520px at 10% 10%, rgba(62,244,207,.16), transparent 58%),
-        radial-gradient(900px 520px at 90% 20%, rgba(57,183,255,.14), transparent 58%),
-        radial-gradient(900px 520px at 50% 120%, rgba(255,207,90,.08), transparent 60%),
-        linear-gradient(180deg, rgba(7,9,11,.96), rgba(11,15,20,.86));
+        radial-gradient(1200px 520px at 8% 10%, rgba(34,230,200,.12), transparent 58%),
+        radial-gradient(900px 520px at 92% 20%, rgba(26,168,255,.12), transparent 58%),
+        radial-gradient(900px 520px at 50% 120%, rgba(255,204,89,.10), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.35));
     }
+    html[data-theme="dark"] .banner{
+      background:
+        radial-gradient(1200px 520px at 8% 10%, rgba(34,230,200,.12), transparent 58%),
+        radial-gradient(900px 520px at 92% 20%, rgba(26,168,255,.10), transparent 58%),
+        radial-gradient(900px 520px at 50% 120%, rgba(255,204,89,.08), transparent 62%),
+        linear-gradient(180deg, rgba(7,9,11,.84), rgba(11,15,20,.64));
+    }
+
     .banner:before{
       content:"";
       position:absolute; inset:-60%;
       background:
         repeating-linear-gradient(90deg,
-          rgba(255,255,255,.05) 0 1px,
+          rgba(255,255,255,.40) 0 1px,
           transparent 1px 18px);
       transform: rotate(10deg);
-      opacity:.12;
+      opacity:.10;
       pointer-events:none;
     }
-    .banner:after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(900px 340px at 50% 60%, rgba(255,255,255,.07), transparent 60%),
-        linear-gradient(90deg, rgba(0,0,0,.0), rgba(0,0,0,.22), rgba(0,0,0,.0));
-      pointer-events:none;
-      opacity:.75;
-    }
+    html[data-theme="dark"] .banner:before{opacity:.08}
 
     .banner-inner{
       position:relative;
-      padding:18px 0 16px;
+      padding:14px 0 12px;
       display:grid;
       grid-template-columns: 1fr auto 1fr;
       align-items:center;
       gap:14px;
-      min-height: 128px;
+      min-height: 112px;
     }
 
     .brand-left{
@@ -138,25 +224,25 @@
       gap:6px;
       min-width: 220px;
     }
-    .brand-left .mini-kicker{
+    .mini-kicker{
       display:inline-flex;
       align-items:center;
       gap:10px;
       font-size:.95rem;
-      color:rgba(233,238,245,.86);
+      color:var(--muted2);
       letter-spacing:.9px;
       text-transform:uppercase;
-      opacity:.92;
     }
-    .brand-left .mini-kicker .spark{
+    .mini-kicker .spark{
       width:10px;height:10px;border-radius:999px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), rgba(62,244,207,.24));
-      box-shadow: 0 0 18px rgba(62,244,207,.20);
-      border:1px solid rgba(233,238,245,.14);
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.6), rgba(34,230,200,.35));
+      box-shadow: 0 0 18px rgba(34,230,200,.25);
+      border:1px solid rgba(255,255,255,.35);
     }
+
     .brand-left h1{
       margin:0;
-      font-size: clamp(1.12rem, 1.5vw, 1.35rem);
+      font-size: clamp(1.1rem, 1.5vw, 1.3rem);
       line-height:1.05;
       letter-spacing:.7px;
       text-transform:uppercase;
@@ -173,40 +259,50 @@
       align-items:center;
       justify-content:center;
     }
-    .banner-logo .logo-frame{
+    .logo-frame{
       position:relative;
       border-radius: 22px;
       padding: 10px 16px;
       background:
-        radial-gradient(500px 120px at 20% 30%, rgba(62,244,207,.14), transparent 60%),
-        radial-gradient(520px 140px at 80% 60%, rgba(57,183,255,.12), transparent 65%),
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,0));
-      border:1px solid rgba(233,238,245,.16);
-      box-shadow: 0 18px 34px rgba(0,0,0,.55);
+        radial-gradient(560px 140px at 20% 30%, rgba(34,230,200,.14), transparent 60%),
+        radial-gradient(560px 160px at 80% 60%, rgba(26,168,255,.12), transparent 65%),
+        linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.15));
+      border:1px solid var(--cardEdge2);
+      box-shadow: var(--shadow2);
       overflow:hidden;
     }
-    .banner-logo .logo-frame:before{
+    html[data-theme="dark"] .logo-frame{
+      background:
+        radial-gradient(560px 140px at 20% 30%, rgba(34,230,200,.12), transparent 60%),
+        radial-gradient(560px 160px at 80% 60%, rgba(26,168,255,.10), transparent 65%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,0));
+    }
+    .logo-frame:before{
       content:"";
       position:absolute; inset:-35%;
       background: conic-gradient(from 170deg,
         transparent 0 20%,
-        rgba(255,255,255,.18) 20% 26%,
+        rgba(255,255,255,.26) 20% 26%,
         transparent 26% 56%,
-        rgba(62,244,207,.14) 56% 62%,
+        rgba(34,230,200,.18) 56% 62%,
         transparent 62% 100%);
-      animation: spin 8s linear infinite;
+      animation: spin 10s linear infinite;
       opacity:.42;
       pointer-events:none;
     }
-    .banner-logo img{
+    html[data-theme="dark"] .logo-frame:before{opacity:.35}
+    .logo-frame img{
       position:relative;
       display:block;
-      height: clamp(84px, 10vw, 120px);
+      height: clamp(78px, 9vw, 108px);
       width:auto;
       max-width: min(520px, 60vw);
       object-fit: contain;
-      filter: drop-shadow(0 14px 26px rgba(0,0,0,.55));
+      filter: drop-shadow(0 12px 22px rgba(0,0,0,.22));
       opacity: .98;
+    }
+    html[data-theme="dark"] .logo-frame img{
+      filter: drop-shadow(0 14px 26px rgba(0,0,0,.55));
     }
 
     .banner-actions{
@@ -219,31 +315,62 @@
 
     .cta{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 14px;border-radius:999px;
+      padding:11px 14px;border-radius:999px;
       background:
-        radial-gradient(600px 120px at 20% 30%, rgba(62,244,207,.16), transparent 60%),
-        radial-gradient(650px 120px at 80% 60%, rgba(57,183,255,.14), transparent 65%),
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.0));
-      border:1px solid rgba(233,238,245,.18);
-      box-shadow: 0 14px 28px rgba(0,0,0,.55);
+        radial-gradient(700px 140px at 15% 40%, rgba(34,230,200,.18), transparent 55%),
+        radial-gradient(700px 140px at 85% 60%, rgba(26,168,255,.16), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.20));
+      border:1px solid var(--cardEdge2);
+      box-shadow: var(--shadow2);
       font-weight:900;
-      letter-spacing:.4px;
+      letter-spacing:.35px;
       transition: transform .15s ease, filter .2s ease, border-color .2s ease;
       font-size: var(--small);
       white-space:nowrap;
     }
-    .cta:hover{transform: translateY(-1px); filter: brightness(1.06); border-color:rgba(62,244,207,.36)}
+    html[data-theme="dark"] .cta{
+      background:
+        radial-gradient(700px 140px at 15% 40%, rgba(34,230,200,.18), transparent 55%),
+        radial-gradient(700px 140px at 85% 60%, rgba(26,168,255,.16), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,0));
+      border:1px solid rgba(233,238,245,.18);
+      box-shadow: var(--shadow);
+    }
+    .cta:hover{transform: translateY(-1px); filter: brightness(1.03); border-color:rgba(34,230,200,.34)}
     .cta .dot{
       width:10px;height:10px;border-radius:999px;
-      background: radial-gradient(circle at 30% 30%, var(--neon), rgba(62,244,207,.18));
-      box-shadow: 0 0 18px rgba(62,244,207,.35);
+      background: radial-gradient(circle at 30% 30%, var(--neon), rgba(34,230,200,.18));
+      box-shadow: 0 0 18px rgba(34,230,200,.35);
     }
-    .cta.alt{
-      border-color:rgba(57,183,255,.26);
-      background:
-        radial-gradient(650px 120px at 25% 35%, rgba(57,183,255,.16), transparent 62%),
-        radial-gradient(650px 120px at 80% 60%, rgba(62,244,207,.12), transparent 65%),
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.0));
+    .cta.alt:hover{border-color:rgba(26,168,255,.32)}
+    .cta.alt .dot{background: radial-gradient(circle at 30% 30%, var(--neon2), rgba(26,168,255,.18)); box-shadow: 0 0 18px rgba(26,168,255,.30)}
+
+    /* theme toggle button */
+    .toggle{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:11px 14px;
+      border-radius:999px;
+      border:1px solid var(--cardEdge2);
+      background: rgba(255,255,255,.55);
+      box-shadow: var(--shadow2);
+      cursor:pointer;
+      font-weight:900;
+      letter-spacing:.35px;
+      font-size: var(--small);
+      user-select:none;
+      transition: transform .15s ease, filter .2s ease;
+    }
+    html[data-theme="dark"] .toggle{
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(233,238,245,.18);
+      box-shadow: var(--shadow);
+    }
+    .toggle:hover{transform: translateY(-1px); filter: brightness(1.03)}
+    .toggle .sunmoon{
+      width:10px;height:10px;border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.8), rgba(255,204,89,.55));
+      box-shadow: 0 0 18px rgba(255,204,89,.22);
+      border:1px solid rgba(255,255,255,.35);
     }
 
     .navrow{
@@ -254,10 +381,9 @@
       content:"";
       position:absolute; left:0; right:0; top:0;
       height:1px;
-      background: linear-gradient(90deg, transparent, rgba(62,244,207,.28), rgba(57,183,255,.22), transparent);
+      background: linear-gradient(90deg, transparent, rgba(34,230,200,.28), rgba(26,168,255,.22), transparent);
       opacity:.9;
     }
-
     nav.primary{
       display:flex;
       gap:10px;
@@ -269,32 +395,46 @@
       color:var(--muted);
       font-size:var(--small);
       padding:10px 12px;border-radius:999px;
-      border:1px solid rgba(233,238,245,.10);
-      background: rgba(255,255,255,.02);
+      border:1px solid var(--cardEdge);
+      background: rgba(255,255,255,.44);
       transition: all .18s ease;
       white-space:nowrap;
     }
+    html[data-theme="dark"] .navlink{
+      background: rgba(255,255,255,.02);
+      border:1px solid rgba(233,238,245,.10);
+    }
     .navlink:hover{
-      border-color:rgba(233,238,245,.16);
+      border-color:var(--cardEdge2);
       color:var(--ink);
+      background:rgba(255,255,255,.62);
+      filter: brightness(1.02);
+    }
+    html[data-theme="dark"] .navlink:hover{
+      border-color:rgba(233,238,245,.16);
       background:rgba(255,255,255,.04);
       filter: brightness(1.05);
     }
     .navlink.hot{
-      border-color: rgba(62,244,207,.26);
-      background: rgba(62,244,207,.08);
-      color: rgba(233,238,245,.96);
-      box-shadow: 0 0 24px rgba(62,244,207,.10);
+      border-color: rgba(34,230,200,.30);
+      background: rgba(34,230,200,.14);
+      color: var(--ink);
+      box-shadow: 0 0 24px rgba(34,230,200,.10);
       font-weight:900;
+    }
+    html[data-theme="dark"] .navlink.hot{
+      color: rgba(233,238,245,.96);
+      background: rgba(34,230,200,.08);
+      border-color: rgba(34,230,200,.26);
     }
 
     @media (max-width: 980px){
       .banner-inner{
         grid-template-columns: 1fr;
         text-align:center;
-        padding: 14px 0 10px;
-        gap:12px;
-        min-height: 152px;
+        padding: 12px 0 10px;
+        gap:10px;
+        min-height: 148px;
       }
       .brand-left{align-items:center; min-width:unset}
       .banner-actions{justify-content:center}
@@ -306,32 +446,62 @@
         -webkit-overflow-scrolling: touch;
       }
       nav.primary::-webkit-scrollbar{height:8px}
-      nav.primary::-webkit-scrollbar-thumb{background: rgba(233,238,245,.12); border-radius:999px}
+      nav.primary::-webkit-scrollbar-thumb{background: rgba(0,0,0,.12); border-radius:999px}
+      html[data-theme="dark"] nav.primary::-webkit-scrollbar-thumb{background: rgba(233,238,245,.12)}
     }
-    /* ===== END NEW TOP BANNER + NAV ===== */
 
-    /* HERO */
-    header.hero{
-      padding:54px 0 12px;
+    /* =========================================================
+       PHOTO BACKDROP SECTIONS
+       ========================================================= */
+    .photo-band{
       position:relative;
+      border-radius: var(--radius2);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      border:1px solid var(--cardEdge);
+      margin-top:18px;
     }
-    .hero-grid{
+    .photo-band .bg{
+      position:absolute; inset:0;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.06) contrast(1.02);
+      transform: scale(1.02);
+    }
+    html[data-theme="dark"] .photo-band .bg{filter: saturate(1.0) contrast(1.0) brightness(.92)}
+    .photo-band .overlay{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, var(--photoOverlayA), var(--photoOverlayB) 55%, var(--photoOverlayC)),
+        radial-gradient(800px 420px at 25% 40%, rgba(34,230,200,.14), transparent 62%),
+        radial-gradient(800px 420px at 78% 45%, rgba(26,168,255,.12), transparent 62%);
+    }
+    .photo-band .content{
+      position:relative;
+      padding: 26px;
       display:grid;
       grid-template-columns: 1.25fr .75fr;
-      gap:18px;
+      gap:16px;
       align-items:stretch;
     }
     @media (max-width: 980px){
-      .hero-grid{grid-template-columns:1fr}
+      .photo-band .content{grid-template-columns:1fr}
     }
 
+    /* =========================================================
+       PANELS / CARDS
+       ========================================================= */
     .panel{
       border-radius: var(--radius2);
       box-shadow: var(--shadow);
       overflow:hidden;
       position:relative;
+      border:1px solid var(--cardEdge);
+      background: var(--panel);
+      backdrop-filter: blur(10px);
     }
     .panel-inner{padding:26px}
+    header.hero{padding:22px 0 10px; position:relative;}
     .hero h2{
       margin:0 0 10px 0;
       font-size:var(--h1);
@@ -345,35 +515,46 @@
       line-height:1.55;
       max-width:72ch;
     }
-    .hero strong{color:var(--ink)}
-    .tagrow{
-      display:flex;gap:10px;flex-wrap:wrap;margin-top:14px
-    }
+    .tagrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
     .tag{
       display:inline-flex;gap:10px;align-items:center;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(233,238,245,.12);
-      background: rgba(255,255,255,.03);
+      padding:10px 12px;border-radius:999px;
+      border:1px solid var(--cardEdge);
+      background: rgba(255,255,255,.52);
       color:var(--muted);
       font-size:var(--small);
+      box-shadow: 0 10px 22px rgba(0,0,0,.06);
+    }
+    html[data-theme="dark"] .tag{
+      background: rgba(255,255,255,.03);
+      box-shadow:none;
+      border:1px solid rgba(233,238,245,.12);
     }
     .tag b{color:var(--ink)}
     .tag .spark{
       width:10px;height:10px;border-radius:999px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), rgba(255,255,255,.06));
-      border:1px solid rgba(255,255,255,.15);
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.7), rgba(255,255,255,.12));
+      border:1px solid rgba(0,0,0,.08);
+    }
+    html[data-theme="dark"] .tag .spark{border:1px solid rgba(255,255,255,.15)}
+
+    .divider{height:1px;background:var(--line);margin:16px 0;}
+    .neonline{
+      height:1px;
+      background: linear-gradient(90deg, transparent, rgba(34,230,200,.35), rgba(26,168,255,.26), transparent);
+      margin:14px 0;
+      opacity:.9;
     }
 
     /* Quote funnel panel */
-    .quote-box{
-      height:100%;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .quote-title{
-      display:flex;align-items:flex-start;justify-content:space-between;gap:10px
+    .quote-box{height:100%;display:flex;flex-direction:column;gap:12px;}
+    .quote-title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+    .kicker{
+      color: var(--muted2);
+      text-transform: uppercase;
+      letter-spacing: .9px;
+      font-size: .95rem;
+      margin-bottom:10px;
     }
     .quote-title h3{
       margin:0;
@@ -383,56 +564,49 @@
     }
     .badge{
       padding:8px 10px;border-radius:999px;
-      border:1px solid rgba(62,244,207,.25);
-      background: rgba(62,244,207,.08);
-      color:rgba(233,238,245,.92);
+      border:1px solid rgba(34,230,200,.30);
+      background: rgba(34,230,200,.14);
+      color: var(--ink);
       font-size: .95rem;
       white-space:nowrap;
-      box-shadow: 0 0 24px rgba(62,244,207,.12);
+      box-shadow: 0 0 22px rgba(34,230,200,.10);
+      font-weight:900;
+    }
+    html[data-theme="dark"] .badge{
+      background: rgba(34,230,200,.08);
+      color: rgba(233,238,245,.92);
+      border:1px solid rgba(34,230,200,.25);
     }
 
-    form{
-      display:grid;
-      gap:10px;
-      margin-top:6px;
-    }
-    label{
-      font-size:var(--small);
-      color:var(--muted2);
-    }
+    form{display:grid;gap:10px;margin-top:6px;}
+    label{font-size:var(--small);color:var(--muted2);}
     input, textarea, select{
       width:100%;
       padding:14px 14px;
       border-radius:14px;
-      border:1px solid rgba(233,238,245,.12);
-      background: rgba(0,0,0,.22);
+      border:1px solid var(--cardEdge);
+      background: rgba(255,255,255,.78);
       color:var(--ink);
       outline:none;
       font-size: 1.05rem;
-      transition: border-color .18s ease, box-shadow .18s ease, transform .12s ease;
+      transition: border-color .18s ease, box-shadow .18s ease, transform .12s ease, background .18s ease;
+    }
+    html[data-theme="dark"] input,
+    html[data-theme="dark"] textarea,
+    html[data-theme="dark"] select{
+      background: rgba(0,0,0,.22);
+      border:1px solid rgba(233,238,245,.12);
+      color:var(--ink);
     }
     input:focus, textarea:focus, select:focus{
-      border-color: rgba(62,244,207,.38);
-      box-shadow: 0 0 0 4px rgba(62,244,207,.10);
+      border-color: rgba(34,230,200,.42);
+      box-shadow: 0 0 0 4px rgba(34,230,200,.12);
     }
     textarea{min-height:110px; resize:vertical}
-    .two{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-    }
-    @media (max-width:720px){
-      .two{grid-template-columns:1fr}
-    }
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+    @media (max-width:720px){.two{grid-template-columns:1fr}}
 
-    .sendrow{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-      justify-content:space-between;
-      margin-top:4px;
-    }
+    .sendrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:4px;}
     .btn{
       cursor:pointer;
       border:none;
@@ -443,20 +617,32 @@
       font-size: 1.02rem;
       color: var(--ink);
       background:
-        radial-gradient(800px 140px at 15% 40%, rgba(62,244,207,.20), transparent 55%),
-        radial-gradient(800px 140px at 85% 60%, rgba(57,183,255,.18), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.07), rgba(0,0,0,0));
-      border:1px solid rgba(233,238,245,.18);
-      box-shadow: 0 18px 32px rgba(0,0,0,.55);
+        radial-gradient(900px 160px at 15% 40%, rgba(34,230,200,.22), transparent 55%),
+        radial-gradient(900px 160px at 85% 60%, rgba(26,168,255,.18), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.22));
+      border:1px solid var(--cardEdge2);
+      box-shadow: var(--shadow2);
       transition: transform .12s ease, filter .2s ease, border-color .2s ease;
     }
-    .btn:hover{transform:translateY(-1px);filter:brightness(1.06);border-color:rgba(57,183,255,.32)}
-    .btn:active{transform:translateY(0px);filter:brightness(1.00)}
+    html[data-theme="dark"] .btn{
+      color: var(--ink);
+      background:
+        radial-gradient(800px 140px at 15% 40%, rgba(34,230,200,.20), transparent 55%),
+        radial-gradient(800px 140px at 85% 60%, rgba(26,168,255,.18), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.07), rgba(0,0,0,0));
+      border:1px solid rgba(233,238,245,.18);
+      box-shadow: var(--shadow);
+    }
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.02);border-color:rgba(26,168,255,.28)}
     .btn.secondary{
+      background: rgba(255,255,255,.64);
+      border:1px solid var(--cardEdge);
+      box-shadow: none;
+      font-weight:900;
+    }
+    html[data-theme="dark"] .btn.secondary{
       background: rgba(255,255,255,.04);
       border:1px solid rgba(233,238,245,.12);
-      box-shadow: none;
-      font-weight:800;
     }
 
     .microcopy{
@@ -474,6 +660,10 @@
     .trustline span{
       padding:8px 10px;
       border-radius:999px;
+      border:1px solid var(--cardEdge);
+      background: rgba(255,255,255,.50);
+    }
+    html[data-theme="dark"] .trustline span{
       border:1px solid rgba(233,238,245,.10);
       background: rgba(255,255,255,.02);
     }
@@ -484,93 +674,117 @@
       display:flex;align-items:flex-end;justify-content:space-between;gap:12px;
       margin: 18px 0 10px;
     }
-    .section-title h3{
-      margin:0;
-      font-size:var(--h2);
-      letter-spacing:.45px;
-      line-height:1.1;
-    }
-    .section-title p{
-      margin:0;
-      color:var(--muted2);
-      font-size:var(--small);
-      max-width:52ch;
-      line-height:1.35;
-    }
+    .section-title h3{margin:0;font-size:var(--h2);letter-spacing:.45px;line-height:1.1;}
+    .section-title p{margin:0;color:var(--muted2);font-size:var(--small);max-width:52ch;line-height:1.35;}
 
-    .grid3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    @media (max-width:980px){
-      .grid3{grid-template-columns:1fr}
-    }
+    .grid3{display:grid;grid-template-columns: repeat(3, 1fr);gap:14px;}
+    @media (max-width:980px){ .grid3{grid-template-columns:1fr} }
 
     .card{
       border-radius: var(--radius);
       padding:18px;
       position:relative;
       overflow:hidden;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow2);
+      border:1px solid var(--cardEdge);
+      background: var(--panel2);
+      backdrop-filter: blur(10px);
     }
     .card h4{margin:0 0 8px 0; font-size: 1.25rem; letter-spacing:.35px}
     .card p{margin:0; color:var(--muted); font-size:var(--p); line-height:1.55}
 
-    .bullets{
-      margin:12px 0 0;
-      padding:0;
-      list-style:none;
-      display:grid;
-      gap:10px;
-    }
-    .bullets li{
-      display:flex;gap:10px;align-items:flex-start;
-      color:var(--muted);
-      font-size:var(--p);
-      line-height:1.55;
-    }
+    .bullets{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px;}
+    .bullets li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:var(--p);line-height:1.55;}
     .tick{
       flex:0 0 12px;height:12px;margin-top:8px;border-radius:999px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), rgba(62,244,207,.20));
-      box-shadow: 0 0 20px rgba(62,244,207,.18);
-      border:1px solid rgba(233,238,245,.16);
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.8), rgba(34,230,200,.28));
+      box-shadow: 0 0 18px rgba(34,230,200,.16);
+      border:1px solid rgba(0,0,0,.08);
     }
+    html[data-theme="dark"] .tick{border:1px solid rgba(233,238,245,.16)}
 
-    .story{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      margin-top:12px;
-    }
+    .story{display:grid;grid-template-columns: 1fr 1fr;gap:14px;margin-top:12px;}
     @media (max-width:980px){ .story{grid-template-columns:1fr} }
 
-    .story .card{
-      min-height: 220px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+    /* =========================================================
+       "PROMINENT BACKGROUNDS" SECTION — BIG PHOTO TILES
+       ========================================================= */
+    .showcase{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:14px;
+      margin-top:10px;
     }
-    .kicker{
-      color: rgba(233,238,245,.88);
-      text-transform: uppercase;
-      letter-spacing: .9px;
-      font-size: .95rem;
-      margin-bottom:10px;
+    @media (max-width:980px){ .showcase{grid-template-columns:1fr} }
+
+    .tile{
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border:1px solid var(--cardEdge);
+      box-shadow: var(--shadow);
+      position:relative;
+      min-height: 320px;
     }
-    .divider{
-      height:1px;background:rgba(233,238,245,.10);
-      margin: 16px 0;
+    .tile .bg{
+      position:absolute; inset:0;
+      background-size: cover;
+      background-position:center;
+      transform: scale(1.03);
+      filter: saturate(1.06) contrast(1.02);
+    }
+    html[data-theme="dark"] .tile .bg{filter:saturate(1.0) contrast(1.0) brightness(.90)}
+    .tile .veil{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--photoOverlayC) 45%, var(--photoOverlayB) 100%),
+        radial-gradient(900px 500px at 20% 30%, rgba(34,230,200,.14), transparent 60%),
+        radial-gradient(900px 500px at 85% 30%, rgba(26,168,255,.12), transparent 60%);
+    }
+    .tile .txt{
+      position:absolute; left:18px; right:18px; bottom:16px;
+      padding:16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.72);
+      border:1px solid var(--cardEdge);
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(10px);
+    }
+    html[data-theme="dark"] .tile .txt{
+      background: rgba(7,9,11,.66);
+      border:1px solid rgba(233,238,245,.12);
+    }
+    .tile .txt .mini{
+      font-size:.95rem; color:var(--muted2); letter-spacing:.9px; text-transform:uppercase;
+      display:flex; gap:10px; align-items:center;
+      margin-bottom:8px;
+    }
+    .tile .txt .mini .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(26,168,255,.35));
+      box-shadow: 0 0 18px rgba(26,168,255,.18);
+      border:1px solid rgba(0,0,0,.08);
+    }
+    html[data-theme="dark"] .tile .txt .mini .dot{border:1px solid rgba(233,238,245,.14)}
+    .tile .txt h4{margin:0 0 6px 0; font-size:1.35rem; letter-spacing:.35px}
+    .tile .txt p{margin:0; color:var(--muted); font-size:var(--p); line-height:1.45}
+
+    .tile.small{min-height: 250px}
+    .tileGrid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:14px;
     }
 
-    /* Sticky bottom CTA (mobile-friendly) */
+    /* =========================================================
+       STICKY BOTTOM CTA
+       ========================================================= */
     .sticky{
       position:fixed;
       left:0;right:0;bottom:0;
       z-index:60;
       padding:10px 12px;
-      background: rgba(7,9,11,.70);
-      border-top:1px solid rgba(233,238,245,.10);
+      background: var(--glass);
+      border-top:1px solid var(--line);
       backdrop-filter: blur(14px);
     }
     .sticky-inner{
@@ -582,57 +796,68 @@
       justify-content:space-between;
     }
     .sticky strong{letter-spacing:.4px}
-    .sticky .mini{
-      color:var(--muted2);
-      font-size: .98rem;
-      line-height:1.2;
-    }
+    .sticky .mini{color:var(--muted2);font-size: .98rem;line-height:1.2;}
     .sticky-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
     .pill{
       display:inline-flex;align-items:center;gap:10px;
       padding:12px 14px;border-radius:999px;
-      border:1px solid rgba(233,238,245,.16);
-      background: rgba(255,255,255,.04);
+      border:1px solid var(--cardEdge2);
+      background: rgba(255,255,255,.60);
       font-weight:900;
       letter-spacing:.35px;
       font-size: 1.02rem;
-      box-shadow: 0 14px 28px rgba(0,0,0,.45);
+      box-shadow: var(--shadow2);
     }
-    .pill.call{border-color:rgba(62,244,207,.28)}
-    .pill.email{border-color:rgba(57,183,255,.26)}
-    .pill:hover{filter:brightness(1.06)}
+    html[data-theme="dark"] .pill{
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(233,238,245,.16);
+      box-shadow: var(--shadow2);
+    }
+    .pill.call{border-color:rgba(34,230,200,.28)}
+    .pill.email{border-color:rgba(26,168,255,.26)}
+    .pill:hover{filter:brightness(1.02)}
     .pill .icon{
       width:10px;height:10px;border-radius:999px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), rgba(57,183,255,.22));
-      box-shadow: 0 0 18px rgba(57,183,255,.18);
-      border:1px solid rgba(233,238,245,.14);
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.85), rgba(26,168,255,.26));
+      box-shadow: 0 0 18px rgba(26,168,255,.16);
+      border:1px solid rgba(0,0,0,.08);
     }
+    html[data-theme="dark"] .pill .icon{border:1px solid rgba(233,238,245,.14)}
 
     footer{
       padding:26px 0 90px;
       color:var(--muted2);
       font-size:var(--small);
       line-height:1.55;
-      border-top: 1px solid rgba(233,238,245,.10);
+      border-top: 1px solid var(--line);
       margin-top:22px;
     }
 
-    /* Glimmer overlay (automatic & random; no mouse needed) */
+    /* Glimmer overlay (automatic & random; still works in light) */
     .glimmer-layer{
       pointer-events:none;
       position:absolute;
       inset:-20%;
       background: linear-gradient(120deg,
         transparent 0%,
-        rgba(255,255,255,.06) 10%,
-        rgba(62,244,207,.12) 14%,
-        rgba(255,255,255,.06) 18%,
+        rgba(255,255,255,.10) 10%,
+        rgba(34,230,200,.12) 14%,
+        rgba(255,255,255,.10) 18%,
         transparent 30%,
         transparent 100%);
       transform: translateX(-40%) rotate(0deg);
-      opacity:.0;
+      opacity:0;
       filter: blur(0.2px);
       mix-blend-mode: screen;
+    }
+    html[data-theme="dark"] .glimmer-layer{
+      background: linear-gradient(120deg,
+        transparent 0%,
+        rgba(255,255,255,.06) 10%,
+        rgba(34,230,200,.12) 14%,
+        rgba(255,255,255,.06) 18%,
+        transparent 30%,
+        transparent 100%);
     }
     .has-glimmer{position:relative}
     .has-glimmer[data-glimmer="on"] .glimmer-layer{
@@ -648,108 +873,104 @@
 
     @keyframes spin{to{transform:rotate(360deg)}}
 
-    /* Subtle neon accents */
-    .neonline{
-      height:1px;
-      background: linear-gradient(90deg, transparent, rgba(62,244,207,.35), rgba(57,183,255,.26), transparent);
-      margin:14px 0;
-      opacity:.9;
+    /* Smooth anchor offset for sticky header */
+    :target{scroll-margin-top: 170px;}
+    @media (max-width: 980px){ :target{scroll-margin-top: 210px;} }
+
+    /* =========================================================
+       ADDITIONAL PHOTO BACKGROUND SECTIONS
+       ========================================================= */
+    .photo-strip{
+      position: relative;
+      min-height: 420px;
+      margin: 22px 0;
+      border-radius: var(--radius2);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--cardEdge);
+    }
+    .photo-strip .bg{
+      position:absolute; inset:0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.03);
+    }
+    .photo-strip .overlay{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg,
+          var(--photoOverlayA),
+          var(--photoOverlayB) 55%,
+          var(--photoOverlayC)),
+        radial-gradient(900px 500px at 20% 40%, rgba(34,230,200,.14), transparent 60%),
+        radial-gradient(900px 500px at 85% 40%, rgba(26,168,255,.12), transparent 60%);
+    }
+    .photo-strip .content{
+      position:relative;
+      padding: 32px;
+      max-width: 760px;
     }
 
-    /* Accessibility helpers */
-    .sr-only{
-      position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0
+    .bg-mosaic{
+      display:grid;
+      grid-template-columns: 2fr 1fr;
+      gap:14px;
+      margin-top:18px;
+    }
+    @media(max-width:980px){
+      .bg-mosaic{grid-template-columns:1fr}
     }
 
-    /* ===== FULL-WIDTH TOP BANNER (never crops text) ===== */
-./* ===== TOP HERO BANNER (NEW) ===== */
-.top-hero-banner{
-  position:relative;
-  background:
-    radial-gradient(1200px 520px at 10% 10%, rgba(62,244,207,.14), transparent 58%),
-    radial-gradient(900px 520px at 90% 20%, rgba(57,183,255,.12), transparent 58%),
-    linear-gradient(180deg, rgba(7,9,11,.98), rgba(11,15,20,.92));
-  border-bottom: 1px solid rgba(233,238,245,.10);
-}
+    .bg-tile{
+      position:relative;
+      min-height:260px;
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid var(--cardEdge);
+      box-shadow: var(--shadow2);
+    }
+    .bg-tile .bg{
+      position:absolute; inset:0;
+      background-size:cover;
+      background-position:center;
+    }
+    .bg-tile .veil{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg,
+          rgba(0,0,0,0) 0%,
+          var(--photoOverlayC) 45%,
+          var(--photoOverlayB) 100%);
+    }
+    .bg-tile .label{
+      position:absolute;
+      bottom:14px; left:14px; right:14px;
+      padding:14px;
+      border-radius:14px;
+      background: rgba(255,255,255,.78);
+      border:1px solid var(--cardEdge);
+      box-shadow: var(--shadow2);
+    }
+    html[data-theme="dark"] .bg-tile .label{
+      background: rgba(7,9,11,.70);
+      border:1px solid rgba(233,238,245,.12);
+    }
+    .bg-tile h4{margin:0 0 6px 0}
+    .bg-tile p{margin:0; font-size:var(--p); color:var(--muted)}
 
-.top-hero-inner{
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 18px 18px;           /* ✅ 10%+ “breathing room” */
-}
-
-.top-hero-img{
-  display:block;
-  width:100%;
-  height:auto;                   /* ✅ never crops */
-  max-height: 260px;             /* mobile baseline */
-  object-fit: contain;           /* ✅ keep all letters visible */
-  filter: drop-shadow(0 18px 34px rgba(0,0,0,.55));
-  border-radius: 18px;
-}
-
-/* Bigger on desktop (what you asked) */
-@media (min-width: 1024px){
-  .top-hero-inner{
-    padding: 28px 18px;          /* more top/bottom space */
-  }
-  .top-hero-img{
-    max-height: 420px;           /* ✅ BIGGER on desktop */
-    border-radius: 22px;
-  }
-}
-
-/* Slightly bigger on mid screens */
-@media (min-width: 768px) and (max-width: 1023px){
-  .top-hero-img{
-    max-height: 340px;
-  }
-}
-/* ===== TOP HERO BANNER (NEW) ===== */
-.top-hero-banner{
-  position:relative;
-  background:
-    radial-gradient(1200px 520px at 10% 10%, rgba(62,244,207,.14), transparent 58%),
-    radial-gradient(900px 520px at 90% 20%, rgba(57,183,255,.12), transparent 58%),
-    linear-gradient(180deg, rgba(7,9,11,.98), rgba(11,15,20,.92));
-  border-bottom: 1px solid rgba(233,238,245,.10);
-}
-
-.top-hero-inner{
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 18px 18px;           /* ✅ 10%+ “breathing room” */
-}
-
-.top-hero-img{
-  display:block;
-  width:100%;
-  height:auto;                   /* ✅ never crops */
-  max-height: 260px;             /* mobile baseline */
-  object-fit: contain;           /* ✅ keep all letters visible */
-  filter: drop-shadow(0 18px 34px rgba(0,0,0,.55));
-  border-radius: 18px;
-}
-
-/* Bigger on desktop (what you asked) */
-@media (min-width: 1024px){
-  .top-hero-inner{
-    padding: 28px 18px;          /* more top/bottom space */
-  }
-  .top-hero-img{
-    max-height: 420px;           /* ✅ BIGGER on desktop */
-    border-radius: 22px;
-  }
-}
-
-/* Slightly bigger on mid screens */
-@media (min-width: 768px) and (max-width: 1023px){
-  .top-hero-img{
-    max-height: 340px;
-  }
-}
-
-
+    /* ===== NEW: make the carport link look "primary" in the nav ===== */
+    .navlink.page{
+      border-color: rgba(26,168,255,.28);
+      background: rgba(26,168,255,.10);
+      color: var(--ink);
+      font-weight: 900;
+      box-shadow: 0 0 22px rgba(26,168,255,.08);
+    }
+    html[data-theme="dark"] .navlink.page{
+      background: rgba(26,168,255,.08);
+      border-color: rgba(26,168,255,.24);
+      color: rgba(233,238,245,.96);
+    }
   </style>
 
   <!-- LocalBusiness schema -->
@@ -769,31 +990,32 @@
 </head>
 
 <body>
+  <!-- TOP BANNER IMAGE (your provided file) -->
   <section class="top-hero-banner" aria-label="Stallion SteelWorks Welding banner">
-  <div class="top-hero-inner">
-    <img
-      class="top-hero-img"
-      src="pics/steelworks-banner.png"
-      alt="Stallion SteelWorks Steelworks Welding banner"
-      loading="eager"
-      decoding="async"
-    />
-  </div>
-</section>
-  <!-- NEW: Banner + Nav (no banner image needed) -->
+    <div class="top-hero-inner">
+      <img
+        class="top-hero-img"
+        src="pics/Welding banner.png"
+        alt="Stallion SteelWorks Welding banner"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
+  </section>
+
+  <!-- Sticky banner + nav -->
   <div class="masthead">
     <div class="banner">
       <div class="wrap banner-inner">
         <div class="brand-left">
           <div class="mini-kicker"><span class="spark"></span> Phoenix • Custom Fabrication • Repairs</div>
-          <h1>Stallion SteelWorks <span style="color:rgba(62,244,207,.92)">Welding</span></h1>
+          <h1>Stallion SteelWorks <span style="color:var(--neon2)">Welding</span></h1>
           <small>Steel doors • gates • railings • furniture • frames • fast quotes • built to last</small>
         </div>
 
         <div class="banner-logo" aria-label="Stallion SteelWorks Welding logo">
           <div class="logo-frame has-glimmer">
             <div class="glimmer-layer" aria-hidden="true"></div>
-            <!-- Your existing logo file -->
             <img src="pics/SteelworksWelding.jpg" alt="Stallion SteelWorks Welding logo" loading="eager" />
           </div>
         </div>
@@ -802,6 +1024,11 @@
           <a class="cta" href="tel:60299977556" title="Call Stallion SteelWorks Welding"><span class="dot"></span> Call Now</a>
           <a class="cta alt" href="mailto:stallionsteelworks@gmail.com?subject=Quote%20Request%20-%20Stallion%20SteelWorks%20Welding" title="Email Stallion SteelWorks Welding"><span class="dot"></span> Email Quote</a>
           <a class="cta" href="#quote" title="Get a fast quote"><span class="dot"></span> Fast Quote</a>
+
+          <button class="toggle" id="themeToggle" type="button" title="Toggle light/dark">
+            <span class="sunmoon"></span>
+            <span id="themeLabel">Light Mode</span>
+          </button>
         </div>
       </div>
     </div>
@@ -810,8 +1037,18 @@
       <div class="wrap">
         <nav class="primary" aria-label="primary">
           <a class="navlink hot" href="#quote">Get a Quote</a>
+
+          <!-- NEW: carport.html link placed right after Get a Quote -->
+          <a class="navlink page" href="carport.html" title="Carports & Shade Structures">Carports</a>
+
+          <a class="navlink" href="#showcase">Showcase</a>
+          <a class="navlink" href="./services/carport.html">Carports</a>
           <a class="navlink" href="#custom">Custom Builds</a>
           <a class="navlink" href="#doors">Doors & Gates</a>
+
+          <!-- NEW: add it again after Doors & Gates (as requested) -->
+          <a class="navlink page" href="carport.html" title="Carports & Shade Structures">Carports</a>
+
           <a class="navlink" href="#furniture">Furniture</a>
           <a class="navlink" href="#repairs">Repairs</a>
           <a class="navlink" href="#service-area">Service Area</a>
@@ -820,161 +1057,238 @@
     </div>
   </div>
 
+  <section class="photo-strip has-glimmer">
+    <div class="glimmer-layer"></div>
+    <div class="bg" style="background-image:url('pics/Patio-Car-Shade.jfif')"></div>
+    <div class="overlay"></div>
+
+    <div class="content">
+      <h2>Modern Carports & Driveway Shade</h2>
+      <p>
+        Vehicle protection with clean geometry.
+        No horse required — just steel done right.
+      </p>
+
+      <!-- NEW: obvious link to carport.html inside a prominent hero strip -->
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="cta alt" href="carport.html" title="View Carports"> <span class="dot"></span> View Carports</a>
+        <a class="cta" href="#quote" title="Get a quote for a carport"><span class="dot"></span> Quote a Carport</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO-BACKED HERO BAND -->
   <header class="hero">
-    <div class="wrap hero-grid">
-      <!-- Left hero -->
-      <div class="panel texture-granite has-glimmer" id="top">
+    <div class="wrap">
+      <div class="photo-band has-glimmer">
         <div class="glimmer-layer" aria-hidden="true"></div>
-        <div class="panel-inner">
-          <h2>Custom Welding in Phoenix, AZ — <span style="color:rgba(57,183,255,.9)">Steel</span>, Strength, Precision.</h2>
-          <p>
-            If you’re searching for <strong>welding near me</strong>, <strong>custom metal fabrication</strong>,
-            <strong>welded furniture</strong>, <strong>steel doors</strong>, <strong>gates</strong>, <strong>railings</strong>,
-            <strong>frames</strong>, or <strong>on-site repairs</strong>, you’re in the right place.
-            Stallion SteelWorks Welding builds <strong>clean, strong welds</strong> with a finish that looks as powerful as it performs.
-          </p>
-          <p>
-            We don’t just “fix metal.” We create <strong>statement pieces</strong> — welded couches, modern industrial tables,
-            custom steel doors, security gates, handrails, brackets, shop upgrades, trailers, and structural supports — plus fast,
-            reliable repairs when production can’t wait.
-          </p>
+        <div class="bg" style="background-image:url('pics/shade-installation.jpg')"></div>
+        <div class="overlay" aria-hidden="true"></div>
 
-          <div class="neonline"></div>
+        <div class="content">
+          <!-- Left hero -->
+          <div class="panel">
+            <div class="panel-inner">
+              <h2>Clean, Modern Welding — <span style="color:var(--neon2)">Built Right</span> the First Time.</h2>
+              <p>
+                If you’re searching for <strong>welding near me</strong>, <strong>custom metal fabrication</strong>,
+                <strong>welded furniture</strong>, <strong>steel doors</strong>, <strong>gates</strong>, <strong>railings</strong>,
+                <strong>frames</strong>, or <strong>on-site repairs</strong>, you’re in the right place.
+                Stallion SteelWorks Welding builds <strong>strong welds</strong> with a finish that looks as good as it performs.
+              </p>
+              <p>
+                We don’t just “fix metal.” We create <strong>statement pieces</strong> — welded couches, modern industrial tables,
+                custom steel doors, security gates, handrails, brackets, shop upgrades, trailers, and structural supports — plus fast,
+                reliable repairs when production can’t wait.
+              </p>
 
-          <div class="tagrow">
-            <div class="tag"><span class="spark"></span><b>Fast Quotes</b> with clear pricing</div>
-            <div class="tag"><span class="spark"></span><b>Custom Builds</b> built to your spec</div>
-            <div class="tag"><span class="spark"></span><b>Clean Finishes</b> grinder-ready detail</div>
-            <div class="tag"><span class="spark"></span><b>Durable Welds</b> made for real use</div>
+              <div class="neonline"></div>
+
+              <div class="tagrow">
+                <div class="tag"><span class="spark"></span><b>Fast Quotes</b> with clear pricing</div>
+                <div class="tag"><span class="spark"></span><b>Custom Builds</b> built to your spec</div>
+                <div class="tag"><span class="spark"></span><b>Clean Finishes</b> detail that sells the look</div>
+                <div class="tag"><span class="spark"></span><b>Durable Welds</b> made for real use</div>
+              </div>
+
+              <div class="divider"></div>
+
+              <ul class="bullets">
+                <li><span class="tick"></span><span><strong>Send a photo + rough dimensions</strong> and we’ll recommend the smartest build path: material thickness, joint design, finish, and timeline.</span></li>
+                <li><span class="tick"></span><span><strong>We can build for style or survival</strong>: sleek modern steel looks, ranch strength, or security-grade toughness.</span></li>
+                <li><span class="tick"></span><span><strong>One-and-done workmanship</strong>: build it right so you don’t pay twice.</span></li>
+              </ul>
+
+              <!-- NEW: inline link (SEO + conversion) -->
+              <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+                <a class="cta alt" href="carport.html" title="Carports & Shade Structures"><span class="dot"></span> Carports & Shade</a>
+                <a class="cta" href="#quote" title="Get a fast quote"><span class="dot"></span> Fast Quote</a>
+              </div>
+            </div>
           </div>
 
-          <div class="divider"></div>
+          <!-- Right quote funnel -->
+          <div class="panel" id="quote">
+            <div class="panel-inner quote-box">
+              <div class="quote-title">
+                <div>
+                  <div class="kicker">Request a fast quote</div>
+                  <h3>Tell us what you want welded</h3>
+                </div>
+                <div class="badge">Quick Response</div>
+              </div>
 
-          <ul class="bullets">
-            <li><span class="tick"></span><span><strong>Send a photo + rough dimensions</strong> and we’ll recommend the smartest build path: material thickness, joint design, finish, and timeline.</span></li>
-            <li><span class="tick"></span><span><strong>We can build for style or survival</strong>: sleek modern steel looks, heavy-duty ranch strength, or security-grade toughness.</span></li>
-            <li><span class="tick"></span><span><strong>Most customers contact us</strong> because they want something done once — and done right. That’s our lane.</span></li>
-          </ul>
-        </div>
-      </div>
+              <div class="microcopy">
+                The fastest way to get moving: <b>describe the piece</b>, add <b>dimensions</b>, and include
+                <b>any photos</b>. We’ll reply with a clear next step: price range, timeline, and options that fit your budget.
+              </div>
 
-      <!-- Right quote funnel -->
-      <div class="panel texture-steel has-glimmer" id="quote">
-        <div class="glimmer-layer" aria-hidden="true"></div>
-        <div class="panel-inner quote-box">
-          <div class="quote-title">
-            <div>
-              <div class="kicker">Request a fast quote</div>
-              <h3>Tell us what you want welded</h3>
+              <form id="quoteForm" action="mailto:stallionsteelworks@gmail.com" method="post" enctype="text/plain">
+                <div class="two">
+                  <div>
+                    <label for="name">Name</label>
+                    <input id="name" name="Name" autocomplete="name" placeholder="Your name" required />
+                  </div>
+                  <div>
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="Phone" autocomplete="tel" placeholder="Best number to reach you" />
+                  </div>
+                </div>
+
+                <div class="two">
+                  <div>
+                    <label for="project">Project Type</label>
+                    <select id="project" name="Project Type">
+                      <option>Custom welded piece (furniture / art / décor)</option>
+                      <option>Door / Gate / Security</option>
+                      <option>Railing / Handrail / Stair</option>
+                      <option>Frame / Brackets / Supports</option>
+                      <option>Repair (equipment / trailer / metal part)</option>
+                      <option>Other (describe below)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="timeline">Timeline</label>
+                    <select id="timeline" name="Timeline">
+                      <option>ASAP (urgent)</option>
+                      <option>This week</option>
+                      <option>1–2 weeks</option>
+                      <option>This month</option>
+                      <option>Planning / budgeting</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="details">Describe what you want built (materials, size, finish)</label>
+                  <textarea id="details" name="Project Details" placeholder="Example: ‘Modern steel door 36&quot; x 80&quot;, matte black.’ Or ‘Welded couch frame with heavy tubing + powder coat.’" required></textarea>
+                </div>
+
+                <div class="sendrow">
+                  <button class="btn" type="submit">Send Quote Request</button>
+                  <button class="btn secondary" type="button" id="textButton">Text / Call Instead</button>
+                </div>
+
+                <div class="trustline">
+                  <span>✅ Clear communication</span>
+                  <span>✅ Built to spec</span>
+                  <span>✅ Strong welds</span>
+                  <span>✅ Clean finish options</span>
+                </div>
+
+                <div class="microcopy">
+                  Prefer fast action? Call <b>602-999-77556</b> or email <b>stallionsteelworks@gmail.com</b>.
+                  If you’re on mobile, the buttons below open instantly.
+                </div>
+              </form>
             </div>
-            <div class="badge">Quick Response</div>
           </div>
-
-          <div class="microcopy">
-            The fastest way to get your project moving: <b>describe the piece</b>, add <b>dimensions</b>, and include
-            <b>any photos</b>. We’ll reply with a clear next step: price range, timeline, and options that fit your budget.
-          </div>
-
-          <!-- NOTE: Static websites can't truly "submit" without a backend.
-               This uses mailto as a frictionless default (high conversion on mobile). -->
-          <form id="quoteForm" action="mailto:stallionsteelworks@gmail.com" method="post" enctype="text/plain">
-            <div class="two">
-              <div>
-                <label for="name">Name</label>
-                <input id="name" name="Name" autocomplete="name" placeholder="Your name" required />
-              </div>
-              <div>
-                <label for="phone">Phone</label>
-                <input id="phone" name="Phone" autocomplete="tel" placeholder="Best number to reach you" />
-              </div>
-            </div>
-
-            <div class="two">
-              <div>
-                <label for="project">Project Type</label>
-                <select id="project" name="Project Type">
-                  <option>Custom welded piece (furniture / art / décor)</option>
-                  <option>Door / Gate / Security</option>
-                  <option>Railing / Handrail / Stair</option>
-                  <option>Frame / Brackets / Supports</option>
-                  <option>Repair (equipment / trailer / metal part)</option>
-                  <option>Other (describe below)</option>
-                </select>
-              </div>
-              <div>
-                <label for="timeline">Timeline</label>
-                <select id="timeline" name="Timeline">
-                  <option>ASAP (urgent)</option>
-                  <option>This week</option>
-                  <option>1–2 weeks</option>
-                  <option>This month</option>
-                  <option>Planning / budgeting</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label for="details">Describe what you want built (materials, size, finish)</label>
-              <textarea id="details" name="Project Details" placeholder="Example: ‘I want a modern steel door, 36&quot; x 80&quot;, matte black, minimal design. Or a welded couch frame with heavy steel tubing and powder coat.’" required></textarea>
-            </div>
-
-            <div class="sendrow">
-              <button class="btn" type="submit">Send Quote Request</button>
-              <button class="btn secondary" type="button" id="textButton">Text / Call Instead</button>
-            </div>
-
-            <div class="trustline">
-              <span>✅ Clear communication</span>
-              <span>✅ Built to spec</span>
-              <span>✅ Strong welds</span>
-              <span>✅ Clean finish options</span>
-            </div>
-
-            <div class="microcopy">
-              Prefer fast action? Call <b>602-999-77556</b> or email <b>stallionsteelworks@gmail.com</b>.
-              If you’re on mobile, the buttons below open instantly.
-            </div>
-          </form>
-        </div>
-      </div>
+        </div><!-- /content -->
+      </div><!-- /photo-band -->
     </div>
   </header>
 
   <main>
     <div class="wrap">
+      <!-- PROMINENT BACKGROUND IMAGE SHOWCASE -->
+      <section id="showcase">
+        <div class="section-title">
+          <h3>Recent Builds & Real-World Results</h3>
+          <p>These photos are used as CSS backgrounds so they’re a visual “front and center” part of the site.</p>
+        </div>
+
+        <div class="showcase">
+          <div class="tile">
+            <div class="bg" style="background-image:url('pics/Pool-Shade.jpg')"></div>
+            <div class="veil" aria-hidden="true"></div>
+            <div class="txt">
+              <div class="mini"><span class="dot"></span> Shade Structures + Steel Work</div>
+              <h4>Clean steel lines, pro fitment, and real durability.</h4>
+              <p>We fabricate and install structures that look modern, sit square, and hold up in Arizona sun.</p>
+
+              <!-- NEW: contextual link here too -->
+              <div style="margin-top:10px;">
+                <a class="cta alt" href="carport.html" title="See carport examples"><span class="dot"></span> See Carport Builds</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tileGrid">
+            <div class="tile small">
+              <div class="bg" style="background-image:url('pics/Patio-Car-Shade-far.jfif')"></div>
+              <div class="veil" aria-hidden="true"></div>
+              <div class="txt">
+                <div class="mini"><span class="dot"></span> Carports • Patio Covers</div>
+                <h4>Modern shade that fits the property.</h4>
+                <p>Simple, clean, professional — built to match your space.</p>
+              </div>
+            </div>
+
+            <div class="tile small">
+              <div class="bg" style="background-image:url('pics/RV-Shade-15FT-Tall.jpg')"></div>
+              <div class="veil" aria-hidden="true"></div>
+              <div class="txt">
+                <div class="mini"><span class="dot"></span> RV Shade • Tall Clearance</div>
+                <h4>Big clearance. Strong steel. Straight installs.</h4>
+                <p>Built for real use — not “light-duty vibes.”</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Why choose us -->
       <section id="why">
         <div class="section-title">
-          <h3>Welding That Looks Elite — And Holds Like a Beast</h3>
-          <p>Granite-level strength. Steel-level confidence. A subtle neon edge that says “modern power.”</p>
+          <h3>Welding That Looks Premium — And Holds Like a Beast</h3>
+          <p>Light mode = brighter, cleaner, higher trust. Dark mode = sleek “steel at night.”</p>
         </div>
 
         <div class="grid3">
-          <div class="card texture-granite has-glimmer">
+          <div class="card has-glimmer">
             <div class="glimmer-layer" aria-hidden="true"></div>
             <h4>Custom Fabrication (Built, Not “Bought”)</h4>
             <p>
-              When you want something that doesn’t exist in a store — a welded couch frame, an industrial table,
-              a unique metal door design, a gate that matches your architecture — we fabricate it from raw steel
-              into a finished piece that elevates the space.
+              When you want something that doesn’t exist in a store — welded couch frames, industrial tables,
+              unique door designs, or a gate that matches your architecture — we fabricate it from raw steel into a finished piece.
             </p>
           </div>
 
-          <div class="card texture-steel has-glimmer">
+          <div class="card has-glimmer">
             <div class="glimmer-layer" aria-hidden="true"></div>
             <h4>Repairs That Get You Back Online</h4>
             <p>
               Broken bracket? Cracked weld? Bent metal? Trailer issues? We repair with strength and clarity:
-              what failed, why it failed, and how to fix it so it survives the next round of real use.
+              what failed, why it failed, and how to fix it so it survives real use.
             </p>
           </div>
 
-          <div class="card texture-granite has-glimmer">
+          <div class="card has-glimmer">
             <div class="glimmer-layer" aria-hidden="true"></div>
             <h4>Finish Options That Sell the Look</h4>
             <p>
-              Smooth and refined, matte and modern, or raw and industrial — we can build “elegant power.”
-              Your welded piece should feel intentional: clean lines, strong joints, and a finish that fits the environment.
+              Smooth and refined, matte and modern, or raw and industrial — your piece should feel intentional:
+              clean lines, strong joints, and a finish that fits the environment.
             </p>
           </div>
         </div>
@@ -984,46 +1298,53 @@
       <section id="custom">
         <div class="section-title">
           <h3>Custom Welded Pieces: Furniture, Frames, One-Off Builds</h3>
-          <p>This page is intentionally text-rich for search intent: “custom welded ___ near me” and “fabricator Phoenix”.</p>
+          <p>Designed for search intent: “custom welded ___ near me” and “fabricator Phoenix”.</p>
         </div>
 
         <div class="story">
-          <div class="card texture-steel has-glimmer">
+          <div class="card has-glimmer" style="background:
+            linear-gradient(180deg, var(--panel2), var(--panel2)),
+            url('pics/MareMotelHayBarn.jpg');
+            background-size: cover;
+            background-position: center;">
             <div class="glimmer-layer" aria-hidden="true"></div>
-            <div>
-              <div class="kicker">Custom welded furniture</div>
-              <h4>Welded Couches, Benches, Tables, Shelving, Statement Frames</h4>
-              <p>
-                Want a welded couch frame that feels like it belongs in a luxury lodge, a modern loft, or a high-end ranch?
-                We build frames that look sharp and hold up under real life. We can fabricate steel bases, legs, supports,
-                welded brackets, and structural furniture frames that are ready for wood, cushions, leather, or stone tops.
-              </p>
-              <ul class="bullets">
-                <li><span class="tick"></span><span><strong>Modern industrial</strong> furniture frames with crisp geometry</span></li>
-                <li><span class="tick"></span><span><strong>Heavy-duty ranch builds</strong> that survive daily use</span></li>
-                <li><span class="tick"></span><span><strong>Designer look</strong> with clean weld transitions and tidy seams</span></li>
-              </ul>
-            </div>
+            <div class="kicker">Custom welded furniture</div>
+            <h4>Welded Couches, Benches, Tables, Shelving, Statement Frames</h4>
+            <p>
+              We build frames that look sharp and hold up under real life. Steel bases, legs, supports,
+              welded brackets, and structural furniture frames ready for wood, cushions, leather, or stone tops.
+            </p>
+            <ul class="bullets">
+              <li><span class="tick"></span><span><strong>Modern industrial</strong> geometry with clean transitions</span></li>
+              <li><span class="tick"></span><span><strong>Heavy-duty</strong> builds that survive daily use</span></li>
+              <li><span class="tick"></span><span><strong>Designer look</strong> without “DIY weld” vibes</span></li>
+            </ul>
             <div class="microcopy">welded furniture Phoenix, custom steel table base, welded couch frame, metal fabrication near me.</div>
           </div>
 
-          <div class="card texture-granite has-glimmer">
+          <div class="card has-glimmer" style="background:
+            linear-gradient(180deg, var(--panel2), var(--panel2)),
+            url('pics/Patio-Car-Shade.jfif');
+            background-size: cover;
+            background-position: center;">
             <div class="glimmer-layer" aria-hidden="true"></div>
-            <div>
-              <div class="kicker">Frames + structure</div>
-              <h4>Brackets, Supports, Mounts, Steel Frames, Custom Solutions</h4>
-              <p>
-                Sometimes you don’t need “a welder.” You need a builder who understands load, leverage, vibration, and wear.
-                We fabricate and reinforce frames for gates, doors, equipment mounts, shade structures, and custom metal work
-                that must stay rigid and aligned.
-              </p>
-              <ul class="bullets">
-                <li><span class="tick"></span><span><strong>Steel brackets</strong> made to stop flex and sag</span></li>
-                <li><span class="tick"></span><span><strong>Reinforced frames</strong> for long-term stability</span></li>
-                <li><span class="tick"></span><span><strong>Clean alignment</strong> so things open, close, and fit correctly</span></li>
-              </ul>
-            </div>
+            <div class="kicker">Frames + structure</div>
+            <h4>Brackets, Supports, Mounts, Steel Frames, Custom Solutions</h4>
+            <p>
+              Sometimes you don’t need “a welder.” You need a builder who understands load, leverage, vibration, and wear.
+              We fabricate and reinforce frames for gates, doors, equipment mounts, and structural metal work.
+            </p>
+            <ul class="bullets">
+              <li><span class="tick"></span><span><strong>Steel brackets</strong> made to stop flex and sag</span></li>
+              <li><span class="tick"></span><span><strong>Reinforced frames</strong> for long-term stability</span></li>
+              <li><span class="tick"></span><span><strong>Clean alignment</strong> so everything fits right</span></li>
+            </ul>
             <div class="microcopy">SEO keywords: metal brackets Phoenix, steel frame fabrication, custom welding services.</div>
+
+            <!-- NEW: link from the "shade/structure" related card -->
+            <div style="margin-top:12px;">
+              <a class="cta alt" href="carport.html"><span class="dot"></span> Carport Page</a>
+            </div>
           </div>
         </div>
       </section>
@@ -1032,47 +1353,62 @@
       <section id="doors">
         <div class="section-title">
           <h3>Steel Doors, Gates, Railings: Security + Style</h3>
-          <p>We build pieces that look expensive — because the details are expensive (and worth it).</p>
+          <p>We build pieces that look expensive — because the details are worth it.</p>
         </div>
 
         <div class="grid3">
-          <div class="card texture-granite has-glimmer">
+          <div class="card has-glimmer">
             <div class="glimmer-layer" aria-hidden="true"></div>
             <h4>Custom Steel Doors</h4>
             <p>
-              From minimalist modern steel doors to heavier security-style builds, we fabricate doors that fit right,
-              feel solid, and elevate the entrance. Want a clean modern look? Want “fortress strength”? Tell us the vibe.
+              Minimal modern steel doors or heavier security builds — fit right, feel solid, elevate the entrance.
+              Tell us the vibe: clean modern or fortress strong.
             </p>
           </div>
 
-          <div class="card texture-steel has-glimmer">
+          <div class="card has-glimmer">
             <div class="glimmer-layer" aria-hidden="true"></div>
             <h4>Gates & Security</h4>
             <p>
-              Drive gates, walk gates, equipment gates, and property gates. Strong hinges, proper reinforcement,
-              and welds designed for movement and stress — not just “stuck together.”
+              Drive gates, walk gates, equipment gates — strong hinges, proper reinforcement,
+              welds designed for movement and stress (not just “stuck together”).
             </p>
           </div>
 
-          <div class="card texture-granite has-glimmer">
+          <div class="card has-glimmer">
             <div class="glimmer-layer" aria-hidden="true"></div>
             <h4>Railings & Handrails</h4>
             <p>
-              Railings should feel safe, look clean, and match the property. We can fabricate sturdy handrails,
-              stair rails, and custom metal guardrails with a finish that looks intentional.
+              Railings should feel safe, look clean, and match the property. We fabricate sturdy handrails,
+              stair rails, and custom guardrails with a finish that looks intentional.
             </p>
+          </div>
+        </div>
+
+        <!-- NEW: prominent link block after Doors & Gates section content -->
+        <div class="divider"></div>
+        <div class="card has-glimmer">
+          <div class="glimmer-layer" aria-hidden="true"></div>
+          <h4>Need a Carport or Shade Structure?</h4>
+          <p>
+            If your project is <strong>carport shade</strong>, <strong>RV cover</strong>, or a <strong>patio cover</strong>,
+            jump to the dedicated page with examples and options.
+          </p>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="cta alt" href="carport.html"><span class="dot"></span> Go to Carports</a>
+            <a class="cta" href="#quote"><span class="dot"></span> Quote It</a>
           </div>
         </div>
 
         <div class="divider"></div>
 
-        <div class="card texture-steel has-glimmer">
+        <div class="card has-glimmer">
           <div class="glimmer-layer" aria-hidden="true"></div>
-          <h4>What Makes Our Work Different (The “Why You’ll Be Happy Later” List)</h4>
+          <h4>What Makes Our Work Different</h4>
           <ul class="bullets">
-            <li><span class="tick"></span><span><strong>Design-first welding:</strong> we think about the final look before we strike the first arc.</span></li>
-            <li><span class="tick"></span><span><strong>Strength-first engineering:</strong> the joint is built for the load, not just for the photo.</span></li>
-            <li><span class="tick"></span><span><strong>Finish options:</strong> raw industrial, refined smooth, matte black modern, or coated for weather and wear.</span></li>
+            <li><span class="tick"></span><span><strong>Design-first welding:</strong> we think about the final look before the first arc.</span></li>
+            <li><span class="tick"></span><span><strong>Strength-first joints:</strong> built for load, vibration, and real-world stress.</span></li>
+            <li><span class="tick"></span><span><strong>Finish options:</strong> raw industrial, refined smooth, matte modern, or coated for weather.</span></li>
             <li><span class="tick"></span><span><strong>Clear process:</strong> photos + dimensions → recommendation → quote range → schedule → build.</span></li>
           </ul>
         </div>
@@ -1082,45 +1418,44 @@
       <section id="furniture">
         <div class="section-title">
           <h3>Welded Furniture & Decor That People Talk About</h3>
-          <p>This is where “welding” becomes “craft.” If you want a piece that feels premium, this is it.</p>
+          <p>This is where “welding” becomes “craft.”</p>
         </div>
 
         <div class="story">
-          <div class="card texture-granite has-glimmer">
+          <div class="card has-glimmer" style="background:
+            linear-gradient(180deg, var(--panel2), var(--panel2)),
+            url('pics/Pool-ShadeThumb.jpg');
+            background-size: cover;
+            background-position: center;">
             <div class="glimmer-layer" aria-hidden="true"></div>
-            <div>
-              <div class="kicker">Luxury industrial</div>
-              <h4>Steel + Stone + Wood: The Power Trio</h4>
-              <p>
-                The granite-and-steel aesthetic is simple: dark depth, clean metal, and a subtle glow of modern energy.
-                We can fabricate bases, frames, structural supports, and decorative metalwork that pairs beautifully with
-                stone tops, reclaimed wood, live-edge slabs, or modern composite materials.
-              </p>
-              <p>
-                If you want “elegance and power,” you’re not looking for the cheapest weld — you’re looking for
-                <strong>the right weld</strong> with the right fit, finish, and strength.
-              </p>
-            </div>
-            <div class="microcopy">Popular: welded table bases, welded bench frames, steel shelving, modern steel accents.</div>
+            <div class="kicker">Luxury industrial</div>
+            <h4>Steel + Stone + Wood: The Power Trio</h4>
+            <p>
+              Clean metal lines, smart geometry, and a finish that reads “premium.” We fabricate bases, frames,
+              structural supports, and decorative metalwork that pairs with stone tops, live-edge slabs, or modern composites.
+            </p>
+            <p>
+              If you want “elegance and power,” you’re looking for <strong>the right weld</strong> with the right fit and finish.
+            </p>
           </div>
 
-          <div class="card texture-steel has-glimmer">
+          <div class="card has-glimmer" style="background:
+            linear-gradient(180deg, var(--panel2), var(--panel2)),
+            url('pics/RV-Shade-2.jpg');
+            background-size: cover;
+            background-position: center;">
             <div class="glimmer-layer" aria-hidden="true"></div>
-            <div>
-              <div class="kicker">Custom statement pieces</div>
-              <h4>Couches, Seating Frames, Fire Features, Art Builds</h4>
-              <p>
-                Want a welded couch frame built like a tank but finished like a showroom piece? Want outdoor steel seating,
-                a custom fire feature surround, a metal wall accent, or a one-off project you saw online?
-                Send the reference photo — we’ll tell you what’s realistic, what’s strong, and how to build it clean.
-              </p>
-              <ul class="bullets">
-                <li><span class="tick"></span><span><strong>Bring a sketch</strong> or a photo — we can translate it into steel.</span></li>
-                <li><span class="tick"></span><span><strong>We help you choose</strong> thickness and finish so it doesn’t warp, flex, or look cheap.</span></li>
-                <li><span class="tick"></span><span><strong>We can build for outdoors</strong> with weather-ready coatings and design choices.</span></li>
-              </ul>
-            </div>
-            <div class="microcopy">SEO keywords: welded couch frame, custom metal furniture, welded decor Phoenix.</div>
+            <div class="kicker">Custom statement pieces</div>
+            <h4>Couches, Seating Frames, Fire Features, Art Builds</h4>
+            <p>
+              Send a reference photo — we’ll tell you what’s realistic, what’s strong, and how to build it clean.
+              Outdoor-ready options available with weather-friendly design and coatings.
+            </p>
+            <ul class="bullets">
+              <li><span class="tick"></span><span><strong>Bring a sketch</strong> or photo — we translate it into steel.</span></li>
+              <li><span class="tick"></span><span><strong>Choose thickness & finish</strong> so it doesn’t warp or look cheap.</span></li>
+              <li><span class="tick"></span><span><strong>Built for outdoors</strong> when needed.</span></li>
+            </ul>
           </div>
         </div>
       </section>
@@ -1129,33 +1464,65 @@
       <section id="repairs">
         <div class="section-title">
           <h3>Welding Repairs: Equipment, Trailers, Metal Parts</h3>
-          <p>When something breaks, you need it fixed strong — and you need it fixed intelligently.</p>
+          <p>When something breaks, you need it fixed strong — and fixed intelligently.</p>
         </div>
 
         <div class="grid3">
-          <div class="card texture-steel has-glimmer">
+          <div class="card has-glimmer">
             <div class="glimmer-layer" aria-hidden="true"></div>
             <h4>Trailer Welding & Reinforcement</h4>
-            <p>
-              Cracks, fatigue points, bent rails, broken joints, or weak welds — we repair and reinforce so it hauls safely
-              and doesn’t keep failing at the same spot.
-            </p>
+            <p>Cracks, fatigue points, bent rails, broken joints — we repair and reinforce so it hauls safely and lasts.</p>
           </div>
-          <div class="card texture-granite has-glimmer">
+          <div class="card has-glimmer">
             <div class="glimmer-layer" aria-hidden="true"></div>
-            <h4>Brackets, Tabs, Mounts, Broken Metal</h4>
-            <p>
-              Small parts cause big problems. We can fabricate replacement brackets, weld broken mounts, reinforce tabs,
-              and restore strength so your setup runs correctly again.
-            </p>
+            <h4>Brackets, Tabs, Mounts</h4>
+            <p>Small parts cause big problems. We fabricate replacements and reinforce weak points so your setup runs correctly.</p>
           </div>
-          <div class="card texture-steel has-glimmer">
+          <div class="card has-glimmer">
             <div class="glimmer-layer" aria-hidden="true"></div>
             <h4>On-Site vs Shop Work</h4>
-            <p>
-              If the job needs on-site attention, we’ll tell you. If it belongs in the shop for accuracy and finish,
-              we’ll tell you that too. The goal: the best outcome, not the fastest compromise.
-            </p>
+            <p>If it needs on-site attention, we’ll tell you. If it belongs in the shop for accuracy, we’ll tell you that too.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h3>Real Builds. Real Steel.</h3>
+          <p>Every structure below is a real installation — no stock photos.</p>
+        </div>
+
+        <div class="bg-mosaic">
+          <div class="bg-tile has-glimmer">
+            <div class="glimmer-layer"></div>
+            <div class="bg" style="background-image:url('pics/RV-Shade-15FT-Tall.jpg')"></div>
+            <div class="veil"></div>
+            <div class="label">
+              <h4>RV Shade & Tall Clearance Structures</h4>
+              <p>Designed for height, strength, and wind resistance.</p>
+            </div>
+          </div>
+
+          <div style="display:grid;gap:14px">
+            <div class="bg-tile has-glimmer">
+              <div class="glimmer-layer"></div>
+              <div class="bg" style="background-image:url('pics/Patio-Car-Shade-far.jfif')"></div>
+              <div class="veil"></div>
+              <div class="label">
+                <h4>Wide Span Steel Shade</h4>
+                <p>Open feel without extra posts.</p>
+              </div>
+            </div>
+
+            <div class="bg-tile has-glimmer">
+              <div class="glimmer-layer"></div>
+              <div class="bg" style="background-image:url('pics/MareMotelHayBarn.jpg')"></div>
+              <div class="veil"></div>
+              <div class="label">
+                <h4>Large Structural Steel Builds</h4>
+                <p>From barns to shade systems.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1167,7 +1534,7 @@
           <p>Built for local SEO: Phoenix welding, welding services Phoenix AZ, metal fabrication Phoenix.</p>
         </div>
 
-        <div class="card texture-granite has-glimmer">
+        <div class="card has-glimmer">
           <div class="glimmer-layer" aria-hidden="true"></div>
           <p>
             Stallion SteelWorks Welding serves Phoenix, AZ and nearby areas. If you’re in the Valley and need a custom welded piece —
@@ -1186,58 +1553,10 @@
             Phone: <strong><a href="tel:60299977556">602-999-77556</a></strong><br/>
             Email: <strong><a href="mailto:stallionsteelworks@gmail.com">stallionsteelworks@gmail.com</a></strong>
           </p>
-        </div>
-      </section>
 
-      <!-- Extra SEO blocks (infinite-scroll feel) -->
-      <section id="seo-scroll">
-        <div class="section-title">
-          <h3>Search Intent Coverage: What People Ask For</h3>
-          <p>These blocks intentionally answer real customer searches so Google understands the page deeply.</p>
-        </div>
-
-        <div class="story">
-          <div class="card texture-steel has-glimmer">
-            <div class="glimmer-layer" aria-hidden="true"></div>
-            <div class="kicker">“Can you build this?”</div>
-            <h4>Yes — if you can describe it, sketch it, or show a photo.</h4>
-            <p>
-              The fastest way to start: send a reference photo (even a screenshot), rough dimensions, and where it will be used
-              (indoor/outdoor, heavy-use/light-use, security requirement). We’ll recommend steel thickness and joint design so your
-              piece looks clean and stays strong.
-            </p>
-          </div>
-
-          <div class="card texture-granite has-glimmer">
-            <div class="glimmer-layer" aria-hidden="true"></div>
-            <div class="kicker">“How much does welding cost?”</div>
-            <h4>It depends — but we’ll give you a clear range fast.</h4>
-            <p>
-              Pricing depends on steel thickness, complexity, finish, and install requirements. We give honest ranges quickly
-              so you can decide. If your budget is tight, we can often offer design options that reduce time while keeping strength.
-            </p>
-          </div>
-        </div>
-
-        <div class="story">
-          <div class="card texture-granite has-glimmer">
-            <div class="glimmer-layer" aria-hidden="true"></div>
-            <div class="kicker">“I need it to look nice.”</div>
-            <h4>We weld for aesthetics — not just function.</h4>
-            <p>
-              Clean edges. Consistent lines. Smart placement of welds. Thoughtful finishing. If you want a door, gate, railing,
-              or furniture piece that looks premium, we build with that finish in mind from the first cut.
-            </p>
-          </div>
-
-          <div class="card texture-steel has-glimmer">
-            <div class="glimmer-layer" aria-hidden="true"></div>
-            <div class="kicker">“I need it strong.”</div>
-            <h4>We design welds for real stress.</h4>
-            <p>
-              Vibration, leverage, weather, torque, and repeated use destroy weak welding. We reinforce where it matters, align
-              correctly, and build it to last — so you don’t pay twice.
-            </p>
+          <!-- NEW: link also in footer-adjacent contact card -->
+          <div style="margin-top:12px;">
+            <a class="cta alt" href="carport.html"><span class="dot"></span> Carports Page</a>
           </div>
         </div>
       </section>
@@ -1250,6 +1569,7 @@
         <p style="margin:0">
           Call <strong><a href="tel:60299977556">602-999-77556</a></strong> • Email <strong><a href="mailto:stallionsteelworks@gmail.com">stallionsteelworks@gmail.com</a></strong>
           • Main site: <strong><a href="https://stallionsteelworks.com/">stallionsteelworks.com</a></strong>
+          • Carports: <strong><a href="carport.html">carport.html</a></strong>
         </p>
       </footer>
     </div>
@@ -1266,6 +1586,9 @@
         <a class="pill call" href="tel:60299977556"><span class="icon"></span> Call 602-999-77556</a>
         <a class="pill email" href="mailto:stallionsteelworks@gmail.com?subject=Quote%20Request%20-%20Stallion%20SteelWorks%20Welding&body=Name:%0D%0APhone:%0D%0AProject%20Type:%0D%0ATimeline:%0D%0ADetails:%0D%0A%0D%0AReference%20photos%20(if%20any):"><span class="icon"></span> Email for Quote</a>
         <a class="pill" href="#quote"><span class="icon"></span> Quote Form</a>
+
+        <!-- NEW: sticky bar link to carport.html -->
+        <a class="pill" href="carport.html" title="Carports"><span class="icon"></span> Carports</a>
       </div>
     </div>
   </div>
@@ -1275,6 +1598,34 @@
     document.getElementById("textButton").addEventListener("click", () => {
       window.location.href = "tel:60299977556";
     });
+
+    // Theme toggle (light default) with localStorage + prefers-color-scheme fallback
+    (function initTheme(){
+      const root = document.documentElement;
+      const label = document.getElementById("themeLabel");
+      const saved = localStorage.getItem("ssw_theme");
+
+      if(saved === "light" || saved === "dark"){
+        root.setAttribute("data-theme", saved);
+      } else {
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        root.setAttribute("data-theme", prefersDark ? "dark" : "light");
+      }
+
+      function syncLabel(){
+        const t = root.getAttribute("data-theme") || "light";
+        label.textContent = (t === "dark") ? "Dark Mode" : "Light Mode";
+      }
+      syncLabel();
+
+      document.getElementById("themeToggle").addEventListener("click", () => {
+        const cur = root.getAttribute("data-theme") || "light";
+        const next = (cur === "dark") ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        localStorage.setItem("ssw_theme", next);
+        syncLabel();
+      });
+    })();
 
     // Automatic random glimmer (no cursor needed)
     (function autoGlimmer(){
@@ -1317,7 +1668,7 @@
       setTimeout(sweep, 1200);
     })();
 
-    // Smooth scroll
+    // Smooth scroll (anchors only)
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener("click",(e)=>{
         const id = a.getAttribute("href");

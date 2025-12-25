@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- =========================
+       PRIMARY SITE
+       ========================= -->
+  <url>
+    <loc>https://welding.stallionsteelworks.com/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- =========================
+       SERVICE PAGES
+       ========================= -->
+  <url>
+    <loc>https://welding.stallionsteelworks.com/services/carport.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- =========================
+       PAGE SECTIONS (ANCHOR SEO SUPPORT)
+       ========================= -->
+  <url>
+    <loc>https://welding.stallionsteelworks.com/#quote</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://welding.stallionsteelworks.com/#showcase</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://welding.stallionsteelworks.com/#custom</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://welding.stallionsteelworks.com/#doors</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://welding.stallionsteelworks.com/#furniture</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://welding.stallionsteelworks.com/#repairs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://welding.stallionsteelworks.com/#service-area</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- =========================
+       MAIN BRAND SITE
+       ========================= -->
+  <url>
+    <loc>https://stallionsteelworks.com/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>40-Foot RV Shade Build in Phoenix AZ | Stallion SteelWorks Welding</title>
+
+  <!-- SEO -->
+  <meta name="description" content="A detailed, photo-backed walkthrough of our 40-foot RV shade build in Phoenix, AZ: steel fabrication, tall-clearance layout, C-panel roofing, weld prep, post setting, alignment, and final finish. Stallion SteelWorks Welding." />
+  <link rel="canonical" href="https://welding.stallionsteelworks.com/blog/rv-shade-40ft-cpanel.html" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="40-Foot RV Shade Build (C-Panel Roof) | Stallion SteelWorks Welding" />
+  <meta property="og:description" content="How we fabricated and installed a tall-clearance, 40-foot RV shade structure using C-panel roofing—steel layout, welding, alignment, and pro-grade finish." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://welding.stallionsteelworks.com/blog/rv-shade-40ft-cpanel.html" />
+  <meta property="og:image" content="https://welding.stallionsteelworks.com/pics/RV-Shade-15FT-Tall.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../pics/favicon.ico" />
+
+  <style>
+    /* =========================================================
+       LIGHT DEFAULT + DARK TOGGLE (matches your main site style)
+       ========================================================= */
+    :root{
+      --radius: 18px;
+      --radius2: 26px;
+      --shadow: 0 18px 38px rgba(0,0,0,.12);
+      --shadow2: 0 10px 28px rgba(0,0,0,.10);
+
+      --h1: clamp(2.2rem, 4.4vw, 3.35rem);
+      --h2: clamp(1.55rem, 2.5vw, 2.25rem);
+      --h3: clamp(1.12rem, 1.85vw, 1.45rem);
+      --p:  clamp(1.05rem, 1.55vw, 1.18rem);
+      --small: clamp(.95rem, 1.15vw, 1.05rem);
+
+      --neon: #22e6c8;
+      --neon2:#1aa8ff;
+      --warning:#ffcc59;
+
+      --bg0: #f6f9fc;
+      --bg1: #ffffff;
+      --ink: #0b1220;
+      --muted: #2f3a4a;
+      --muted2:#526072;
+      --line: rgba(14, 25, 43, .10);
+
+      --panel: rgba(255,255,255,.82);
+      --panel2: rgba(255,255,255,.92);
+      --glass: rgba(255,255,255,.66);
+
+      --cardEdge: rgba(14,25,43,.10);
+      --cardEdge2: rgba(14,25,43,.14);
+
+      --photoOverlayA: rgba(255,255,255,.88);
+      --photoOverlayB: rgba(255,255,255,.68);
+      --photoOverlayC: rgba(255,255,255,.22);
+
+      color-scheme: light;
+    }
+
+    html[data-theme="dark"]{
+      --bg0:#07090b;
+      --bg1:#0b0f14;
+      --ink:#e9eef5;
+      --muted:#b7c1cc;
+      --muted2:#8f9aa6;
+      --line:rgba(233,238,245,.12);
+
+      --panel: rgba(10,14,18,.70);
+      --panel2: rgba(10,14,18,.88);
+      --glass: rgba(7,9,11,.60);
+
+      --cardEdge: rgba(233,238,245,.12);
+      --cardEdge2: rgba(233,238,245,.16);
+
+      --shadow: 0 18px 40px rgba(0,0,0,.55);
+      --shadow2: 0 10px 28px rgba(0,0,0,.45);
+
+      --photoOverlayA: rgba(7,9,11,.74);
+      --photoOverlayB: rgba(7,9,11,.56);
+      --photoOverlayC: rgba(7,9,11,.22);
+
+      color-scheme: dark;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:
+        radial-gradient(1100px 800px at 16% 8%, rgba(34,230,200,.14), transparent 60%),
+        radial-gradient(950px 700px at 86% 16%, rgba(26,168,255,.14), transparent 58%),
+        radial-gradient(950px 700px at 50% 100%, rgba(255,204,89,.11), transparent 62%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+      letter-spacing:.2px;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+    /* Sticky masthead */
+    .masthead{
+      position:sticky; top:0; z-index:80;
+      background: var(--glass);
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 240px;
+    }
+    .brand img{
+      width:auto; height:44px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.5);
+      border:1px solid var(--cardEdge);
+      padding:6px 10px;
+      box-shadow: var(--shadow2);
+      object-fit:contain;
+    }
+    html[data-theme="dark"] .brand img{
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(233,238,245,.14);
+    }
+    .brand .meta{
+      display:flex; flex-direction:column; gap:2px;
+      line-height:1.15;
+    }
+    .brand .meta b{
+      letter-spacing:.6px;
+      text-transform:uppercase;
+      font-size: .98rem;
+    }
+    .brand .meta small{
+      color:var(--muted2);
+      font-size: .92rem;
+    }
+
+    .links{
+      display:flex; align-items:center; gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .chip{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--cardEdge);
+      background: rgba(255,255,255,.52);
+      box-shadow: 0 10px 22px rgba(0,0,0,.06);
+      font-weight:900;
+      font-size: var(--small);
+      letter-spacing:.25px;
+      white-space:nowrap;
+      transition: transform .15s ease, filter .2s ease, border-color .2s ease;
+    }
+    html[data-theme="dark"] .chip{
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(233,238,245,.12);
+      box-shadow:none;
+    }
+    .chip:hover{transform:translateY(-1px); filter:brightness(1.02); border-color:rgba(34,230,200,.34)}
+    .chip .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, var(--neon2), rgba(26,168,255,.18));
+      box-shadow: 0 0 18px rgba(26,168,255,.20);
+      border:1px solid rgba(0,0,0,.08);
+    }
+    html[data-theme="dark"] .chip .dot{border:1px solid rgba(233,238,245,.14)}
+    .chip.call .dot{background: radial-gradient(circle at 30% 30%, var(--neon), rgba(34,230,200,.18)); box-shadow: 0 0 18px rgba(34,230,200,.22)}
+    .toggle{
+      cursor:pointer;
+      user-select:none;
+      border:none;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--cardEdge);
+      background: rgba(255,255,255,.52);
+      box-shadow: 0 10px 22px rgba(0,0,0,.06);
+      font-weight:900;
+      font-size: var(--small);
+      letter-spacing:.25px;
+      transition: transform .15s ease, filter .2s ease;
+    }
+    html[data-theme="dark"] .toggle{
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(233,238,245,.12);
+      box-shadow:none;
+    }
+    .toggle:hover{transform:translateY(-1px); filter:brightness(1.02)}
+
+    /* Hero with photo background */
+    .hero{
+      position:relative;
+      margin: 18px 0;
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border:1px solid var(--cardEdge);
+      box-shadow: var(--shadow);
+      min-height: 520px;
+    }
+    .hero .bg{
+      position:absolute; inset:0;
+      background:
+        url('../pics/RV-Shade-15FT-Tall.jpg');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.02);
+      filter: saturate(1.06) contrast(1.02);
+    }
+    html[data-theme="dark"] .hero .bg{filter: saturate(1.0) contrast(1.0) brightness(.90)}
+    .hero .overlay{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, var(--photoOverlayA), var(--photoOverlayB) 55%, var(--photoOverlayC)),
+        radial-gradient(900px 520px at 18% 35%, rgba(34,230,200,.16), transparent 62%),
+        radial-gradient(900px 520px at 82% 35%, rgba(26,168,255,.14), transparent 62%);
+    }
+    .hero .content{
+      position:relative;
+      padding: 30px;
+      max-width: 820px;
+    }
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--cardEdge);
+      background: rgba(255,255,255,.66);
+      box-shadow: var(--shadow2);
+      font-weight:900;
+      letter-spacing:.8px;
+      text-transform:uppercase;
+      font-size: .9rem;
+      margin-bottom: 14px;
+    }
+    html[data-theme="dark"] .eyebrow{background: rgba(7,9,11,.56); border:1px solid rgba(233,238,245,.12)}
+    .eyebrow .spark{
+      width:10px;height:10px;border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(255,204,89,.55));
+      box-shadow: 0 0 18px rgba(255,204,89,.22);
+      border:1px solid rgba(0,0,0,.08);
+    }
+    html[data-theme="dark"] .eyebrow .spark{border:1px solid rgba(233,238,245,.14)}
+    h1{margin:0 0 10px; font-size: var(--h1); line-height:1.05; letter-spacing:.4px}
+    .lede{
+      margin: 10px 0 0;
+      font-size: var(--p);
+      color: var(--muted);
+      line-height:1.6;
+      max-width: 70ch;
+    }
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .cta{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid var(--cardEdge2);
+      background:
+        radial-gradient(900px 160px at 15% 40%, rgba(34,230,200,.22), transparent 55%),
+        radial-gradient(900px 160px at 85% 60%, rgba(26,168,255,.18), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.22));
+      box-shadow: var(--shadow2);
+      font-weight:900;
+      letter-spacing:.35px;
+    }
+    html[data-theme="dark"] .cta{
+      background:
+        radial-gradient(800px 140px at 15% 40%, rgba(34,230,200,.18), transparent 55%),
+        radial-gradient(800px 140px at 85% 60%, rgba(26,168,255,.16), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.07), rgba(0,0,0,0));
+      border:1px solid rgba(233,238,245,.18);
+      box-shadow: var(--shadow);
+    }
+
+    /* Article */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:16px;
+      align-items:start;
+      margin: 18px 0 90px;
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+      .hero{min-height: 560px}
+    }
+
+    .panel{
+      border-radius: var(--radius2);
+      border:1px solid var(--cardEdge);
+      background: var(--panel);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .panel .inner{padding: 24px}
+    h2{margin: 0 0 10px; font-size: var(--h2); letter-spacing:.35px}
+    h3{margin: 18px 0 8px; font-size: var(--h3); letter-spacing:.25px; text-transform:uppercase}
+    p{margin: 10px 0; font-size: var(--p); color: var(--muted); line-height: 1.75}
+    b,strong{color:var(--ink)}
+    .rule{height:1px;background:var(--line); margin: 16px 0}
+
+    .list{
+      margin: 10px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .list li{
+      display:flex; gap:10px; align-items:flex-start;
+      font-size: var(--p);
+      color: var(--muted);
+      line-height:1.65;
+    }
+    .tick{
+      flex:0 0 12px; height:12px; margin-top: 10px; border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.8), rgba(34,230,200,.28));
+      box-shadow: 0 0 18px rgba(34,230,200,.16);
+      border:1px solid rgba(0,0,0,.08);
+    }
+    html[data-theme="dark"] .tick{border:1px solid rgba(233,238,245,.16)}
+
+    /* Sidebar photo cards */
+    .shot{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border:1px solid var(--cardEdge);
+      box-shadow: var(--shadow2);
+      background: var(--panel2);
+      margin-bottom: 14px;
+    }
+    .shot .bg{
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      position:relative;
+    }
+    .shot .bg:after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--photoOverlayC) 45%, var(--photoOverlayB) 100%);
+    }
+    .shot .cap{
+      padding: 14px;
+    }
+    .cap b{display:block; margin-bottom:6px}
+    .cap small{color:var(--muted2); font-size: .98rem; line-height:1.35; display:block}
+
+    /* Photo mosaic inside article */
+    .mosaic{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      margin: 14px 0 8px;
+    }
+    @media (max-width:980px){ .mosaic{grid-template-columns:1fr} }
+    .tile{
+      position:relative;
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border:1px solid var(--cardEdge);
+      box-shadow: var(--shadow2);
+      min-height: 260px;
+    }
+    .tile .bg{
+      position:absolute; inset:0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.03);
+      filter: saturate(1.06) contrast(1.02);
+    }
+    html[data-theme="dark"] .tile .bg{filter:saturate(1.0) contrast(1.0) brightness(.90)}
+    .tile .veil{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--photoOverlayC) 50%, var(--photoOverlayB) 100%),
+        radial-gradient(900px 500px at 20% 30%, rgba(34,230,200,.14), transparent 60%),
+        radial-gradient(900px 500px at 85% 30%, rgba(26,168,255,.12), transparent 60%);
+    }
+    .tile .label{
+      position:absolute; left:16px; right:16px; bottom:14px;
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.72);
+      border:1px solid var(--cardEdge);
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(10px);
+    }
+    html[data-theme="dark"] .tile .label{background: rgba(7,9,11,.66); border:1px solid rgba(233,238,245,.12)}
+    .label small{color:var(--muted2); display:block; margin-bottom:6px; letter-spacing:.9px; text-transform:uppercase}
+    .label b{display:block; font-size: 1.15rem; letter-spacing:.25px}
+
+    /* Footer */
+    footer{
+      border-top:1px solid var(--line);
+      padding: 22px 0 90px;
+      color: var(--muted2);
+      font-size: var(--small);
+      line-height: 1.6;
+    }
+
+    /* Sticky bottom CTA */
+    .sticky{
+      position:fixed; left:0; right:0; bottom:0; z-index:60;
+      padding:10px 12px;
+      background: var(--glass);
+      border-top:1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+    .sticky-inner{
+      max-width:1080px;
+      margin:0 auto;
+      display:flex; gap:10px; align-items:center; justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .sticky .mini{color:var(--muted2); font-size: .98rem}
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid var(--cardEdge2);
+      background: rgba(255,255,255,.60);
+      box-shadow: var(--shadow2);
+      font-weight:900;
+      letter-spacing:.35px;
+      font-size: 1.02rem;
+      white-space:nowrap;
+    }
+    html[data-theme="dark"] .pill{
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(233,238,245,.16);
+    }
+    .pill .icon{
+      width:10px;height:10px;border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.85), rgba(26,168,255,.26));
+      box-shadow: 0 0 18px rgba(26,168,255,.16);
+      border:1px solid rgba(0,0,0,.08);
+    }
+    html[data-theme="dark"] .pill .icon{border:1px solid rgba(233,238,245,.14)}
+    .pill.call{border-color:rgba(34,230,200,.28)}
+    .pill.email{border-color:rgba(26,168,255,.26)}
+  </style>
+
+  <!-- Article schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BlogPosting",
+    "headline":"40-Foot RV Shade Build in Phoenix AZ (C-Panel Roof) — How We Built It",
+    "description":"A detailed walkthrough of our 40-foot RV shade structure: layout, steel fabrication, welding, C-panel roofing, alignment, and finish.",
+    "image":[
+      "https://welding.stallionsteelworks.com/pics/RV-Shade-15FT-Tall.jpg",
+      "https://welding.stallionsteelworks.com/pics/RV-Shade-2.jpg"
+    ],
+    "author":{"@type":"Organization","name":"Stallion SteelWorks Welding"},
+    "publisher":{"@type":"Organization","name":"Stallion SteelWorks Welding"},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://welding.stallionsteelworks.com/blog/rv-shade-40ft-cpanel.html"},
+    "datePublished":"2025-12-24"
+  }
+  </script>
+
+  <!-- LocalBusiness schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Stallion SteelWorks Welding",
+    "url":"https://welding.stallionsteelworks.com/",
+    "telephone":"+1-602-999-77556",
+    "email":"stallionsteelworks@gmail.com",
+    "areaServed":"Phoenix, AZ",
+    "description":"Custom welding and fabrication: gates, doors, railings, furniture, frames, repairs, and steel structures.",
+    "sameAs":["https://stallionsteelworks.com/"]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Sticky nav -->
+  <div class="masthead" role="banner">
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="Back to homepage">
+        <!-- Use your updated welding logo file here -->
+        <img src="../pics/SteelworksWelding.jpg" alt="Stallion SteelWorks Welding logo" />
+        <span class="meta">
+          <b>Stallion SteelWorks Welding</b>
+          <small>Phoenix • Custom Fabrication • Repairs</small>
+        </span>
+      </a>
+
+      <div class="links" aria-label="Header links">
+        <a class="chip" href="/#quote"><span class="dot"></span> Get a Quote</a>
+        <a class="chip" href="/services/carport.html"><span class="dot"></span> Carports</a>
+        <a class="chip call" href="tel:60299977556"><span class="dot"></span> Call</a>
+        <a class="chip" href="mailto:stallionsteelworks@gmail.com?subject=RV%20Shade%20Quote%20Request"><span class="dot"></span> Email</a>
+        <button class="toggle" id="themeToggle" type="button" title="Toggle light/dark">Toggle Theme</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="wrap">
+    <div class="hero" aria-label="RV shade build hero">
+      <div class="bg" aria-hidden="true"></div>
+      <div class="overlay" aria-hidden="true"></div>
+      <div class="content">
+        <div class="eyebrow"><span class="spark"></span> Welding + Fabrication Blog</div>
+        <h1>40-Foot RV Shade Build in Phoenix, AZ (C-Panel Roof)</h1>
+        <p class="lede">
+          This one was all about <strong>tall clearance</strong>, clean steel alignment, and a roof system that can take Arizona sun day after day.
+          Below is a detailed breakdown of how we built a <strong>40-foot RV shade</strong> using <strong>C-panel</strong> roofing—what we measured,
+          how we laid it out, how we welded it, and what makes it strong.
+        </p>
+
+        <div class="ctaRow" aria-label="Hero calls to action">
+          <a class="cta" href="tel:60299977556">Call 602-999-77556</a>
+          <a class="cta" href="mailto:stallionsteelworks@gmail.com?subject=RV%20Shade%20Quote%20Request&body=Name:%0D%0APhone:%0D%0ACity:%0D%0ARV%20height:%0D%0ALength%20needed:%0D%0AWidth%20needed:%0D%0AInstall%20timeline:%0D%0A%0D%0ADetails:%0D%0A">Email for Quote</a>
+          <a class="cta" href="/services/carport.html">View Carports</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article + Sidebar -->
+  <main class="wrap">
+    <div class="grid">
+      <!-- ARTICLE -->
+      <article class="panel" aria-label="RV shade article">
+        <div class="inner">
+          <h2>Project Summary</h2>
+          <p>
+            The goal was simple: build an RV shade that looks professional and feels “engineered,” not improvised.
+            The structure needed <strong>height for clearance</strong>, <strong>length for coverage</strong>, and a roof system that keeps the sun off
+            without looking bulky. We built a clean steel frame and topped it with <strong>C-panel roofing</strong> for a crisp look and reliable performance.
+          </p>
+
+          <ul class="list">
+            <li><span class="tick"></span><span><strong>Length:</strong> 40 feet of coverage (built in clean, straight bays so it reads “one piece”).</span></li>
+            <li><span class="tick"></span><span><strong>Use case:</strong> RV protection + comfortable access (doors, storage, and movement).</span></li>
+            <li><span class="tick"></span><span><strong>Roof system:</strong> C-panel for a modern profile and consistent lines.</span></li>
+            <li><span class="tick"></span><span><strong>Focus:</strong> alignment, weld quality, and long-term stability.</span></li>
+          </ul>
+
+          <div class="rule"></div>
+
+          <h3>Why C-Panel for an RV Shade?</h3>
+          <p>
+            A lot of people ask about the “roof choice.” We used <strong>C-panel</strong> because it gives you a clean, modern look and a straightforward
+            install process. It’s a profile that reads “commercial-grade,” it sheds water well, and it keeps the roof plane consistent across a long span.
+          </p>
+          <p>
+            The biggest benefit for a 40-foot build is <strong>repeatability</strong>: when your frame is straight and your panel layout is clean,
+            the final roof looks like it was designed that way from day one.
+          </p>
+
+          <div class="rule"></div>
+
+          <h3>Step 1: Layout, Measurements, and “Real Clearance”</h3>
+          <p>
+            RV shade projects live or die on clearance. It’s not just the height of the RV—it's antennas, AC units, roof accessories,
+            and the angle you enter/exit. Before steel gets cut, we confirm the <strong>real-world height</strong> and the space needed to move comfortably.
+          </p>
+          <p>
+            For a long structure like this, layout matters because small errors compound. We set reference lines, confirm the run, and make sure the bays
+            land where they should so the structure feels balanced and looks intentional from the street.
+          </p>
+
+          <h3>Step 2: Steel Prep That Makes Welding Cleaner</h3>
+          <p>
+            “Good welding” starts before the arc. We prep steel so joints fit tight, edges are clean, and connections land square.
+            When your fit-up is right, welds come out stronger and cleaner, and you spend less time fighting alignment later.
+          </p>
+
+          <ul class="list">
+            <li><span class="tick"></span><span><strong>Square cuts + consistent lengths</strong> so the frame stays true across the full 40 feet.</span></li>
+            <li><span class="tick"></span><span><strong>Clean mating surfaces</strong> for better weld penetration and a stronger joint.</span></li>
+            <li><span class="tick"></span><span><strong>Planned connection points</strong> so the roof plane stays flat and the panel lines stay straight.</span></li>
+          </ul>
+
+          <div class="rule"></div>
+
+          <h3>Step 3: Building 40 Feet Long Without “Wavy” Lines</h3>
+          <p>
+            Long steel structures can look bad fast if lines wander. The key is building in a controlled way so every section stays aligned.
+            We treat the frame like a system: posts, beams, and roof members working together—not random pieces thrown up on-site.
+          </p>
+          <p>
+            A 40-foot structure should read clean from far away: straight roof line, consistent bay spacing, and joints that look deliberate.
+            That’s what separates a professional build from something that feels like a weekend experiment.
+          </p>
+
+          <div class="mosaic" aria-label="Photo mosaic">
+            <div class="tile">
+              <div class="bg" style="background-image:url('../pics/RV-Shade-15FT-Tall.jpg')"></div>
+              <div class="veil" aria-hidden="true"></div>
+              <div class="label">
+                <small>Photo</small>
+                <b>Tall clearance + straight roof line</b>
+              </div>
+            </div>
+            <div style="display:grid; gap:14px">
+              <div class="tile" style="min-height: 123px">
+                <div class="bg" style="background-image:url('../pics/RV-Shade-2.jpg')"></div>
+                <div class="veil" aria-hidden="true"></div>
+                <div class="label">
+                  <small>Photo</small>
+                  <b>Clean geometry, modern look</b>
+                </div>
+              </div>
+              <div class="tile" style="min-height: 123px">
+                <div class="bg" style="background-image:url('../pics/Patio-Car-Shade-far.jfif')"></div>
+                <div class="veil" aria-hidden="true"></div>
+                <div class="label">
+                  <small>Related build</small>
+                  <b>Wide-span shade style</b>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rule"></div>
+
+          <h3>Step 4: Welding Choices That Matter (Strength + Looks)</h3>
+          <p>
+            When we say “obvious welding,” we mean this: the structure should look <strong>fabricated by a real welding shop</strong>—
+            not bolted together like an afterthought. Clean welds, correct joint design, and consistent finishing are the details customers notice.
+          </p>
+          <p>
+            We build joints for real stress: wind load, vibration, and daily movement. If you live in Arizona, you already know the sun is relentless—
+            but wind and time are what punish weak steel work. That’s why we focus on smart reinforcement and clean alignment at every connection.
+          </p>
+
+          <ul class="list">
+            <li><span class="tick"></span><span><strong>Joint design:</strong> built for load paths (so the frame shares stress instead of concentrating it).</span></li>
+            <li><span class="tick"></span><span><strong>Weld consistency:</strong> clean beads and predictable strength across the structure.</span></li>
+            <li><span class="tick"></span><span><strong>Finish readiness:</strong> built so it can be finished clean—no “lumpy” visuals.</span></li>
+          </ul>
+
+          <div class="rule"></div>
+
+          <h3>Step 5: Installing the C-Panel Roof (The Clean Finish)</h3>
+          <p>
+            Once the steel frame is square and stable, the roof install becomes a clean, professional step—not a fight.
+            C-panel goes on with a consistent rhythm, and the final look is what most customers want: modern, straight, and purposeful.
+          </p>
+          <p>
+            The roof is where the whole build “reads” as premium. When panel lines are clean and the frame is straight,
+            the structure looks intentional even to someone who knows nothing about welding.
+          </p>
+
+          <div class="rule"></div>
+
+          <h3>What This Build Solves for RV Owners</h3>
+          <p>
+            RV shade is not just about comfort. It’s about protecting your investment.
+            Shade reduces sun damage, helps preserve exterior surfaces, and makes the space usable year-round.
+          </p>
+
+          <ul class="list">
+            <li><span class="tick"></span><span><strong>Heat management:</strong> less direct sun means less stress on exterior materials.</span></li>
+            <li><span class="tick"></span><span><strong>Usability:</strong> you can access storage, doors, and gear without getting cooked.</span></li>
+            <li><span class="tick"></span><span><strong>Clean curb appeal:</strong> a straight, modern steel shade looks like a real upgrade.</span></li>
+          </ul>
+
+          <div class="rule"></div>
+
+          <h3>Want One Built for Your RV?</h3>
+          <p>
+            If you want an RV shade with a clean modern look, tall clearance, and pro welding—send us a photo of the space and your rough dimensions.
+            We’ll tell you the best layout, what’s realistic, and how to build it so it lasts.
+          </p>
+
+          <div class="ctaRow">
+            <a class="cta" href="tel:60299977556">Call 602-999-77556</a>
+            <a class="cta" href="mailto:stallionsteelworks@gmail.com?subject=RV%20Shade%20Quote%20Request&body=Name:%0D%0APhone:%0D%0ACity:%0D%0ARV%20height:%0D%0ALength%20needed:%0D%0AWidth%20needed:%0D%0AInstall%20timeline:%0D%0A%0D%0ADetails:%0D%0A">Email for Quote</a>
+            <a class="cta" href="/services/carport.html">See Carport Options</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside aria-label="Sidebar photos and quick info">
+        <div class="shot">
+          <div class="bg" style="background-image:url('../pics/RV-Shade-15FT-Tall.jpg')"></div>
+          <div class="cap">
+            <b>Tall Clearance Build</b>
+            <small>Designed to feel open, usable, and “not cramped” when parking and moving around.</small>
+          </div>
+        </div>
+
+        <div class="shot">
+          <div class="bg" style="background-image:url('../pics/RV-Shade-2.jpg')"></div>
+          <div class="cap">
+            <b>Clean Modern Geometry</b>
+            <small>Straight lines + consistent spacing makes the whole structure look premium.</small>
+          </div>
+        </div>
+
+        <div class="shot">
+          <div class="bg" style="background-image:url('../pics/Pool-ShadeThumb.jpg')"></div>
+          <div class="cap">
+            <b>Related Builds</b>
+            <small>We also fabricate shade structures for patios, pools, and wide-span carports.</small>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="inner">
+            <h3 style="margin-top:0">Fast Quote Checklist</h3>
+            <ul class="list">
+              <li><span class="tick"></span><span><strong>RV height</strong> (include AC/antenna)</span></li>
+              <li><span class="tick"></span><span><strong>Coverage length</strong> you want (ex: 40 ft)</span></li>
+              <li><span class="tick"></span><span><strong>Width</strong> for doors + access</span></li>
+              <li><span class="tick"></span><span><strong>Photo of the space</strong> + where posts can go</span></li>
+            </ul>
+            <div class="rule"></div>
+            <a class="chip call" href="tel:60299977556"><span class="dot"></span> Call Now</a>
+            <a class="chip" href="mailto:stallionsteelworks@gmail.com?subject=RV%20Shade%20Quote%20Request"><span class="dot"></span> Email</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div class="wrap" style="max-width:1080px">
+        <p style="margin:0 0 10px 0">
+          <strong>Stallion SteelWorks Welding</strong> — Phoenix, AZ. Custom metal fabrication, welded furniture, steel doors, gates, railings, frames, brackets, repairs.
+        </p>
+        <p style="margin:0">
+          Call <strong><a href="tel:60299977556">602-999-77556</a></strong> • Email <strong><a href="mailto:stallionsteelworks@gmail.com">stallionsteelworks@gmail.com</a></strong>
+          • Back to home: <strong><a href="/">welding.stallionsteelworks.com</a></strong>
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Sticky bottom CTA -->
+  <div class="sticky" role="region" aria-label="Contact bar">
+    <div class="sticky-inner">
+      <div>
+        <div><strong>Want an RV shade built right?</strong></div>
+        <div class="mini">Call or email now — fast quote + clear next steps.</div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">
+        <a class="pill call" href="tel:60299977556"><span class="icon"></span> Call 602-999-77556</a>
+        <a class="pill email" href="mailto:stallionsteelworks@gmail.com?subject=RV%20Shade%20Quote%20Request&body=Name:%0D%0APhone:%0D%0ACity:%0D%0ARV%20height:%0D%0ALength%20needed:%0D%0AWidth%20needed:%0D%0AInstall%20timeline:%0D%0A%0D%0ADetails:%0D%0A"><span class="icon"></span> Email for Quote</a>
+        <a class="pill" href="/services/carport.html"><span class="icon"></span> Carports</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle (light default) with localStorage + prefers-color-scheme fallback
+    (function initTheme(){
+      const root = document.documentElement;
+      const saved = localStorage.getItem("ssw_theme");
+      if(saved === "light" || saved === "dark"){
+        root.setAttribute("data-theme", saved);
+      } else {
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        root.setAttribute("data-theme", prefersDark ? "dark" : "light");
+      }
+      const btn = document.getElementById("themeToggle");
+      btn.addEventListener("click", () => {
+        const cur = root.getAttribute("data-theme") || "light";
+        const next = (cur === "dark") ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        localStorage.setItem("ssw_theme", next);
+      });
+    })();
+  </script>
+</body>
+</html>
