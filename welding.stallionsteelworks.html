@@ -1225,7 +1225,7 @@
 
               <!-- NEW: contextual link here too -->
               <div style="margin-top:10px;">
-                <a class="cta alt" href="carport.html" title="See carport examples"><span class="dot"></span> See Carport Builds</a>
+                <a class="cta alt" href="./services/gallery.html" title="See carport examples"><span class="dot"></span> See Carport Builds</a>
               </div>
             </div>
           </div>
@@ -1392,7 +1392,7 @@
             jump to the dedicated page with examples and options.
           </p>
           <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="cta alt" href="carport.html"><span class="dot"></span> Go to Carports</a>
+            <a class="cta alt" href="./services/carport.html"><span class="dot"></span> Go to Carports</a>
             <a class="cta" href="#quote"><span class="dot"></span> Quote It</a>
           </div>
         </div>
@@ -1553,7 +1553,7 @@
 
           <!-- NEW: link also in footer-adjacent contact card -->
           <div style="margin-top:12px;">
-            <a class="cta alt" href="carport.html"><span class="dot"></span> Carports Page</a>
+            <a class="cta alt" href="./services/carport.html"><span class="dot"></span> Carports Page</a>
           </div>
         </div>
       </section>
@@ -1566,7 +1566,7 @@
         <p style="margin:0">
           Call <strong><a href="tel:60299977556">602-999-77556</a></strong> • Email <strong><a href="mailto:stallionsteelworks@gmail.com">stallionsteelworks@gmail.com</a></strong>
           • Main site: <strong><a href="https://stallionsteelworks.com/">stallionsteelworks.com</a></strong>
-          • Carports: <strong><a href="carport.html">carport.html</a></strong>
+          • Carports: <strong><a href="./servcies/carport.html">carport.html</a></strong>
         </p>
       </footer>
     </div>
@@ -1585,97 +1585,103 @@
         <a class="pill" href="#quote"><span class="icon"></span> Quote Form</a>
 
         <!-- NEW: sticky bar link to carport.html -->
-        <a class="pill" href="carport.html" title="Carports"><span class="icon"></span> Carports</a>
+        <a class="pill" href="./services/carport.html" title="Carports"><span class="icon"></span> Carports</a>
       </div>
     </div>
   </div>
 
   <script>
-    // Text/Call button (mobile-first)
-    document.getElementById("textButton").addEventListener("click", () => {
+  // Text/Call button (mobile-first) — SAFE even if button isn't present
+  const textBtn = document.getElementById("textButton");
+  if (textBtn) {
+    textBtn.addEventListener("click", () => {
       window.location.href = "tel:60299977556";
     });
+  }
 
-    // Theme toggle (light default) with localStorage + prefers-color-scheme fallback
-    (function initTheme(){
-      const root = document.documentElement;
-      const label = document.getElementById("themeLabel");
-      const saved = localStorage.getItem("ssw_theme");
+  // Theme toggle (light default) with localStorage + prefers-color-scheme fallback
+  (function initTheme(){
+    const root = document.documentElement;
+    const label = document.getElementById("themeLabel");
+    const toggle = document.getElementById("themeToggle");
+    if (!label || !toggle) return;
 
-      if(saved === "light" || saved === "dark"){
-        root.setAttribute("data-theme", saved);
-      } else {
-        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-        root.setAttribute("data-theme", prefersDark ? "dark" : "light");
-      }
+    const saved = localStorage.getItem("ssw_theme");
 
-      function syncLabel(){
-        const t = root.getAttribute("data-theme") || "light";
-        label.textContent = (t === "dark") ? "Dark Mode" : "Light Mode";
-      }
+    if(saved === "light" || saved === "dark"){
+      root.setAttribute("data-theme", saved);
+    } else {
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      root.setAttribute("data-theme", prefersDark ? "dark" : "light");
+    }
+
+    function syncLabel(){
+      const t = root.getAttribute("data-theme") || "light";
+      label.textContent = (t === "dark") ? "Dark Mode" : "Light Mode";
+    }
+    syncLabel();
+
+    toggle.addEventListener("click", () => {
+      const cur = root.getAttribute("data-theme") || "light";
+      const next = (cur === "dark") ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("ssw_theme", next);
       syncLabel();
+    });
+  })();
 
-      document.getElementById("themeToggle").addEventListener("click", () => {
-        const cur = root.getAttribute("data-theme") || "light";
-        const next = (cur === "dark") ? "light" : "dark";
-        root.setAttribute("data-theme", next);
-        localStorage.setItem("ssw_theme", next);
-        syncLabel();
-      });
-    })();
+  // Automatic random glimmer (no cursor needed)
+  (function autoGlimmer(){
+    const targets = Array.from(document.querySelectorAll(".has-glimmer"));
+    if(!targets.length) return;
 
-    // Automatic random glimmer (no cursor needed)
-    (function autoGlimmer(){
-      const targets = Array.from(document.querySelectorAll(".has-glimmer"));
-      if(!targets.length) return;
+    const r = (min,max)=>Math.floor(Math.random()*(max-min+1))+min;
 
-      const r = (min,max)=>Math.floor(Math.random()*(max-min+1))+min;
-
-      function sweep(){
-        const count = r(1, Math.min(3, targets.length));
-        const picked = new Set();
-        while(picked.size < count){
-          picked.add(targets[r(0, targets.length-1)]);
-        }
-
-        picked.forEach((el, idx) => {
-          const delay = r(0, 420) + (idx*90);
-          setTimeout(() => {
-            const dur = r(1100, 2100);
-            el.style.setProperty("--gdur", dur + "ms");
-            el.setAttribute("data-glimmer","on");
-            setTimeout(() => el.removeAttribute("data-glimmer"), dur + 120);
-          }, delay);
-        });
-
-        const nextIn = r(1400, 2600);
-        setTimeout(sweep, nextIn);
+    function sweep(){
+      const count = r(1, Math.min(3, targets.length));
+      const picked = new Set();
+      while(picked.size < count){
+        picked.add(targets[r(0, targets.length-1)]);
       }
 
-      setTimeout(() => {
-        targets.slice(0, Math.min(4, targets.length)).forEach((el, i) => {
-          setTimeout(() => {
-            el.style.setProperty("--gdur", (1400 + i*120) + "ms");
-            el.setAttribute("data-glimmer","on");
-            setTimeout(() => el.removeAttribute("data-glimmer"), 1700 + i*120);
-          }, 250 + i*180);
-        });
-      }, 250);
-
-      setTimeout(sweep, 1200);
-    })();
-
-    // Smooth scroll (anchors only)
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener("click",(e)=>{
-        const id = a.getAttribute("href");
-        if(!id || id === "#") return;
-        const el = document.querySelector(id);
-        if(!el) return;
-        e.preventDefault();
-        el.scrollIntoView({behavior:"smooth", block:"start"});
+      picked.forEach((el, idx) => {
+        const delay = r(0, 420) + (idx*90);
+        setTimeout(() => {
+          const dur = r(1100, 2100);
+          el.style.setProperty("--gdur", dur + "ms");
+          el.setAttribute("data-glimmer","on");
+          setTimeout(() => el.removeAttribute("data-glimmer"), dur + 120);
+        }, delay);
       });
+
+      const nextIn = r(1400, 2600);
+      setTimeout(sweep, nextIn);
+    }
+
+    setTimeout(() => {
+      targets.slice(0, Math.min(4, targets.length)).forEach((el, i) => {
+        setTimeout(() => {
+          el.style.setProperty("--gdur", (1400 + i*120) + "ms");
+          el.setAttribute("data-glimmer","on");
+          setTimeout(() => el.removeAttribute("data-glimmer"), 1700 + i*120);
+        }, 250 + i*180);
+      });
+    }, 250);
+
+    setTimeout(sweep, 1200);
+  })();
+
+  // Smooth scroll (anchors only)
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener("click",(e)=>{
+      const id = a.getAttribute("href");
+      if(!id || id === "#") return;
+      const el = document.querySelector(id);
+      if(!el) return;
+      e.preventDefault();
+      el.scrollIntoView({behavior:"smooth", block:"start"});
     });
-  </script>
+  });
+</script>
 </body>
 </html>
