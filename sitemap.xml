@@ -65,6 +65,23 @@
     <loc>https://welding.stallionsteelworks.com/#service-area</loc>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
+  </url> 
+
+
+  <!-- Services: Gallery -->
+  <url>
+    <loc>https://welding.stallionsteelworks.com/services/gallery.html</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url> 
+
+    <!-- Shade Structures -->
+  <url>
+    <loc>https://welding.stallionsteelworks.com/services/shade.html</loc>
+    <lastmod>2025-12-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- =========================
@@ -74,6 +91,29 @@
     <loc>https://stallionsteelworks.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
-  </url>
+  </url> 
+
+  <url>
+  <loc>https://welding.stallionsteelworks.com/services/carport-shade-scottsdale.html</loc>
+  <lastmod>2025-12-26</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.95</priority>
+
+  <!-- Primary visuals for rich results -->
+  <image:image>
+    <image:loc>https://welding.stallionsteelworks.com/pics/Patio-Car-Shade-enhanced.jpg</image:loc>
+    <image:title>Scottsdale AZ Carport & Shade Structures</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://welding.stallionsteelworks.com/pics/RV-Shade-15FT-Tall-enhanced.jpg</image:loc>
+    <image:title>RV Carport Shade – Tall Clearance Scottsdale</image:title>
+  </image:image>
+
+  <image:image>
+    <image:loc>https://welding.stallionsteelworks.com/pics/Pool-Shade-enhanced.jpg</image:loc>
+    <image:title>Residential Pool Shade Structure Scottsdale AZ</image:title>
+  </image:image>
+</url>
 
 </urlset>

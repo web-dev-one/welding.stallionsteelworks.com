@@ -15,51 +15,53 @@
   <meta property="og:description" content="Custom welded pieces: doors, gates, railings, furniture, frames, shade + repairs. Fast quote. Call 602-999-77556." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://welding.stallionsteelworks.com/" />
-  <link rel="icon" href="/favicon.ico" sizes="any">
+
+  <link rel="icon" href="./pics/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" sizes="180x180" href="/pics/apple-touch-icon.png">
-
-
 
   <style>
     /* =========================================================
        THEME SYSTEM (LIGHT DEFAULT + DARK TOGGLE)
+       Sleeker tokens, less “busy”, sharper contrast.
        ========================================================= */
     :root{
       --radius: 18px;
-      --radius2: 26px;
-      --shadow: 0 18px 38px rgba(0,0,0,.12);
-      --shadow2: 0 10px 28px rgba(0,0,0,.10);
+      --radius2: 28px;
 
-      --h1: clamp(2.35rem, 4.4vw, 3.7rem);
-      --h2: clamp(1.6rem, 2.5vw, 2.35rem);
-      --h3: clamp(1.15rem, 1.85vw, 1.55rem);
-      --p:  clamp(1.05rem, 1.55vw, 1.2rem);
-      --small: clamp(.95rem, 1.15vw, 1.05rem);
+      --h1: clamp(2.35rem, 4.6vw, 3.9rem);
+      --h2: clamp(1.65rem, 2.6vw, 2.5rem);
+      --h3: clamp(1.15rem, 1.9vw, 1.6rem);
+      --p:  clamp(1.05rem, 1.55vw, 1.22rem);
+      --small: clamp(.95rem, 1.15vw, 1.06rem);
 
-      /* brand accents (kept) */
+      /* brand accents */
       --neon: #22e6c8;
       --neon2:#1aa8ff;
       --warning:#ffcc59;
 
-      /* LIGHT THEME TOKENS */
-      --bg0: #f6f9fc;
+      /* LIGHT THEME */
+      --bg0: #f4f7fb;
       --bg1: #ffffff;
       --ink: #0b1220;
-      --muted: #2f3a4a;
-      --muted2:#526072;
+      --muted: #334154;
+      --muted2:#5a6a7f;
       --line: rgba(14, 25, 43, .10);
 
-      --panel: rgba(255,255,255,.82);
-      --panel2: rgba(255,255,255,.92);
-      --glass: rgba(255,255,255,.66);
+      --glass: rgba(255,255,255,.62);
+      --panel: rgba(255,255,255,.74);
+      --panel2: rgba(255,255,255,.88);
 
       --cardEdge: rgba(14,25,43,.10);
-      --cardEdge2: rgba(14,25,43,.14);
+      --cardEdge2: rgba(14,25,43,.16);
 
-      /* readable overlay for photo backgrounds */
+      /* Shadows: sharper, less heavy */
+      --shadow: 0 14px 30px rgba(0,0,0,.10);
+      --shadow2: 0 10px 22px rgba(0,0,0,.08);
+
+      /* overlays */
       --photoOverlayA: rgba(255,255,255,.86);
-      --photoOverlayB: rgba(255,255,255,.66);
-      --photoOverlayC: rgba(255,255,255,.25);
+      --photoOverlayB: rgba(255,255,255,.62);
+      --photoOverlayC: rgba(255,255,255,.22);
 
       color-scheme: light;
     }
@@ -68,22 +70,22 @@
       --bg0:#07090b;
       --bg1:#0b0f14;
       --ink:#e9eef5;
-      --muted:#b7c1cc;
-      --muted2:#8f9aa6;
+      --muted:#c0c9d4;
+      --muted2:#95a3b2;
       --line:rgba(233,238,245,.12);
 
-      --panel: rgba(10,14,18,.70);
-      --panel2: rgba(10,14,18,.88);
-      --glass: rgba(7,9,11,.60);
+      --glass: rgba(7,9,11,.52);
+      --panel: rgba(10,14,18,.64);
+      --panel2: rgba(10,14,18,.82);
 
       --cardEdge: rgba(233,238,245,.12);
-      --cardEdge2: rgba(233,238,245,.16);
+      --cardEdge2: rgba(233,238,245,.18);
 
-      --shadow: 0 18px 40px rgba(0,0,0,.55);
-      --shadow2: 0 10px 28px rgba(0,0,0,.45);
+      --shadow: 0 18px 40px rgba(0,0,0,.50);
+      --shadow2: 0 12px 26px rgba(0,0,0,.40);
 
-      --photoOverlayA: rgba(7,9,11,.72);
-      --photoOverlayB: rgba(7,9,11,.55);
+      --photoOverlayA: rgba(7,9,11,.74);
+      --photoOverlayB: rgba(7,9,11,.56);
       --photoOverlayC: rgba(7,9,11,.22);
 
       color-scheme: dark;
@@ -96,9 +98,9 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--ink);
       background:
-        radial-gradient(1100px 800px at 16% 8%, rgba(34,230,200,.14), transparent 60%),
-        radial-gradient(950px 700px at 86% 16%, rgba(26,168,255,.14), transparent 58%),
-        radial-gradient(950px 700px at 50% 100%, rgba(255,204,89,.11), transparent 62%),
+        radial-gradient(1100px 800px at 16% 8%, rgba(34,230,200,.10), transparent 60%),
+        radial-gradient(950px 700px at 86% 16%, rgba(26,168,255,.10), transparent 58%),
+        radial-gradient(950px 700px at 50% 110%, rgba(255,204,89,.08), transparent 62%),
         linear-gradient(180deg, var(--bg0), var(--bg1));
       overflow-x:hidden;
       letter-spacing:.2px;
@@ -108,127 +110,86 @@
     .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
 
     /* =========================================================
-       IMAGE ASSETS (place these files in /pics/)
-       =========================================================
-       pics/Welding banner.png
-       pics/shade-installation.jpg
-       pics/MareMotelHayBarn.jpg
-       pics/Patio-Car-Shade.jfif
-       pics/Patio-Car-Shade-far.jfif
-       pics/Pool-Shade.jpg
-       pics/Pool-ShadeThumb.jpg
-       pics/RV-Shade-2.jpg
-       pics/RV-Shade-15FT-Tall.jpg
-    */
-
-    /* =========================================================
-       TOP HERO BANNER (USES YOUR PROVIDED BANNER IMAGE)
+       TOP HERO (FULL BLEED BACKGROUND, MORE OPEN)
+       Replace old banner image with a clicky hero.
+       Put Hero-Banner.webp (recommended) or .jpg in /pics/
        ========================================================= */
-    .top-hero-banner{
+    .hero-top{
       position:relative;
-      border-bottom:1px solid var(--line);
-      background:
-        radial-gradient(1200px 520px at 10% 10%, rgba(34,230,200,.16), transparent 58%),
-        radial-gradient(900px 520px at 90% 20%, rgba(26,168,255,.14), transparent 58%),
-        linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.35));
+      min-height: clamp(440px, 62vh, 720px);
+      overflow:hidden;
+      border-bottom: 1px solid var(--line);
+      background: #000;
     }
-    html[data-theme="dark"] .top-hero-banner{
-      background:
-        radial-gradient(1200px 520px at 10% 10%, rgba(34,230,200,.12), transparent 58%),
-        radial-gradient(900px 520px at 90% 20%, rgba(26,168,255,.10), transparent 58%),
-        linear-gradient(180deg, rgba(7,9,11,.92), rgba(11,15,20,.76));
+    .hero-top .bg{
+      position:absolute; inset:0;
+      background-image: url("pics/Hero-Banner.webp");
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.03);
+      filter: saturate(1.05) contrast(1.03);
+    }
+    html[data-theme="dark"] .hero-top .bg{
+      filter: saturate(1.0) contrast(1.02) brightness(.92);
     }
 
-    .top-hero-inner{
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 18px 18px;
+    /* Sleek overlay: keeps text readable without killing the photo */
+    .hero-top .overlay{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg,
+          rgba(255,255,255,.86),
+          rgba(255,255,255,.55) 52%,
+          rgba(255,255,255,.12) 100%),
+        radial-gradient(900px 520px at 18% 30%, rgba(34,230,200,.14), transparent 62%),
+        radial-gradient(900px 520px at 70% 35%, rgba(26,168,255,.12), transparent 62%);
     }
-    .top-hero-img{
-      display:block;
-      width:100%;
-      height:auto;
-      max-height: 260px;     /* mobile baseline */
-      object-fit: contain;   /* never crops logo text */
-      border-radius: 18px;
-      box-shadow: var(--shadow2);
-      background: rgba(255,255,255,.35);
+    html[data-theme="dark"] .hero-top .overlay{
+      background:
+        linear-gradient(90deg,
+          rgba(7,9,11,.78),
+          rgba(7,9,11,.50) 52%,
+          rgba(7,9,11,.14) 100%),
+        radial-gradient(900px 520px at 18% 30%, rgba(34,230,200,.14), transparent 62%),
+        radial-gradient(900px 520px at 70% 35%, rgba(26,168,255,.12), transparent 62%);
     }
-    html[data-theme="dark"] .top-hero-img{
-      background: rgba(0,0,0,.15);
-    }
-    @media (min-width: 1024px){
-      .top-hero-inner{padding: 26px 18px;}
-      .top-hero-img{max-height: 430px; border-radius: 22px;}
-    }
-    @media (min-width: 768px) and (max-width: 1023px){
-      .top-hero-img{max-height: 340px;}
+
+    .hero-top .inner{
+      position:relative;
+      padding: 26px 0 26px;
     }
 
     /* =========================================================
-       STICKY MASTHEAD
+       STICKY MASTHEAD (cleaner, thinner, sharper)
        ========================================================= */
     .masthead{
       position:sticky;
       top:0;
       z-index:80;
       background: var(--glass);
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(16px);
       border-bottom:1px solid var(--line);
     }
 
-    .banner{
-      position:relative;
-      overflow:hidden;
-      border-bottom:1px solid var(--line);
-      background:
-        radial-gradient(1200px 520px at 8% 10%, rgba(34,230,200,.12), transparent 58%),
-        radial-gradient(900px 520px at 92% 20%, rgba(26,168,255,.12), transparent 58%),
-        radial-gradient(900px 520px at 50% 120%, rgba(255,204,89,.10), transparent 62%),
-        linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.35));
-    }
-    html[data-theme="dark"] .banner{
-      background:
-        radial-gradient(1200px 520px at 8% 10%, rgba(34,230,200,.12), transparent 58%),
-        radial-gradient(900px 520px at 92% 20%, rgba(26,168,255,.10), transparent 58%),
-        radial-gradient(900px 520px at 50% 120%, rgba(255,204,89,.08), transparent 62%),
-        linear-gradient(180deg, rgba(7,9,11,.84), rgba(11,15,20,.64));
-    }
-
-    .banner:before{
-      content:"";
-      position:absolute; inset:-60%;
-      background:
-        repeating-linear-gradient(90deg,
-          rgba(255,255,255,.40) 0 1px,
-          transparent 1px 18px);
-      transform: rotate(10deg);
-      opacity:.10;
-      pointer-events:none;
-    }
-    html[data-theme="dark"] .banner:before{opacity:.08}
-
-    .banner-inner{
-      position:relative;
-      padding:14px 0 12px;
-      display:grid;
-      grid-template-columns: 1fr auto 1fr;
+    .mast-inner{
+      display:flex;
       align-items:center;
-      gap:14px;
-      min-height: 112px;
+      justify-content:space-between;
+      gap:12px;
+      padding: 12px 0;
     }
 
     .brand-left{
       display:flex;
       flex-direction:column;
       gap:6px;
-      min-width: 220px;
+      min-width: 240px;
     }
     .mini-kicker{
       display:inline-flex;
       align-items:center;
       gap:10px;
-      font-size:.95rem;
+      font-size:.92rem;
       color:var(--muted2);
       letter-spacing:.9px;
       text-transform:uppercase;
@@ -236,13 +197,13 @@
     .mini-kicker .spark{
       width:10px;height:10px;border-radius:999px;
       background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.6), rgba(34,230,200,.35));
-      box-shadow: 0 0 18px rgba(34,230,200,.25);
+      box-shadow: 0 0 16px rgba(34,230,200,.22);
       border:1px solid rgba(255,255,255,.35);
     }
 
     .brand-left h1{
       margin:0;
-      font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+      font-size: clamp(1.1rem, 1.6vw, 1.34rem);
       line-height:1.05;
       letter-spacing:.7px;
       text-transform:uppercase;
@@ -254,57 +215,6 @@
       line-height:1.25;
     }
 
-    .banner-logo{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-    .logo-frame{
-      position:relative;
-      border-radius: 22px;
-      padding: 10px 16px;
-      background:
-        radial-gradient(560px 140px at 20% 30%, rgba(34,230,200,.14), transparent 60%),
-        radial-gradient(560px 160px at 80% 60%, rgba(26,168,255,.12), transparent 65%),
-        linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.15));
-      border:1px solid var(--cardEdge2);
-      box-shadow: var(--shadow2);
-      overflow:hidden;
-    }
-    html[data-theme="dark"] .logo-frame{
-      background:
-        radial-gradient(560px 140px at 20% 30%, rgba(34,230,200,.12), transparent 60%),
-        radial-gradient(560px 160px at 80% 60%, rgba(26,168,255,.10), transparent 65%),
-        linear-gradient(180deg, rgba(255,255,255,.05), rgba(0,0,0,0));
-    }
-    .logo-frame:before{
-      content:"";
-      position:absolute; inset:-35%;
-      background: conic-gradient(from 170deg,
-        transparent 0 20%,
-        rgba(255,255,255,.26) 20% 26%,
-        transparent 26% 56%,
-        rgba(34,230,200,.18) 56% 62%,
-        transparent 62% 100%);
-      animation: spin 10s linear infinite;
-      opacity:.42;
-      pointer-events:none;
-    }
-    html[data-theme="dark"] .logo-frame:before{opacity:.35}
-    .logo-frame img{
-      position:relative;
-      display:block;
-      height: clamp(78px, 9vw, 108px);
-      width:auto;
-      max-width: min(520px, 60vw);
-      object-fit: contain;
-      filter: drop-shadow(0 12px 22px rgba(0,0,0,.22));
-      opacity: .98;
-    }
-    html[data-theme="dark"] .logo-frame img{
-      filter: drop-shadow(0 14px 26px rgba(0,0,0,.55));
-    }
-
     .banner-actions{
       display:flex;
       justify-content:flex-end;
@@ -313,76 +223,54 @@
       flex-wrap:wrap;
     }
 
-    .cta{
+    .cta, .toggle{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
       padding:11px 14px;border-radius:999px;
-      background:
-        radial-gradient(700px 140px at 15% 40%, rgba(34,230,200,.18), transparent 55%),
-        radial-gradient(700px 140px at 85% 60%, rgba(26,168,255,.16), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.20));
       border:1px solid var(--cardEdge2);
+      background: rgba(255,255,255,.58);
       box-shadow: var(--shadow2);
       font-weight:900;
       letter-spacing:.35px;
-      transition: transform .15s ease, filter .2s ease, border-color .2s ease;
+      transition: transform .15s ease, filter .2s ease, border-color .2s ease, background .2s ease;
       font-size: var(--small);
       white-space:nowrap;
     }
-    html[data-theme="dark"] .cta{
-      background:
-        radial-gradient(700px 140px at 15% 40%, rgba(34,230,200,.18), transparent 55%),
-        radial-gradient(700px 140px at 85% 60%, rgba(26,168,255,.16), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,0));
+    html[data-theme="dark"] .cta,
+    html[data-theme="dark"] .toggle{
+      background: rgba(255,255,255,.05);
       border:1px solid rgba(233,238,245,.18);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow2);
     }
-    .cta:hover{transform: translateY(-1px); filter: brightness(1.03); border-color:rgba(34,230,200,.34)}
+    .cta:hover, .toggle:hover{transform: translateY(-1px); filter: brightness(1.03); border-color:rgba(26,168,255,.26)}
     .cta .dot{
       width:10px;height:10px;border-radius:999px;
       background: radial-gradient(circle at 30% 30%, var(--neon), rgba(34,230,200,.18));
-      box-shadow: 0 0 18px rgba(34,230,200,.35);
+      box-shadow: 0 0 16px rgba(34,230,200,.28);
     }
-    .cta.alt:hover{border-color:rgba(26,168,255,.32)}
-    .cta.alt .dot{background: radial-gradient(circle at 30% 30%, var(--neon2), rgba(26,168,255,.18)); box-shadow: 0 0 18px rgba(26,168,255,.30)}
+    .cta.alt .dot{
+      background: radial-gradient(circle at 30% 30%, var(--neon2), rgba(26,168,255,.18));
+      box-shadow: 0 0 16px rgba(26,168,255,.22);
+    }
 
-    /* theme toggle button */
-    .toggle{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:11px 14px;
-      border-radius:999px;
-      border:1px solid var(--cardEdge2);
-      background: rgba(255,255,255,.55);
-      box-shadow: var(--shadow2);
-      cursor:pointer;
-      font-weight:900;
-      letter-spacing:.35px;
-      font-size: var(--small);
-      user-select:none;
-      transition: transform .15s ease, filter .2s ease;
-    }
-    html[data-theme="dark"] .toggle{
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(233,238,245,.18);
-      box-shadow: var(--shadow);
-    }
-    .toggle:hover{transform: translateY(-1px); filter: brightness(1.03)}
+    .toggle{cursor:pointer; user-select:none}
     .toggle .sunmoon{
       width:10px;height:10px;border-radius:999px;
       background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.8), rgba(255,204,89,.55));
-      box-shadow: 0 0 18px rgba(255,204,89,.22);
-      border:1px solid rgba(255,255,255,.35);
+      box-shadow: 0 0 16px rgba(255,204,89,.18);
+      border:1px solid rgba(255,255,255,.30);
     }
 
     .navrow{
-      position:relative;
       padding: 10px 0 12px;
+      border-top:1px solid rgba(255,255,255,.0);
     }
     .navrow:before{
       content:"";
-      position:absolute; left:0; right:0; top:0;
+      display:block;
       height:1px;
-      background: linear-gradient(90deg, transparent, rgba(34,230,200,.28), rgba(26,168,255,.22), transparent);
+      background: linear-gradient(90deg, transparent, rgba(34,230,200,.24), rgba(26,168,255,.20), transparent);
       opacity:.9;
+      margin-bottom:10px;
     }
     nav.primary{
       display:flex;
@@ -419,7 +307,7 @@
       border-color: rgba(34,230,200,.30);
       background: rgba(34,230,200,.14);
       color: var(--ink);
-      box-shadow: 0 0 24px rgba(34,230,200,.10);
+      box-shadow: 0 0 18px rgba(34,230,200,.08);
       font-weight:900;
     }
     html[data-theme="dark"] .navlink.hot{
@@ -427,15 +315,21 @@
       background: rgba(34,230,200,.08);
       border-color: rgba(34,230,200,.26);
     }
+    .navlink.page{
+      border-color: rgba(26,168,255,.26);
+      background: rgba(26,168,255,.10);
+      color: var(--ink);
+      font-weight: 900;
+      box-shadow: 0 0 18px rgba(26,168,255,.07);
+    }
+    html[data-theme="dark"] .navlink.page{
+      background: rgba(26,168,255,.08);
+      border-color: rgba(26,168,255,.22);
+      color: rgba(233,238,245,.96);
+    }
 
     @media (max-width: 980px){
-      .banner-inner{
-        grid-template-columns: 1fr;
-        text-align:center;
-        padding: 12px 0 10px;
-        gap:10px;
-        min-height: 148px;
-      }
+      .mast-inner{flex-direction:column; text-align:center}
       .brand-left{align-items:center; min-width:unset}
       .banner-actions{justify-content:center}
       nav.primary{
@@ -451,46 +345,19 @@
     }
 
     /* =========================================================
-       PHOTO BACKDROP SECTIONS
+       HERO CONTENT BLOCK (inside top hero)
        ========================================================= */
-    .photo-band{
-      position:relative;
-      border-radius: var(--radius2);
-      overflow:hidden;
-      box-shadow: var(--shadow);
-      border:1px solid var(--cardEdge);
-      margin-top:18px;
-    }
-    .photo-band .bg{
-      position:absolute; inset:0;
-      background-size: cover;
-      background-position: center;
-      filter: saturate(1.06) contrast(1.02);
-      transform: scale(1.02);
-    }
-    html[data-theme="dark"] .photo-band .bg{filter: saturate(1.0) contrast(1.0) brightness(.92)}
-    .photo-band .overlay{
-      position:absolute; inset:0;
-      background:
-        linear-gradient(90deg, var(--photoOverlayA), var(--photoOverlayB) 55%, var(--photoOverlayC)),
-        radial-gradient(800px 420px at 25% 40%, rgba(34,230,200,.14), transparent 62%),
-        radial-gradient(800px 420px at 78% 45%, rgba(26,168,255,.12), transparent 62%);
-    }
-    .photo-band .content{
-      position:relative;
-      padding: 26px;
+    .hero-grid{
       display:grid;
-      grid-template-columns: 1.25fr .75fr;
+      grid-template-columns: 1.15fr .85fr;
       gap:16px;
       align-items:stretch;
+      padding-top: 20px;
     }
-    @media (max-width: 980px){
-      .photo-band .content{grid-template-columns:1fr}
+    @media(max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
     }
 
-    /* =========================================================
-       PANELS / CARDS
-       ========================================================= */
     .panel{
       border-radius: var(--radius2);
       box-shadow: var(--shadow);
@@ -498,32 +365,33 @@
       position:relative;
       border:1px solid var(--cardEdge);
       background: var(--panel);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
-    .panel-inner{padding:26px}
-    header.hero{padding:22px 0 10px; position:relative;}
-    .hero h2{
-      margin:0 0 10px 0;
+    .panel-inner{padding:28px}
+
+    .hero-copy h2{
+      margin:0 0 12px 0;
       font-size:var(--h1);
-      letter-spacing:.6px;
-      line-height:1.05;
+      letter-spacing:.5px;
+      line-height:1.03;
     }
-    .hero p{
+    .hero-copy p{
       margin:12px 0;
       font-size:var(--p);
       color:var(--muted);
-      line-height:1.55;
+      line-height:1.6;
       max-width:72ch;
     }
-    .tagrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+    .tagrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
     .tag{
       display:inline-flex;gap:10px;align-items:center;
       padding:10px 12px;border-radius:999px;
       border:1px solid var(--cardEdge);
-      background: rgba(255,255,255,.52);
+      background: rgba(255,255,255,.54);
       color:var(--muted);
       font-size:var(--small);
-      box-shadow: 0 10px 22px rgba(0,0,0,.06);
+      box-shadow: 0 10px 18px rgba(0,0,0,.05);
     }
     html[data-theme="dark"] .tag{
       background: rgba(255,255,255,.03);
@@ -541,12 +409,12 @@
     .divider{height:1px;background:var(--line);margin:16px 0;}
     .neonline{
       height:1px;
-      background: linear-gradient(90deg, transparent, rgba(34,230,200,.35), rgba(26,168,255,.26), transparent);
+      background: linear-gradient(90deg, transparent, rgba(34,230,200,.32), rgba(26,168,255,.22), transparent);
       margin:14px 0;
       opacity:.9;
     }
 
-    /* Quote funnel panel */
+    /* Quote funnel */
     .quote-box{height:100%;display:flex;flex-direction:column;gap:12px;}
     .quote-title{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
     .kicker{
@@ -569,7 +437,7 @@
       color: var(--ink);
       font-size: .95rem;
       white-space:nowrap;
-      box-shadow: 0 0 22px rgba(34,230,200,.10);
+      box-shadow: 0 0 18px rgba(34,230,200,.08);
       font-weight:900;
     }
     html[data-theme="dark"] .badge{
@@ -578,82 +446,16 @@
       border:1px solid rgba(34,230,200,.25);
     }
 
-    form{display:grid;gap:10px;margin-top:6px;}
-    label{font-size:var(--small);color:var(--muted2);}
-    input, textarea, select{
-      width:100%;
-      padding:14px 14px;
-      border-radius:14px;
-      border:1px solid var(--cardEdge);
-      background: rgba(255,255,255,.78);
-      color:var(--ink);
-      outline:none;
-      font-size: 1.05rem;
-      transition: border-color .18s ease, box-shadow .18s ease, transform .12s ease, background .18s ease;
-    }
-    html[data-theme="dark"] input,
-    html[data-theme="dark"] textarea,
-    html[data-theme="dark"] select{
-      background: rgba(0,0,0,.22);
-      border:1px solid rgba(233,238,245,.12);
-      color:var(--ink);
-    }
-    input:focus, textarea:focus, select:focus{
-      border-color: rgba(34,230,200,.42);
-      box-shadow: 0 0 0 4px rgba(34,230,200,.12);
-    }
-    textarea{min-height:110px; resize:vertical}
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-    @media (max-width:720px){.two{grid-template-columns:1fr}}
-
-    .sendrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:4px;}
-    .btn{
-      cursor:pointer;
-      border:none;
-      padding:14px 16px;
-      border-radius:14px;
-      font-weight:900;
-      letter-spacing:.5px;
-      font-size: 1.02rem;
-      color: var(--ink);
-      background:
-        radial-gradient(900px 160px at 15% 40%, rgba(34,230,200,.22), transparent 55%),
-        radial-gradient(900px 160px at 85% 60%, rgba(26,168,255,.18), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.22));
-      border:1px solid var(--cardEdge2);
-      box-shadow: var(--shadow2);
-      transition: transform .12s ease, filter .2s ease, border-color .2s ease;
-    }
-    html[data-theme="dark"] .btn{
-      color: var(--ink);
-      background:
-        radial-gradient(800px 140px at 15% 40%, rgba(34,230,200,.20), transparent 55%),
-        radial-gradient(800px 140px at 85% 60%, rgba(26,168,255,.18), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.07), rgba(0,0,0,0));
-      border:1px solid rgba(233,238,245,.18);
-      box-shadow: var(--shadow);
-    }
-    .btn:hover{transform:translateY(-1px);filter:brightness(1.02);border-color:rgba(26,168,255,.28)}
-    .btn.secondary{
-      background: rgba(255,255,255,.64);
-      border:1px solid var(--cardEdge);
-      box-shadow: none;
-      font-weight:900;
-    }
-    html[data-theme="dark"] .btn.secondary{
-      background: rgba(255,255,255,.04);
-      border:1px solid rgba(233,238,245,.12);
-    }
-
     .microcopy{
       font-size: .98rem;
       color: var(--muted2);
-      line-height:1.35;
-      max-width:55ch;
+      line-height:1.45;
+      max-width:60ch;
     }
     .microcopy b{color:var(--ink)}
+
     .trustline{
-      display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;
+      display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;
       color:var(--muted2);
       font-size: .98rem;
     }
@@ -667,6 +469,34 @@
       border:1px solid rgba(233,238,245,.10);
       background: rgba(255,255,255,.02);
     }
+
+    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .btn{
+      cursor:pointer;
+      border:none;
+      padding:14px 16px;
+      border-radius:14px;
+      font-weight:900;
+      letter-spacing:.5px;
+      font-size: 1.02rem;
+      color: var(--ink);
+      background: rgba(255,255,255,.72);
+      border:1px solid var(--cardEdge2);
+      box-shadow: var(--shadow2);
+      transition: transform .12s ease, filter .2s ease, border-color .2s ease, background .2s ease;
+    }
+    html[data-theme="dark"] .btn{
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(233,238,245,.18);
+      box-shadow: var(--shadow2);
+    }
+    .btn.primary{
+      background:
+        radial-gradient(900px 160px at 15% 40%, rgba(34,230,200,.18), transparent 55%),
+        radial-gradient(900px 160px at 85% 60%, rgba(26,168,255,.16), transparent 60%),
+        rgba(255,255,255,.80);
+    }
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.02);border-color:rgba(26,168,255,.26)}
 
     /* Sections */
     section{ padding:18px 0; }
@@ -698,7 +528,7 @@
     .tick{
       flex:0 0 12px;height:12px;margin-top:8px;border-radius:999px;
       background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.8), rgba(34,230,200,.28));
-      box-shadow: 0 0 18px rgba(34,230,200,.16);
+      box-shadow: 0 0 16px rgba(34,230,200,.12);
       border:1px solid rgba(0,0,0,.08);
     }
     html[data-theme="dark"] .tick{border:1px solid rgba(233,238,245,.16)}
@@ -706,9 +536,7 @@
     .story{display:grid;grid-template-columns: 1fr 1fr;gap:14px;margin-top:12px;}
     @media (max-width:980px){ .story{grid-template-columns:1fr} }
 
-    /* =========================================================
-       "PROMINENT BACKGROUNDS" SECTION — BIG PHOTO TILES
-       ========================================================= */
+    /* Big photo tiles */
     .showcase{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
@@ -737,8 +565,8 @@
       position:absolute; inset:0;
       background:
         linear-gradient(180deg, rgba(0,0,0,0) 0%, var(--photoOverlayC) 45%, var(--photoOverlayB) 100%),
-        radial-gradient(900px 500px at 20% 30%, rgba(34,230,200,.14), transparent 60%),
-        radial-gradient(900px 500px at 85% 30%, rgba(26,168,255,.12), transparent 60%);
+        radial-gradient(900px 500px at 20% 30%, rgba(34,230,200,.12), transparent 60%),
+        radial-gradient(900px 500px at 85% 30%, rgba(26,168,255,.10), transparent 60%);
     }
     .tile .txt{
       position:absolute; left:18px; right:18px; bottom:16px;
@@ -761,7 +589,7 @@
     .tile .txt .mini .dot{
       width:10px;height:10px;border-radius:999px;
       background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(26,168,255,.35));
-      box-shadow: 0 0 18px rgba(26,168,255,.18);
+      box-shadow: 0 0 16px rgba(26,168,255,.14);
       border:1px solid rgba(0,0,0,.08);
     }
     html[data-theme="dark"] .tile .txt .mini .dot{border:1px solid rgba(233,238,245,.14)}
@@ -769,15 +597,9 @@
     .tile .txt p{margin:0; color:var(--muted); font-size:var(--p); line-height:1.45}
 
     .tile.small{min-height: 250px}
-    .tileGrid{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:14px;
-    }
+    .tileGrid{display:grid; grid-template-columns: 1fr; gap:14px;}
 
-    /* =========================================================
-       STICKY BOTTOM CTA
-       ========================================================= */
+    /* Sticky bottom CTA */
     .sticky{
       position:fixed;
       left:0;right:0;bottom:0;
@@ -785,7 +607,7 @@
       padding:10px 12px;
       background: var(--glass);
       border-top:1px solid var(--line);
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(16px);
     }
     .sticky-inner{
       max-width:1180px;
@@ -813,13 +635,13 @@
       border:1px solid rgba(233,238,245,.16);
       box-shadow: var(--shadow2);
     }
-    .pill.call{border-color:rgba(34,230,200,.28)}
-    .pill.email{border-color:rgba(26,168,255,.26)}
+    .pill.call{border-color:rgba(34,230,200,.26)}
+    .pill.email{border-color:rgba(26,168,255,.22)}
     .pill:hover{filter:brightness(1.02)}
     .pill .icon{
       width:10px;height:10px;border-radius:999px;
       background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.85), rgba(26,168,255,.26));
-      box-shadow: 0 0 18px rgba(26,168,255,.16);
+      box-shadow: 0 0 16px rgba(26,168,255,.12);
       border:1px solid rgba(0,0,0,.08);
     }
     html[data-theme="dark"] .pill .icon{border:1px solid rgba(233,238,245,.14)}
@@ -833,16 +655,16 @@
       margin-top:22px;
     }
 
-    /* Glimmer overlay (automatic & random; still works in light) */
+    /* Glimmer overlay (automatic & random) */
     .glimmer-layer{
       pointer-events:none;
       position:absolute;
       inset:-20%;
       background: linear-gradient(120deg,
         transparent 0%,
-        rgba(255,255,255,.10) 10%,
-        rgba(34,230,200,.12) 14%,
-        rgba(255,255,255,.10) 18%,
+        rgba(255,255,255,.08) 10%,
+        rgba(34,230,200,.10) 14%,
+        rgba(255,255,255,.08) 18%,
         transparent 30%,
         transparent 100%);
       transform: translateX(-40%) rotate(0deg);
@@ -853,9 +675,9 @@
     html[data-theme="dark"] .glimmer-layer{
       background: linear-gradient(120deg,
         transparent 0%,
-        rgba(255,255,255,.06) 10%,
-        rgba(34,230,200,.12) 14%,
-        rgba(255,255,255,.06) 18%,
+        rgba(255,255,255,.05) 10%,
+        rgba(34,230,200,.10) 14%,
+        rgba(255,255,255,.05) 18%,
         transparent 30%,
         transparent 100%);
     }
@@ -871,106 +693,225 @@
       100%{transform: translateX(110%) rotate(0deg); opacity:0}
     }
 
-    @keyframes spin{to{transform:rotate(360deg)}}
-
-    /* Smooth anchor offset for sticky header */
+    /* Smooth anchor offset */
     :target{scroll-margin-top: 170px;}
-    @media (max-width: 980px){ :target{scroll-margin-top: 210px;} }
+    @media (max-width: 980px){ :target{scroll-margin-top: 220px;} } 
+
 
     /* =========================================================
-       ADDITIONAL PHOTO BACKGROUND SECTIONS
-       ========================================================= */
-    .photo-strip{
-      position: relative;
-      min-height: 420px;
-      margin: 22px 0;
-      border-radius: var(--radius2);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--cardEdge);
-    }
-    .photo-strip .bg{
-      position:absolute; inset:0;
-      background-size: cover;
-      background-position: center;
-      transform: scale(1.03);
-    }
-    .photo-strip .overlay{
-      position:absolute; inset:0;
-      background:
-        linear-gradient(90deg,
-          var(--photoOverlayA),
-          var(--photoOverlayB) 55%,
-          var(--photoOverlayC)),
-        radial-gradient(900px 500px at 20% 40%, rgba(34,230,200,.14), transparent 60%),
-        radial-gradient(900px 500px at 85% 40%, rgba(26,168,255,.12), transparent 60%);
-    }
-    .photo-strip .content{
-      position:relative;
-      padding: 32px;
-      max-width: 760px;
-    }
+   MOBILE: OPEN + LESS CLUTTER
+   ========================================================= */
+@media (max-width: 980px){
 
-    .bg-mosaic{
-      display:grid;
-      grid-template-columns: 2fr 1fr;
-      gap:14px;
-      margin-top:18px;
-    }
-    @media(max-width:980px){
-      .bg-mosaic{grid-template-columns:1fr}
-    }
+  /* 1) Reduce overall vertical density */
+  section{ padding: 12px 0; }
+  .panel-inner{ padding: 18px; }
+  .card{ padding: 16px; }
+  .wrap{ padding: 0 14px; }
 
-    .bg-tile{
-      position:relative;
-      min-height:260px;
-      border-radius: var(--radius);
-      overflow:hidden;
-      border:1px solid var(--cardEdge);
-      box-shadow: var(--shadow2);
-    }
-    .bg-tile .bg{
-      position:absolute; inset:0;
-      background-size:cover;
-      background-position:center;
-    }
-    .bg-tile .veil{
-      position:absolute; inset:0;
-      background:
-        linear-gradient(180deg,
-          rgba(0,0,0,0) 0%,
-          var(--photoOverlayC) 45%,
-          var(--photoOverlayB) 100%);
-    }
-    .bg-tile .label{
-      position:absolute;
-      bottom:14px; left:14px; right:14px;
-      padding:14px;
-      border-radius:14px;
-      background: rgba(255,255,255,.78);
-      border:1px solid var(--cardEdge);
-      box-shadow: var(--shadow2);
-    }
-    html[data-theme="dark"] .bg-tile .label{
-      background: rgba(7,9,11,.70);
-      border:1px solid rgba(233,238,245,.12);
-    }
-    .bg-tile h4{margin:0 0 6px 0}
-    .bg-tile p{margin:0; font-size:var(--p); color:var(--muted)}
+  /* 2) Make the top banner image section shorter and less dominant */
+  .top-hero-inner{ padding: 12px 14px; }
+  .top-hero-img{
+    max-height: 160px;          /* was 260 */
+    border-radius: 16px;
+    box-shadow: 0 10px 22px rgba(0,0,0,.10);
+  }
 
-    /* ===== NEW: make the carport link look "primary" in the nav ===== */
-    .navlink.page{
-      border-color: rgba(26,168,255,.28);
-      background: rgba(26,168,255,.10);
-      color: var(--ink);
-      font-weight: 900;
-      box-shadow: 0 0 22px rgba(26,168,255,.08);
-    }
-    html[data-theme="dark"] .navlink.page{
-      background: rgba(26,168,255,.08);
-      border-color: rgba(26,168,255,.24);
-      color: rgba(233,238,245,.96);
-    }
+  /* 3) Make sticky header feel lighter */
+  .masthead{ backdrop-filter: blur(12px); }
+  .banner-inner{
+    min-height: unset;
+    padding: 10px 0 8px;
+    gap: 8px;
+  }
+
+  /* Hide the small "Phoenix • ..." kicker (it’s a clutter line on mobile) */
+  .mini-kicker{ display:none; }
+
+  /* 4) Make logo smaller and cleaner */
+  .logo-frame{
+    padding: 8px 12px;
+    border-radius: 18px;
+    box-shadow: 0 10px 20px rgba(0,0,0,.10);
+  }
+  .logo-frame img{
+    height: 70px;               /* smaller logo height */
+    max-width: 86vw;
+    filter: drop-shadow(0 8px 14px rgba(0,0,0,.18));
+  }
+
+  /* 5) Turn the action row into a clean 2-button layout */
+  .banner-actions{
+    gap: 8px;
+    justify-content: center;
+  }
+
+  /* Make CTAs less chunky */
+  .cta, .toggle{
+    padding: 10px 12px;
+    font-size: .98rem;
+  }
+
+  /* Hide Email + Theme toggle from the top row to reduce clutter */
+  .cta.alt{ display:none; }     /* this is your Email Quote button */
+  #themeToggle{ display:none; } /* move theme toggle elsewhere if desired */
+
+  /* Make the remaining buttons span the row */
+  .banner-actions .cta{
+    flex: 1 1 calc(50% - 8px);
+    justify-content: center;
+  }
+
+  /* 6) Slim down the nav chip row (less “pill soup”) */
+  .navrow{ padding: 8px 0 10px; }
+  nav.primary{
+    gap: 8px;
+    padding: 0 2px 6px;
+  }
+  .navlink{
+    padding: 9px 11px;
+    font-size: .95rem;
+    border-radius: 999px;
+  }
+
+  /* 7) Make your photo-strip hero do more “work” visually */
+  .photo-strip{
+    min-height: 360px; /* was 420 */
+    margin: 14px 0;
+    border-radius: 20px;
+  }
+  .photo-strip .content{
+    padding: 22px;
+    max-width: 92%;
+  }
+  .photo-strip h2{
+    margin: 0 0 8px 0;
+    font-size: clamp(1.7rem, 6vw, 2.1rem);
+    line-height: 1.08;
+  }
+
+  /* 8) Reduce “chip” density under hero */
+  .tagrow{ gap: 8px; }
+  .tag{
+    padding: 9px 10px;
+    font-size: .95rem;
+  }
+
+  /* 9) Sticky bottom CTA: tighter + less tall */
+  .sticky{ padding: 8px 10px; }
+  .pill{
+    padding: 10px 12px;
+    font-size: .98rem;
+  }
+}
+
+/* Optional: if you want the theme toggle accessible but not cluttering the header,
+   you can show it in the sticky bar only on mobile */
+@media (max-width: 980px){
+  .sticky-actions #mobileThemePill{ display:inline-flex; }
+}
+@media (min-width: 981px){
+  .sticky-actions #mobileThemePill{ display:none; }
+} 
+
+@media (max-width: 980px){
+  .top-hero-banner{ display:none; } 
+} 
+
+/* =========================================================
+   MOBILE: Compact sticky CTA (less bulky)
+   ========================================================= */
+@media (max-width: 980px){
+  .sticky{
+    padding: 6px 8px;
+    backdrop-filter: blur(14px);
+  }
+
+  .sticky-inner{
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Hide the left text block on mobile */
+  .sticky-inner > div:first-child{
+    display:none;
+  }
+
+  /* Keep pills in one line, compact */
+  .sticky-actions{
+    width:100%;
+    gap: 8px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .pill{
+    padding: 10px 12px;
+    font-size: .96rem;
+    line-height: 1;
+    box-shadow: none;              /* cleaner */
+    border-radius: 999px;
+  }
+
+  /* Show only Call + Fast Quote as primary */
+  .pill.email,
+  .pill.carports{
+    display:none;
+  }
+
+  /* Make the two primary buttons fill space nicely */
+  .pill.call,
+  .pill.quote{
+    flex: 1 1 0;
+    justify-content:center;
+  }
+
+  /* Compact "More" button */
+  .pill.more{
+    flex: 0 0 auto;
+    padding: 10px 12px;
+  }
+
+  /* The dropdown menu */
+  .sticky-more{
+    position: relative;
+  }
+  .sticky-menu{
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 10px);
+    min-width: 210px;
+    background: var(--panel2);
+    border: 1px solid var(--cardEdge2);
+    border-radius: 14px;
+    box-shadow: var(--shadow2);
+    padding: 8px;
+    display: none;
+  }
+  html[data-theme="dark"] .sticky-menu{
+    background: rgba(10,14,18,.92);
+  }
+
+  .sticky-menu a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding: 10px 10px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .sticky-menu a:hover{
+    background: rgba(26,168,255,.10);
+    border-color: rgba(26,168,255,.18);
+  }
+
+  .sticky-more[aria-expanded="true"] .sticky-menu{
+    display:block;
+  }
+}
+
   </style>
 
   <!-- LocalBusiness schema -->
@@ -990,34 +931,91 @@
 </head>
 
 <body>
-  <!-- TOP BANNER IMAGE (your provided file) -->
-  <section class="top-hero-banner" aria-label="Stallion SteelWorks Welding banner">
-    <div class="top-hero-inner">
-      <img
-        class="top-hero-img"
-        src="pics/Welding banner.png"
-        alt="Stallion SteelWorks Welding banner"
-        loading="eager"
-        decoding="async"
-      />
+
+  <!-- TOP HERO (open + clicky) -->
+  <section class="hero-top has-glimmer" aria-label="Stallion SteelWorks Welding hero">
+    <div class="glimmer-layer" aria-hidden="true"></div>
+    <div class="bg" aria-hidden="true"></div>
+    <div class="overlay" aria-hidden="true"></div>
+
+    <div class="wrap inner">
+      <div class="hero-grid">
+
+        <div class="panel hero-copy">
+          <div class="panel-inner">
+            <div class="mini-kicker"><span class="spark"></span> Phoenix • Custom Fabrication • Repairs</div>
+
+            <h2>Clean, Modern Welding — <span style="color:var(--neon2)">Built Right</span>.</h2>
+
+            <p>
+              Custom welded pieces that look premium and hold up under real use:
+              <strong>steel doors</strong>, <strong>gates</strong>, <strong>railings</strong>, <strong>furniture</strong>,
+              <strong>frames</strong>, <strong>shade structures</strong>, plus fast, intelligent repairs.
+            </p>
+
+            <div class="tagrow">
+              <div class="tag"><span class="spark"></span><b>Fast Quotes</b> (photo + dms)</div>
+              <div class="tag"><span class="spark"></span><b>Clean Finishes</b> that sell the look</div>
+              <div class="tag"><span class="spark"></span><b>Durable Welds</b> built to last</div>
+              <div class="tag"><span class="spark"></span><b>Phoenix Local</b> Valley service</div>
+            </div>
+
+            <div class="neonline"></div>
+
+            <div class="btnrow">
+              <a class="cta alt" href="#quote"><span class="dot"></span> Get a Fast Quote</a>
+              <a class="cta" href="tel:60299977556"><span class="dot"></span> Call 602-999-77556</a>
+              <a class="cta alt" href="./services/carport-shade-scottsdale.html" title="Carports & Shade Structures"><span class="dot"></span> Carports & Shade</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" id="quote">
+          <div class="panel-inner quote-box">
+            <div class="quote-title">
+              <div>
+                <div class="kicker">Request a fast quote</div>
+                <h3>Send your photo + rough dimensions</h3>
+              </div>
+              <div class="badge">Quick Response</div>
+            </div>
+
+            <div class="microcopy">
+              Fastest quote path: <b>1)</b> take a photo, <b>2)</b> add rough dimensions,
+              <b>3)</b> tell us the finish you want (matte black, raw industrial, coated).
+              We’ll reply with a clear next step and price range.
+            </div>
+
+            <div class="trustline">
+              <span>✅ Clear communication</span>
+              <span>✅ Built to spec</span>
+              <span>✅ Strong welds</span>
+              <span>✅ Clean finish options</span>
+            </div>
+
+            <div class="btnrow">
+              <a class="btn primary" href="tel:60299977556">Call Now</a>
+              <a class="btn" href="mailto:stallionsteelworks@gmail.com?subject=Quote%20Request%20-%20Stallion%20SteelWorks%20Welding&body=Name:%0D%0APhone:%0D%0AProject:%0D%0ARough%20Dimensions:%0D%0AFinish:%0D%0ADetails:%0D%0A%0D%0A(Attach%20photos%20to%20this%20email)">Email Photos</a>
+              <a class="btn" href="./services/gallery.html">Gallery</a>
+            </div>
+
+            <div class="microcopy">
+              Prefer browsing shade builds? Jump to <b>Carports</b> for examples and options.
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- Sticky banner + nav -->
+  <!-- Sticky masthead + nav -->
   <div class="masthead">
-    <div class="banner">
-      <div class="wrap banner-inner">
+    <div class="wrap">
+      <div class="mast-inner">
         <div class="brand-left">
-          <div class="mini-kicker"><span class="spark"></span> Phoenix • Custom Fabrication • Repairs</div>
           <h1>Stallion SteelWorks <span style="color:var(--neon2)">Welding</span></h1>
           <small>Steel doors • gates • railings • furniture • frames • fast quotes • built to last</small>
-        </div>
-
-        <div class="banner-logo" aria-label="Stallion SteelWorks Welding logo">
-          <div class="logo-frame has-glimmer">
-            <div class="glimmer-layer" aria-hidden="true"></div>
-            <img src="pics/SteelworksWelding.jpg" alt="Stallion SteelWorks Welding logo" loading="eager" />
-          </div>
         </div>
 
         <div class="banner-actions" aria-label="Quick actions">
@@ -1031,21 +1029,14 @@
           </button>
         </div>
       </div>
-    </div>
 
-    <div class="navrow">
-      <div class="wrap">
+      <div class="navrow">
         <nav class="primary" aria-label="primary">
           <a class="navlink hot" href="#quote">Get a Quote</a>
-
-          <!-- NEW: carport.html link placed right after Get a Quote -->
-          <a class="navlink page" href="./services/carport.html" title="Carports & Shade Structures">Carports</a>
-
+          <a class="navlink page" href="./services/carport-shade-scottsdale.html" title="Carports & Shade Structures">Carports</a>
           <a class="navlink" href="#showcase">Showcase</a>
-        
           <a class="navlink" href="#custom">Custom Builds</a>
           <a class="navlink" href="#doors">Doors & Gates</a>
-
           <a class="navlink" href="#furniture">Furniture</a>
           <a class="navlink" href="#repairs">Repairs</a>
           <a class="navlink" href="#service-area">Service Area</a>
@@ -1054,164 +1045,13 @@
     </div>
   </div>
 
-  <section class="photo-strip has-glimmer">
-    <div class="glimmer-layer"></div>
-    <div class="bg" style="background-image:url('pics/Patio-Car-Shade.jfif')"></div>
-    <div class="overlay"></div>
-
-    <div class="content">
-      <h2>Modern Carports & Driveway Shade</h2>
-      <p>
-        Vehicle protection with clean geometry.
-        No horse required — just steel done right.
-      </p>
-
-      <!-- NEW: obvious link to carport.html inside a prominent hero strip -->
-      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-        <a class="cta alt" href="./services/carport.html" title="View Carports"> <span class="dot"></span> View Carports</a>
-        <a class="cta" href="#quote" title="Get a quote for a carport"><span class="dot"></span> Quote a Carport</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PHOTO-BACKED HERO BAND -->
-  <header class="hero">
-    <div class="wrap">
-      <div class="photo-band has-glimmer">
-        <div class="glimmer-layer" aria-hidden="true"></div>
-        <div class="bg" style="background-image:url('pics/shade-installation.jpg')"></div>
-        <div class="overlay" aria-hidden="true"></div>
-
-        <div class="content">
-          <!-- Left hero -->
-          <div class="panel">
-            <div class="panel-inner">
-              <h2>Clean, Modern Welding — <span style="color:var(--neon2)">Built Right</span> the First Time.</h2>
-              <p>
-                If you’re searching for <strong>welding near me</strong>, <strong>custom metal fabrication</strong>,
-                <strong>welded furniture</strong>, <strong>steel doors</strong>, <strong>gates</strong>, <strong>railings</strong>,
-                <strong>frames</strong>, or <strong>on-site repairs</strong>, you’re in the right place.
-                Stallion SteelWorks Welding builds <strong>strong welds</strong> with a finish that looks as good as it performs.
-              </p>
-              <p>
-                We don’t just “fix metal.” We create <strong>statement pieces</strong> — welded couches, modern industrial tables,
-                custom steel doors, security gates, handrails, brackets, shop upgrades, trailers, and structural supports — plus fast,
-                reliable repairs when production can’t wait.
-              </p>
-
-              <div class="neonline"></div>
-
-              <div class="tagrow">
-                <div class="tag"><span class="spark"></span><b>Fast Quotes</b> with clear pricing</div>
-                <div class="tag"><span class="spark"></span><b>Custom Builds</b> built to your spec</div>
-                <div class="tag"><span class="spark"></span><b>Clean Finishes</b> detail that sells the look</div>
-                <div class="tag"><span class="spark"></span><b>Durable Welds</b> made for real use</div>
-              </div>
-
-              <div class="divider"></div>
-
-              <ul class="bullets">
-                <li><span class="tick"></span><span><strong>Send a photo + rough dimensions</strong> and we’ll recommend the smartest build path: material thickness, joint design, finish, and timeline.</span></li>
-                <li><span class="tick"></span><span><strong>We can build for style or survival</strong>: sleek modern steel looks, ranch strength, or security-grade toughness.</span></li>
-                <li><span class="tick"></span><span><strong>One-and-done workmanship</strong>: build it right so you don’t pay twice.</span></li>
-              </ul>
-
-              <!-- NEW: inline link (SEO + conversion) -->
-              <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-                <a class="cta alt" href="carport.html" title="Carports & Shade Structures"><span class="dot"></span> Carports & Shade</a>
-                <a class="cta" href="#quote" title="Get a fast quote"><span class="dot"></span> Fast Quote</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right quote funnel -->
-          <div class="panel" id="quote">
-            <div class="panel-inner quote-box">
-              <div class="quote-title">
-                <div>
-                  <div class="kicker">Request a fast quote</div>
-                  <h3>Tell us what you want welded</h3>
-                </div>
-                <div class="badge">Quick Response</div>
-              </div>
-
-              <!-- <div class="microcopy">
-                The fastest way to get moving: <b>describe the piece</b>, add <b>dimensions</b>, and include
-                <b>any photos</b>. We’ll reply with a clear next step: price range, timeline, and options that fit your budget.
-              </div>
-
-              <form id="quoteForm" action="mailto:stallionsteelworks@gmail.com" method="post" enctype="text/plain">
-                <div class="two">
-                  <div>
-                    <label for="name">Name</label>
-                    <input id="name" name="Name" autocomplete="name" placeholder="Your name" required />
-                  </div>
-                  <div>
-                    <label for="phone">Phone</label>
-                    <input id="phone" name="Phone" autocomplete="tel" placeholder="Best number to reach you" />
-                  </div>
-                </div>
-
-                <div class="two">
-                  <div>
-                    <label for="project">Project Type</label>
-                    <select id="project" name="Project Type">
-                      <option>Custom welded piece (furniture / art / décor)</option>
-                      <option>Door / Gate / Security</option>
-                      <option>Railing / Handrail / Stair</option>
-                      <option>Frame / Brackets / Supports</option>
-                      <option>Repair (equipment / trailer / metal part)</option>
-                      <option>Other (describe below)</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label for="timeline">Timeline</label>
-                    <select id="timeline" name="Timeline">
-                      <option>ASAP (urgent)</option>
-                      <option>This week</option>
-                      <option>1–2 weeks</option>
-                      <option>This month</option>
-                      <option>Planning / budgeting</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label for="details">Describe what you want built (materials, size, finish)</label>
-                  <textarea id="details" name="Project Details" placeholder="Example: ‘Modern steel door 36&quot; x 80&quot;, matte black.’ Or ‘Welded couch frame with heavy tubing + powder coat.’" required></textarea>
-                </div>
-
-                <div class="sendrow">
-                  <button class="btn" type="submit">Send Quote Request</button>
-                  <button class="btn secondary" type="button" id="textButton">Text / Call Instead</button>
-                </div> -->
-
-                <div class="trustline">
-                  <span>✅ Clear communication</span>
-                  <span>✅ Built to spec</span>
-                  <span>✅ Strong welds</span>
-                  <span>✅ Clean finish options</span>
-                </div>
-
-                <div class="microcopy">
-                  Prefer fast action? Call <b>602-999-77556</b> or email <b>stallionsteelworks@gmail.com</b>.
-                  If you’re on mobile, the buttons below open instantly.
-                </div>
-              </form>
-            </div>
-          </div>
-        </div><!-- /content -->
-      </div><!-- /photo-band -->
-    </div>
-  </header>
-
   <main>
     <div class="wrap">
       <!-- PROMINENT BACKGROUND IMAGE SHOWCASE -->
       <section id="showcase">
         <div class="section-title">
           <h3>Recent Builds & Real-World Results</h3>
-          <p>These photos are used as CSS backgrounds so they’re a visual “front and center” part of the site.</p>
+          <p></p>
         </div>
 
         <div class="showcase">
@@ -1221,11 +1061,10 @@
             <div class="txt">
               <div class="mini"><span class="dot"></span> Shade Structures + Steel Work</div>
               <h4>Clean steel lines, pro fitment, and real durability.</h4>
-              <p>We fabricate and install structures that look modern, sit square, and hold up in Arizona sun.</p>
+              <p>Modern structures that sit square, look premium, and hold up in Arizona sun.</p>
 
-              <!-- NEW: contextual link here too -->
               <div style="margin-top:10px;">
-                <a class="cta alt" href="./services/gallery.html" title="See carport examples"><span class="dot"></span> See Carport Builds</a>
+                <a class="cta alt" href="./services/gallery.html" title="See carport examples"><span class="dot"></span> See Builds</a>
               </div>
             </div>
           </div>
@@ -1258,7 +1097,7 @@
       <section id="why">
         <div class="section-title">
           <h3>Welding That Looks Premium — And Holds Like a Beast</h3>
-          <p>Light mode = brighter, cleaner, higher trust. Dark mode = sleek “steel at night.”</p>
+          <p></p>
         </div>
 
         <div class="grid3">
@@ -1275,7 +1114,7 @@
             <div class="glimmer-layer" aria-hidden="true"></div>
             <h4>Repairs That Get You Back Online</h4>
             <p>
-              Broken bracket? Cracked weld? Bent metal? Trailer issues? We repair with strength and clarity:
+              Broken bracket? Cracked weld? Bent metal? Trailer issues? We repair with clarity:
               what failed, why it failed, and how to fix it so it survives real use.
             </p>
           </div>
@@ -1295,7 +1134,7 @@
       <section id="custom">
         <div class="section-title">
           <h3>Custom Welded Pieces: Furniture, Frames, One-Off Builds</h3>
-          <p>Designed for search intent: “custom welded ___ near me” and “fabricator Phoenix”.</p>
+          <p>custom welded near me and fabricator Phoenix.</p>
         </div>
 
         <div class="story">
@@ -1338,7 +1177,6 @@
             </ul>
             <div class="microcopy">SEO keywords: metal brackets Phoenix, steel frame fabrication, custom welding services.</div>
 
-            <!-- NEW: link from the "shade/structure" related card -->
             <div style="margin-top:12px;">
               <a class="cta alt" href="./services/carport.html"><span class="dot"></span> Carport Page</a>
             </div>
@@ -1382,8 +1220,8 @@
           </div>
         </div>
 
-        <!-- NEW: prominent link block after Doors & Gates section content -->
         <div class="divider"></div>
+
         <div class="card has-glimmer">
           <div class="glimmer-layer" aria-hidden="true"></div>
           <h4>Need a Carport or Shade Structure?</h4>
@@ -1411,7 +1249,7 @@
         </div>
       </section>
 
-      <!-- Furniture focus -->
+      <!-- Furniture -->
       <section id="furniture">
         <div class="section-title">
           <h3>Welded Furniture & Decor That People Talk About</h3>
@@ -1483,47 +1321,6 @@
         </div>
       </section>
 
-      <section>
-        <div class="section-title">
-          <h3>Real Builds. Real Steel.</h3>
-          <p>Every structure below is a real installation — no stock photos.</p>
-        </div>
-
-        <div class="bg-mosaic">
-          <div class="bg-tile has-glimmer">
-            <div class="glimmer-layer"></div>
-            <div class="bg" style="background-image:url('pics/RV-Shade-15FT-Tall.jpg')"></div>
-            <div class="veil"></div>
-            <div class="label">
-              <h4>RV Shade & Tall Clearance Structures</h4>
-              <p>Designed for height, strength, and wind resistance.</p>
-            </div>
-          </div>
-
-          <div style="display:grid;gap:14px">
-            <div class="bg-tile has-glimmer">
-              <div class="glimmer-layer"></div>
-              <div class="bg" style="background-image:url('pics/Patio-Car-Shade-far.jfif')"></div>
-              <div class="veil"></div>
-              <div class="label">
-                <h4>Wide Span Steel Shade</h4>
-                <p>Open feel without extra posts.</p>
-              </div>
-            </div>
-
-            <div class="bg-tile has-glimmer">
-              <div class="glimmer-layer"></div>
-              <div class="bg" style="background-image:url('pics/MareMotelHayBarn.jpg')"></div>
-              <div class="veil"></div>
-              <div class="label">
-                <h4>Large Structural Steel Builds</h4>
-                <p>From barns to shade systems.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Service area -->
       <section id="service-area">
         <div class="section-title">
@@ -1551,7 +1348,6 @@
             Email: <strong><a href="mailto:stallionsteelworks@gmail.com">stallionsteelworks@gmail.com</a></strong>
           </p>
 
-          <!-- NEW: link also in footer-adjacent contact card -->
           <div style="margin-top:12px;">
             <a class="cta alt" href="./services/carport.html"><span class="dot"></span> Carports Page</a>
           </div>
@@ -1566,7 +1362,7 @@
         <p style="margin:0">
           Call <strong><a href="tel:60299977556">602-999-77556</a></strong> • Email <strong><a href="mailto:stallionsteelworks@gmail.com">stallionsteelworks@gmail.com</a></strong>
           • Main site: <strong><a href="https://stallionsteelworks.com/">stallionsteelworks.com</a></strong>
-          • Carports: <strong><a href="./servcies/carport.html">carport.html</a></strong>
+          • Carports: <strong><a href="./services/carport.html">carport.html</a></strong>
         </p>
       </footer>
     </div>
@@ -1581,107 +1377,97 @@
       </div>
       <div class="sticky-actions">
         <a class="pill call" href="tel:60299977556"><span class="icon"></span> Call 602-999-77556</a>
-        <a class="pill email" href="mailto:stallionsteelworks@gmail.com?subject=Quote%20Request%20-%20Stallion%20SteelWorks%20Welding&body=Name:%0D%0APhone:%0D%0AProject%20Type:%0D%0ATimeline:%0D%0ADetails:%0D%0A%0D%0AReference%20photos%20(if%20any):"><span class="icon"></span> Email for Quote</a>
-        <a class="pill" href="#quote"><span class="icon"></span> Quote Form</a>
-
-        <!-- NEW: sticky bar link to carport.html -->
+        <a class="pill email" href="mailto:stallionsteelworks@gmail.com?subject=Quote%20Request%20-%20Stallion%20SteelWorks%20Welding&body=Name:%0D%0APhone:%0D%0AProject:%0D%0ARough%20Dimensions:%0D%0AFinish:%0D%0ADetails:%0D%0A%0D%0A(Attach%20photos%20to%20this%20email)"><span class="icon"></span> Email for Quote</a>
+        <a class="pill" href="#quote"><span class="icon"></span> Fast Quote</a>
         <a class="pill" href="./services/carport.html" title="Carports"><span class="icon"></span> Carports</a>
       </div>
     </div>
   </div>
 
   <script>
-  // Text/Call button (mobile-first) — SAFE even if button isn't present
-  const textBtn = document.getElementById("textButton");
-  if (textBtn) {
-    textBtn.addEventListener("click", () => {
-      window.location.href = "tel:60299977556";
-    });
-  }
+    // Theme toggle (light default) with localStorage + prefers-color-scheme fallback
+    (function initTheme(){
+      const root = document.documentElement;
+      const label = document.getElementById("themeLabel");
+      const toggle = document.getElementById("themeToggle");
+      if (!label || !toggle) return;
 
-  // Theme toggle (light default) with localStorage + prefers-color-scheme fallback
-  (function initTheme(){
-    const root = document.documentElement;
-    const label = document.getElementById("themeLabel");
-    const toggle = document.getElementById("themeToggle");
-    if (!label || !toggle) return;
-
-    const saved = localStorage.getItem("ssw_theme");
-
-    if(saved === "light" || saved === "dark"){
-      root.setAttribute("data-theme", saved);
-    } else {
-      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      root.setAttribute("data-theme", prefersDark ? "dark" : "light");
-    }
-
-    function syncLabel(){
-      const t = root.getAttribute("data-theme") || "light";
-      label.textContent = (t === "dark") ? "Dark Mode" : "Light Mode";
-    }
-    syncLabel();
-
-    toggle.addEventListener("click", () => {
-      const cur = root.getAttribute("data-theme") || "light";
-      const next = (cur === "dark") ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      localStorage.setItem("ssw_theme", next);
-      syncLabel();
-    });
-  })();
-
-  // Automatic random glimmer (no cursor needed)
-  (function autoGlimmer(){
-    const targets = Array.from(document.querySelectorAll(".has-glimmer"));
-    if(!targets.length) return;
-
-    const r = (min,max)=>Math.floor(Math.random()*(max-min+1))+min;
-
-    function sweep(){
-      const count = r(1, Math.min(3, targets.length));
-      const picked = new Set();
-      while(picked.size < count){
-        picked.add(targets[r(0, targets.length-1)]);
+      const saved = localStorage.getItem("ssw_theme");
+      if(saved === "light" || saved === "dark"){
+        root.setAttribute("data-theme", saved);
+      } else {
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        root.setAttribute("data-theme", prefersDark ? "dark" : "light");
       }
 
-      picked.forEach((el, idx) => {
-        const delay = r(0, 420) + (idx*90);
-        setTimeout(() => {
-          const dur = r(1100, 2100);
-          el.style.setProperty("--gdur", dur + "ms");
-          el.setAttribute("data-glimmer","on");
-          setTimeout(() => el.removeAttribute("data-glimmer"), dur + 120);
-        }, delay);
+      function syncLabel(){
+        const t = root.getAttribute("data-theme") || "light";
+        label.textContent = (t === "dark") ? "Dark Mode" : "Light Mode";
+      }
+      syncLabel();
+
+      toggle.addEventListener("click", () => {
+        const cur = root.getAttribute("data-theme") || "light";
+        const next = (cur === "dark") ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        localStorage.setItem("ssw_theme", next);
+        syncLabel();
       });
+    })();
 
-      const nextIn = r(1400, 2600);
-      setTimeout(sweep, nextIn);
-    }
+    // Automatic random glimmer
+    (function autoGlimmer(){
+      const targets = Array.from(document.querySelectorAll(".has-glimmer"));
+      if(!targets.length) return;
 
-    setTimeout(() => {
-      targets.slice(0, Math.min(4, targets.length)).forEach((el, i) => {
-        setTimeout(() => {
-          el.style.setProperty("--gdur", (1400 + i*120) + "ms");
-          el.setAttribute("data-glimmer","on");
-          setTimeout(() => el.removeAttribute("data-glimmer"), 1700 + i*120);
-        }, 250 + i*180);
+      const r = (min,max)=>Math.floor(Math.random()*(max-min+1))+min;
+
+      function sweep(){
+        const count = r(1, Math.min(3, targets.length));
+        const picked = new Set();
+        while(picked.size < count){
+          picked.add(targets[r(0, targets.length-1)]);
+        }
+
+        picked.forEach((el, idx) => {
+          const delay = r(0, 420) + (idx*90);
+          setTimeout(() => {
+            const dur = r(1100, 2100);
+            el.style.setProperty("--gdur", dur + "ms");
+            el.setAttribute("data-glimmer","on");
+            setTimeout(() => el.removeAttribute("data-glimmer"), dur + 120);
+          }, delay);
+        });
+
+        const nextIn = r(1400, 2600);
+        setTimeout(sweep, nextIn);
+      }
+
+      setTimeout(() => {
+        targets.slice(0, Math.min(4, targets.length)).forEach((el, i) => {
+          setTimeout(() => {
+            el.style.setProperty("--gdur", (1400 + i*120) + "ms");
+            el.setAttribute("data-glimmer","on");
+            setTimeout(() => el.removeAttribute("data-glimmer"), 1700 + i*120);
+          }, 250 + i*180);
+        });
+      }, 250);
+
+      setTimeout(sweep, 1200);
+    })();
+
+    // Smooth scroll (anchors only)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener("click",(e)=>{
+        const id = a.getAttribute("href");
+        if(!id || id === "#") return;
+        const el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:"smooth", block:"start"});
       });
-    }, 250);
-
-    setTimeout(sweep, 1200);
-  })();
-
-  // Smooth scroll (anchors only)
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener("click",(e)=>{
-      const id = a.getAttribute("href");
-      if(!id || id === "#") return;
-      const el = document.querySelector(id);
-      if(!el) return;
-      e.preventDefault();
-      el.scrollIntoView({behavior:"smooth", block:"start"});
     });
-  });
-</script>
+  </script>
+
 </body>
 </html>
